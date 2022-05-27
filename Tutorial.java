@@ -18,7 +18,7 @@ public class Tutorial extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         bg = new GreenfootImage("images/bg/snow.jpg");
-        bg.scale(getWidth() * 
+        bg.scale(getWidth()*2, getHeight()*2); 
         setBackground(bg);
         Player frisk = new Player();
         addObject(frisk, 100, 200);
