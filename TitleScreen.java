@@ -48,6 +48,8 @@ public class TitleScreen extends World
         
         clickToPlay = new Label("[CLICK TO MAKE FRIENDS]", 25);
         addObject(clickToPlay, 300, 350);
+        
+        
     }
     
     /**
@@ -56,6 +58,10 @@ public class TitleScreen extends World
      */
     public void act()
     {
+        GreenfootSound loaded = new GreenfootSound("sounds/title-screen-loaded.mp3");
+        GreenfootSound ambient = new GreenfootSound("sounds/title-screen-ambient.mp3");
+        ambient.playLoop();
+        
         animateBG();
         animateText();
         if(Greenfoot.mouseClicked(this))
@@ -70,8 +76,10 @@ public class TitleScreen extends World
                 fade = fade - 0.1;
             }
             */
+            ambient.stop();
             Tutorial world = new Tutorial();
             Greenfoot.setWorld(world);
+            
         }
     }
     

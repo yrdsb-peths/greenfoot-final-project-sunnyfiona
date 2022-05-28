@@ -53,45 +53,68 @@ public class Player extends Actor
         walk();
         animate();
         
+        
     }
     
     public void walk()
     {
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX() + 3, getY());
-            
-            if(animTimer.millisElapsed() >100){
+            /*
+            if(animTimer.millisElapsed() >100)
+            {
                 setImage(rightWalk[curIndex]);
             }
+            */
+            if(isTouching(Wall.class))
+            {
+                setLocation(getX() - 3, getY());
+            }
+            
         }
         if(Greenfoot.isKeyDown("a")){
             setLocation(getX() - 3, getY());
+            /*
             if(animTimer.millisElapsed() >100){
                 setImage(leftWalk[curIndex]);
+            }
+            */
+            if(isTouching(Wall.class))
+            {
+                setLocation(getX() + 3, getY());
             }
         }
         
         if(Greenfoot.isKeyDown("w")){
             setLocation(getX(), getY() - 3);
-            resetDirection();
-            facingUp = true;
+            //resetDirection();
+            //facingUp = true;
+            if(isTouching(Wall.class))
+            {
+                setLocation(getX(), getY() + 3);
+            }
         }
         
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(), getY() + 3);
-            resetDirection();
-            facingDown = true;
+            //resetDirection();
+            //facingDown = true;
+            if(isTouching(Wall.class))
+            {
+                setLocation(getX(), getY() - 3);
+            }
+            
         }
         
     }
-    
+    /*
     public void resetDirection()
     {
         facingUp = false;
         facingRight = false;
         facingDown = false;
         facingLeft = false;
-    }
+    */
     int curIndex = 0;
     public void animate()
     {

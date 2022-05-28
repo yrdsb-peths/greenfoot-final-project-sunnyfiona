@@ -11,7 +11,7 @@ public class Friend extends Actor
     GreenfootImage[] idle;
     GreenfootImage[] walkLeft;
     GreenfootImage[] walkRight;
-    
+    SimpleTimer animTimer;
     /**
      * Constructor for the class. Sets the images of the NPCs 
      * and sets the animations.
@@ -27,6 +27,7 @@ public class Friend extends Actor
             walkLeft[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
             walkLeft[i].mirrorHorizontally();
         }
+        setImage(idle[0]);
     }
     /**
      * Act - do whatever the Friend wants to do. This method is called whenever
@@ -35,5 +36,12 @@ public class Friend extends Actor
     public void act()
     {
         // Add your action code here.
+    }
+    /**
+     * WalkX - moves the Friend horizontally
+     */
+    public void walkX(int steps)
+    {
+        
     }
 }
