@@ -24,7 +24,7 @@ public class Tutorial extends World
         Player frisk = new Player();
         addObject(frisk, 100, 200);
         Wall tree = new Wall("tree-group");
-        addObject(tree, 300, 200);
+        addObject(tree, 300, 400);
         /*
         Wall[] trees = new Wall[8];
         for(int i = 0; i < trees.length; i++)
