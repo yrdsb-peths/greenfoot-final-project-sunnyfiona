@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Friend extends Actor
 {
-    GreenfootImage[] idle;
     GreenfootImage[] leftWalk;
     GreenfootImage[] rightWalk;
     SimpleTimer animTimer;
@@ -18,19 +17,18 @@ public class Friend extends Actor
      */
     public Friend(String name)
     {
-        /*
-        idle = new GreenfootImage[4];
+        
+        
         rightWalk = new GreenfootImage[4];
-        for(int i = 0; i < idle.length; i++)
+        for(int i = 0; i < rightWalk.length; i++)
         {
-            idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
+            //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
             rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
             leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
             leftWalk[i].mirrorHorizontally();
         }
-        setImage(idle[0]);
+        setImage("images/" + name + "/" + name + "-idle-0.png");
         animTimer = new SimpleTimer();
-        */
         setImage("images/" + name + "/" + name + "-idle-0.png");
     }
     /**
