@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Friend extends Actor
 {
     GreenfootImage[] idle;
-    GreenfootImage[] walkLeft;
-    GreenfootImage[] walkRight;
+    GreenfootImage[] leftWalk;
+    GreenfootImage[] rightWalk;
     SimpleTimer animTimer;
     /**
      * Constructor for the class. Sets the images of the NPCs 
@@ -18,16 +18,20 @@ public class Friend extends Actor
      */
     public Friend(String name)
     {
+        /*
         idle = new GreenfootImage[4];
-        walkRight = new GreenfootImage[4];
+        rightWalk = new GreenfootImage[4];
         for(int i = 0; i < idle.length; i++)
         {
             idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
-            walkRight[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            walkLeft[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            walkLeft[i].mirrorHorizontally();
+            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            leftWalk[i].mirrorHorizontally();
         }
         setImage(idle[0]);
+        animTimer = new SimpleTimer();
+        */
+        setImage("images/" + name + "/" + name + "-idle-0.png");
     }
     /**
      * Act - do whatever the Friend wants to do. This method is called whenever
@@ -38,10 +42,37 @@ public class Friend extends Actor
         // Add your action code here.
     }
     /**
-     * WalkX - moves the Friend horizontally
+     * WalkX - moves the Friend horizontally towards an x coordinate
      */
-    public void walkX(int steps)
+    public void walkX(int toX)
     {
-        
+        setLocation(getX() + 5, getY());
+        boolean goRight = toX < 0;
+        animate(goRight, false);
+        if(getX() == toX)
+        {
+            animate(false, true);
+        }
+    }
+    int curIndex = 0;
+    public void animate(boolean goRight, boolean stopped)
+    {
+        if(animTimer.millisElapsed() > 110)
+        {
+            if(stopped == true){
+                
+            }
+            else if (goRight == true)
+            {
+                setImage(rightWalk[curIndex]);
+            }
+            else
+            {
+                setImage(leftWalk[curIndex]);
+            }
+            curIndex++;
+            curIndex %= 3;
+            animTimer.mark();
+        }
     }
 }
