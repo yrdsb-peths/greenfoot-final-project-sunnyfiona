@@ -23,18 +23,24 @@ public class Tutorial extends World
         setBackground(bg);
         Player frisk = new Player();
         addObject(frisk, 100, 200);
-        
-        Wall treeOne= new Wall("tree-group", 100);
-        Wall treeTwo= new Wall("tree-group", 100);
-        Wall treeThree= new Wall("tree-group", 100);
-        //treeGroup.scale(tree.getWidth() * 2, tree.getHeight() * 2);
-        //treeGroup.setImage(tree);
-        addObject(treeOne, 200, 400);
-        addObject(treeTwo, 400, 400);
-        addObject(treeThree, 600, 400);
+        Wall tree = new Wall("tree-group");
+        addObject(tree, 300, 200);
         /*
+        Wall[] trees = new Wall[8];
+        for(int i = 0; i < trees.length; i++)
+        {
+            trees[i] = new Wall("tree-group");
+        }
+        for(int i = 0; i < 8; i++)
+        {
+            int prevPos = 0;
+            addObject(trees[i], prevPos + 50, 400);
+            prevPos += 50;
+        }
+        */
+        
         Friend temmie = new Friend("temmie");
         addObject(temmie, 400, 200);
-        */
+        
     }
 }
