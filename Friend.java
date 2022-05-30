@@ -20,6 +20,7 @@ public class Friend extends Actor
         
         
         rightWalk = new GreenfootImage[4];
+        leftWalk = new GreenfootImage[4];
         for(int i = 0; i < rightWalk.length; i++)
         {
             //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
