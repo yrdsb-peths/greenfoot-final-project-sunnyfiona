@@ -10,6 +10,8 @@ public class Tutorial extends World
 {
     GreenfootImage bg;
     GreenfootImage tree;
+    Friend temmie = new Friend("temmie");
+    Player frisk = new Player();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,7 +23,7 @@ public class Tutorial extends World
         bg = new GreenfootImage("images/bg/snow.jpg");
         bg.scale(getWidth()*2, getHeight()*2); 
         setBackground(bg);
-        Player frisk = new Player();
+        
         addObject(frisk, 100, 200);
         Wall tree = new Wall("tree-group");
         addObject(tree, 300, 400);
@@ -39,8 +41,16 @@ public class Tutorial extends World
         }
         */
         
-        Friend temmie = new Friend("temmie");
+        
         addObject(temmie, 400, 200);
         
+    }
+    public void act()
+    {
+        if(frisk.getX() >= 599)
+        {
+            Maze world = new Maze();
+            Greenfoot.setWorld(world);
+        }
     }
 }
