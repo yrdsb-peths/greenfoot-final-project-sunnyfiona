@@ -20,6 +20,8 @@ public class Player extends Actor
     private boolean facingLeft;
     private boolean facingDown;
     
+    private static int = numLives;
+    
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -52,8 +54,17 @@ public class Player extends Actor
     {
         walk();
         animate();
-        
-        
+        pickUpHeart();
+    }
+    
+    public void pickUpHeart()
+    {
+        if(isTouching(Heart.class))
+        {
+            removeTouching(Heart.class);
+            MyWorld world = (MyWorld) getWorld();
+            //need to increase score
+        }
     }
     
     public void walk()
