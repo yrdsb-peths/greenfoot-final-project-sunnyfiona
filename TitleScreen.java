@@ -18,7 +18,9 @@ public class TitleScreen extends World
     private SimpleTimer clickLabelTimer;
     private Label narration;
     private Label clickToPlay;
-    
+    GreenfootSound loaded = new GreenfootSound("sounds/title-screen-loaded.mp3");
+    GreenfootSound ambient = new GreenfootSound("sounds/title-screen-ambient.mp3");
+        
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -52,15 +54,17 @@ public class TitleScreen extends World
         
     }
     
+    public void started()
+    {
+        ambient.playLoop();
+    }
+    
     /**
      * Method that executes the title screen mechanisms
      * (animations, click to play)
      */
     public void act()
     {
-        GreenfootSound loaded = new GreenfootSound("sounds/title-screen-loaded.mp3");
-        GreenfootSound ambient = new GreenfootSound("sounds/title-screen-ambient.mp3");
-        ambient.playLoop();
         
         animateBG();
         animateText();
@@ -77,9 +81,9 @@ public class TitleScreen extends World
             }
             */
             ambient.stop();
+            loaded.stop();
             Tutorial world = new Tutorial();
             Greenfoot.setWorld(world);
-            
         }
     }
     
