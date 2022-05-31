@@ -20,6 +20,11 @@ public class Player extends Actor
     private boolean facingLeft;
     private boolean facingDown;
     
+<<<<<<< HEAD
+    private static int numLives;
+    
+=======
+>>>>>>> abc3aaee0cc319d67de1f8a5ebf093d60403f9f4
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
