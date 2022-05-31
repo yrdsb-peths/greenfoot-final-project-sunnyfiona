@@ -17,8 +17,6 @@ public class Friend extends Actor
      */
     public Friend(String name)
     {
-        
-        
         rightWalk = new GreenfootImage[4];
         leftWalk = new GreenfootImage[4];
         for(int i = 0; i < rightWalk.length; i++)
@@ -45,9 +43,13 @@ public class Friend extends Actor
      */
     public void walkX(int toX)
     {
-        setLocation(getX() + 5, getY());
+        setLocation(getX() + 2, getY());
         boolean goRight = toX < 0;
         animate(goRight, false);
+        if(toX > getX())
+        {
+            setLocation(getX() + 2, getY());
+        }
         if(getX() == toX)
         {
             animate(false, true);
