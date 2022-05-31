@@ -25,7 +25,7 @@ public class Tutorial extends World
         setBackground(bg);
         
         addObject(frisk, 100, 200);
-        addObject(temmie, 400, 200);
+        addObject(temmie, 500, 200);
         buildTrees();
     }
     public void act()
@@ -35,6 +35,7 @@ public class Tutorial extends World
             Maze world = new Maze();
             Greenfoot.setWorld(world);
         }
+        temmie.walkX(200);
     }
     public void buildTrees()
     {

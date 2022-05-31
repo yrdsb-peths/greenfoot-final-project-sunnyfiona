@@ -41,20 +41,24 @@ public class Friend extends Actor
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */
+
     public void walkX(int toX)
     {
-        setLocation(getX() + 2, getY());
-        boolean goRight = toX < 0;
-        animate(goRight, false);
-        if(toX > getX())
+        
+        while(getX() != toX)
         {
-            setLocation(getX() + 2, getY());
+            if(toX > getX())
+            {
+                setLocation(getX() + 2, getY());
+                animate(true, false);
+            }
+        else{
+            setLocation(getX() - 2, getY());
+            animate(false, false);
         }
-        if(getX() == toX)
-        {
-            animate(false, true);
         }
     }
+        
     int curIndex = 0;
     public void animate(boolean goRight, boolean stopped)
     {
