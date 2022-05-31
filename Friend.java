@@ -30,6 +30,7 @@ public class Friend extends Actor
         animTimer = new SimpleTimer();
         setImage("images/" + name + "/" + name + "-idle-0.png");
     }
+
     /**
      * Act - do whatever the Friend wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,35 +38,36 @@ public class Friend extends Actor
     public void act()
     {
         // Add your action code here.
+        Tutorial world = (Tutorial) getWorld();
+        int x = world.frisk.getX();
+        walkX(x);
     }
+
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */
-
     public void walkX(int toX)
     {
         
-        while(getX() != toX)
+        if(toX > getX())
         {
-            if(toX > getX())
-            {
-                setLocation(getX() + 2, getY());
-                animate(true, false);
-            }
+            setLocation(getX() + 2, getY());
+            animate(true, false);
+        }
         else{
             setLocation(getX() - 2, getY());
             animate(false, false);
         }
-        }
+
     }
-        
+
     int curIndex = 0;
     public void animate(boolean goRight, boolean stopped)
     {
         if(animTimer.millisElapsed() > 110)
         {
             if(stopped == true){
-                
+
             }
             else if (goRight == true)
             {
