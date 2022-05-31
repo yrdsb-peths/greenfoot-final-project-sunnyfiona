@@ -29,13 +29,29 @@ public class Maze extends World
             mazeWall[i] = new Wall("maze-wall");
         }
         
-        for(int i = 0; i < 20; i++)
+        //1st h wall
+        int x1 = 0;
+        int limit = 7;
+        for(int i = 0; i < limit; i++)
         {
-            for(int x = 0; i < 60; x+= 10)
-            {
-                addObject(mazeWall[i], x, 300);
-            }
-            
+            addObject(mazeWall[i], x1, 350);
+            x1 += 50;
+        }
+        int x2 = 600;
+        limit = 12;
+        for(int i = 8; i < limit; i++)
+        {
+            addObject(mazeWall[i], x2, 350);
+            x2 -= 50;
+        }
+        
+        //2nd h wall
+        int x3 = 0;
+        limit = 18;
+        for(int i = 13; i < limit; i++)
+        {
+            addObject(mazeWall[i], x3, 275);
+            x1 += 50;
         }
     }
 }
