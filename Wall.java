@@ -23,7 +23,7 @@ public class Wall extends Actor
      */
     public Wall(String imageName, int scale)
     {
-        GreenfootImage image = new GreenfootImage("images/" + imageName + ".png");
+        GreenfootImage image = new GreenfootImage("images/walls/" + imageName + ".png");
         setImage(image);
         
         image.scale(image.getWidth() + scale, image.getHeight() + scale);
