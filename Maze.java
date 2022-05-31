@@ -17,12 +17,25 @@ public class Maze extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        //buildMaze();
+        buildMaze();
+        //add frisk
+        //add grillby
     }
     public void buildMaze()
     {
-        mazeWall = new Wall[20];
-        Wall wall1 = new Wall("maze-wall-dark");
-        Wall wall2 = new Wall("maze-wall-dark");
+        mazeWall = new Wall[100];
+        for(int i = 0; i < mazeWall.length; i++)
+        {
+            mazeWall[i] = new Wall("maze-wall");
+        }
+        
+        for(int i = 0; i < 20; i++)
+        {
+            for(int x = 0; i < 60; x+= 10)
+            {
+                addObject(mazeWall[i], x, 300);
+            }
+            
+        }
     }
 }
