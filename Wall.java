@@ -13,7 +13,7 @@ public class Wall extends Actor
      */
     public Wall(String imageName)
     {
-        GreenfootImage image = new GreenfootImage("images/walls" + imageName + ".png");
+        GreenfootImage image = new GreenfootImage("images/walls/" + imageName + ".png");
         setImage(image);
     }
     /**
