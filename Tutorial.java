@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Tutorial extends World
 {
     GreenfootImage bg;
-    GreenfootImage tree;
+    Wall[] tree;
     Friend temmie = new Friend("temmie");
     Player frisk = new Player();
     /**
@@ -25,25 +25,8 @@ public class Tutorial extends World
         setBackground(bg);
         
         addObject(frisk, 100, 200);
-        Wall tree = new Wall("tree-group");
-        addObject(tree, 300, 400);
-        /*
-        Wall[] trees = new Wall[8];
-        for(int i = 0; i < trees.length; i++)
-        {
-            trees[i] = new Wall("tree-group");
-        }
-        for(int i = 0; i < 8; i++)
-        {
-            int prevPos = 0;
-            addObject(trees[i], prevPos + 50, 400);
-            prevPos += 50;
-        }
-        */
-        
-        
         addObject(temmie, 400, 200);
-        
+        buildTrees();
     }
     public void act()
     {
@@ -52,5 +35,14 @@ public class Tutorial extends World
             Maze world = new Maze();
             Greenfoot.setWorld(world);
         }
+    }
+    public void buildTrees()
+    {
+        tree = new Wall[10];
+        for(int i = 0; i < tree.length; i++)
+        {
+            tree[i] = new Wall("tree-group");
+        }
+        addObject(tree[0], 300, 400);
     }
 }
