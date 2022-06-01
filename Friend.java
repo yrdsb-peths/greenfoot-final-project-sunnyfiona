@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Friend extends Actor
 {
-    GreenfootImage[] leftWalk;
-    GreenfootImage[] rightWalk;
+    GreenfootImage[] leftWalk = new GreenfootImage[4];
+    GreenfootImage[] rightWalk = new GreenfootImage[4];
+    GreenfootImage idle;
     SimpleTimer animTimer;
     /**
      * Constructor for the class. Sets the images of the NPCs 
@@ -17,18 +18,18 @@ public class Friend extends Actor
      */
     public Friend(String name)
     {
-        rightWalk = new GreenfootImage[4];
-        leftWalk = new GreenfootImage[4];
+        //rightWalk = new GreenfootImage[4];
+        //leftWalk = new GreenfootImage[4];
         for(int i = 0; i < rightWalk.length; i++)
         {
             //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
-            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
             leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            leftWalk[i].mirrorHorizontally();
+            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            rightWalk[i].mirrorHorizontally();
         }
-        setImage("images/" + name + "/" + name + "-idle-0.png");
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
+        setImage(idle);
         animTimer = new SimpleTimer();
-        setImage("images/" + name + "/" + name + "-idle-0.png");
     }
 
     /**
@@ -42,7 +43,36 @@ public class Friend extends Actor
         int x = world.frisk.getX();
         walkX(x);
     }
-
+    /**
+     * scale smaller - divides the image size of the friend by the factor
+     */
+    public void scaleSmaller(int factor)
+    {
+        for(int i = 0; i < rightWalk.length; i++)
+        {
+            //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
+            leftWalk[i].scale(leftWalk[i].getWidth() / factor, leftWalk[i].getHeight() / factor);
+            rightWalk[i].scale(rightWalk[i].getWidth() / factor, rightWalk[i].getHeight() / factor);
+            
+        }
+        idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
+    }
+    /**
+     * scale bigger - multiplies the image size of the friend by the factor
+     */
+    public void scaleBigger(int factor)
+    {
+        
+        for(int i = 0; i < rightWalk.length; i++)
+        {
+            //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
+            leftWalk[i].scale(leftWalk[i].getWidth() * factor, leftWalk[i].getHeight() * factor);
+            rightWalk[i].scale(rightWalk[i].getWidth() * factor, rightWalk[i].getHeight() * factor);
+            
+        }
+        idle.scale(idle.getWidth() * factor, idle.getHeight() * factor);
+    
+    }
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */

@@ -26,6 +26,7 @@ public class Tutorial extends World
         
         addObject(frisk, 100, 200);
         addObject(temmie, 500, 200);
+        temmie.scaleSmaller(3);
         buildTrees();
     }
     public void act()
