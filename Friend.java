@@ -11,7 +11,6 @@ public class Friend extends Actor
     GreenfootImage[] leftWalk = new GreenfootImage[4];
     GreenfootImage[] rightWalk = new GreenfootImage[4];
     GreenfootImage idle;
-    String name;
     SimpleTimer animTimer;
     /**
      * Constructor for the class. Sets the images of the NPCs 
@@ -21,20 +20,18 @@ public class Friend extends Actor
     {
         //rightWalk = new GreenfootImage[4];
         //leftWalk = new GreenfootImage[4];
-        this.name = name;
         for(int i = 0; i < rightWalk.length; i++)
         {
             //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
-            this.leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            this.rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            this.rightWalk[i].mirrorHorizontally();
+            leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            rightWalk[i].mirrorHorizontally();
         }
-        this.idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         setImage(idle);
         animTimer = new SimpleTimer();
-        
     }
-    
+
     /**
      * Act - do whatever the Friend wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -42,12 +39,9 @@ public class Friend extends Actor
     public void act()
     {
         // Add your action code here.
-        
-        /*
         Tutorial world = (Tutorial) getWorld();
         int x = world.frisk.getX();
         walkX(x);
-        */
     }
     /**
      * scale smaller - divides the image size of the friend by the factor
@@ -61,7 +55,7 @@ public class Friend extends Actor
             rightWalk[i].scale(rightWalk[i].getWidth() / factor, rightWalk[i].getHeight() / factor);
             
         }
-        idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
+        //idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
     }
     /**
      * scale bigger - multiplies the image size of the friend by the factor
