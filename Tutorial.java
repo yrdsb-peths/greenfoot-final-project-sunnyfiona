@@ -24,9 +24,9 @@ public class Tutorial extends World
         bg.scale(getWidth()*2, getHeight()*2); 
         setBackground(bg);
         
-        addObject(frisk, 100, 200);
+        addObject(frisk, 20, 200);
         addObject(temmie, 500, 200);
-        temmie.scaleSmaller(3);
+        temmie.scaleSmaller(5);
         buildTrees();
     }
     public void act()
@@ -41,9 +41,12 @@ public class Tutorial extends World
     public void buildTrees()
     {
         tree = new Wall[10];
+        int x1 = 0;
+        int limit = 4;
         for(int i = 0; i < tree.length; i++)
         {
-            tree[i] = new Wall("tree-group");
+            tree[i] = new Wall("tree-group", 100);
+            
         }
         addObject(tree[0], 300, 400);
     }
