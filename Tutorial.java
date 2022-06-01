@@ -35,7 +35,7 @@ public class Tutorial extends World
             Maze world = new Maze();
             Greenfoot.setWorld(world);
         }
-        temmie.walkX(200);
+       
     }
     public void buildTrees()
     {
