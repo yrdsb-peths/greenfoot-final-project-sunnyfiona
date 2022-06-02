@@ -39,9 +39,18 @@ public class Friend extends Actor
     public void act()
     {
         // Add your action code here.
+<<<<<<< HEAD
+        
+        
         Tutorial world = (Tutorial) getWorld();
         int x = world.frisk.getX();
         walkX(x);
+        
+=======
+        Tutorial world = (Tutorial) getWorld();
+        int x = world.frisk.getX();
+        walkX(x);
+>>>>>>> 589a1e741fc273476c41f5bcaca572250d19ee5b
     }
     /**
      * scale smaller - divides the image size of the friend by the factor
