@@ -43,8 +43,8 @@ public class Friend extends Actor
         
         
         Tutorial world = (Tutorial) getWorld();
-        int x = world.frisk.getX();
-        walkX(x);
+        //int x = world.frisk.getX();
+        //walkX(x);
         
 =======
         Tutorial world = (Tutorial) getWorld();
