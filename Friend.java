@@ -10,8 +10,8 @@ public class Friend extends Actor
 {
     GreenfootImage[] leftWalk = new GreenfootImage[4];
     GreenfootImage[] rightWalk = new GreenfootImage[4];
+    private String name;
     GreenfootImage idle;
-    String name;
     SimpleTimer animTimer;
     /**
      * Constructor for the class. Sets the images of the NPCs 
@@ -19,20 +19,20 @@ public class Friend extends Actor
      */
     public Friend(String name)
     {
+        
+        this.name = name;
         //rightWalk = new GreenfootImage[4];
         //leftWalk = new GreenfootImage[4];
-        this.name = name;
         for(int i = 0; i < rightWalk.length; i++)
         {
             //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
-            this.leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            this.rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            this.rightWalk[i].mirrorHorizontally();
+            leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
+            rightWalk[i].mirrorHorizontally();
         }
-        this.idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         setImage(idle);
         animTimer = new SimpleTimer();
-        
     }
     
     /**
@@ -42,31 +42,33 @@ public class Friend extends Actor
     public void act()
     {
         // Add your action code here.
-        
-        
+        /*
         Tutorial world = (Tutorial) getWorld();
         int x = world.frisk.getX();
         walkX(x);
-        
-    }
+        */
+        }
     /**
      * scale smaller - divides the image size of the friend by the factor
      */
-    public void scaleSmaller(int factor)
+    public void scaleSmaller(String name, int factor)
     {
         for(int i = 0; i < rightWalk.length; i++)
         {
-            //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
             leftWalk[i].scale(leftWalk[i].getWidth() / factor, leftWalk[i].getHeight() / factor);
             rightWalk[i].scale(rightWalk[i].getWidth() / factor, rightWalk[i].getHeight() / factor);
             
         }
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
+        setImage(idle);
     }
+    
     /**
      * scale bigger - multiplies the image size of the friend by the factor
      */
-    public void scaleBigger(int factor)
+    /*
+    public void scaleBigger(String name, int factor)
     {
         
         for(int i = 0; i < rightWalk.length; i++)
@@ -76,9 +78,11 @@ public class Friend extends Actor
             rightWalk[i].scale(rightWalk[i].getWidth() * factor, rightWalk[i].getHeight() * factor);
             
         }
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         idle.scale(idle.getWidth() * factor, idle.getHeight() * factor);
     
     }
+    */
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */
