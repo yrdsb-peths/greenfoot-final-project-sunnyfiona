@@ -10,6 +10,7 @@ public class Friend extends Actor
 {
     GreenfootImage[] leftWalk = new GreenfootImage[4];
     GreenfootImage[] rightWalk = new GreenfootImage[4];
+    private String name;
     GreenfootImage idle;
     SimpleTimer animTimer;
     /**
@@ -18,6 +19,8 @@ public class Friend extends Actor
      */
     public Friend(String name)
     {
+        
+        this.name = name;
         //rightWalk = new GreenfootImage[4];
         //leftWalk = new GreenfootImage[4];
         for(int i = 0; i < rightWalk.length; i++)
@@ -31,7 +34,7 @@ public class Friend extends Actor
         setImage(idle);
         animTimer = new SimpleTimer();
     }
-
+    
     /**
      * Act - do whatever the Friend wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -39,37 +42,32 @@ public class Friend extends Actor
     public void act()
     {
         // Add your action code here.
-<<<<<<< HEAD
-        
-        
-        Tutorial world = (Tutorial) getWorld();
-        //int x = world.frisk.getX();
-        //walkX(x);
-        
-=======
+        /*
         Tutorial world = (Tutorial) getWorld();
         int x = world.frisk.getX();
         walkX(x);
->>>>>>> 589a1e741fc273476c41f5bcaca572250d19ee5b
-    }
+        */
+        }
     /**
      * scale smaller - divides the image size of the friend by the factor
      */
-    public void scaleSmaller(int factor)
+    public void scaleSmaller(String name, int factor)
     {
         for(int i = 0; i < rightWalk.length; i++)
         {
-            //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
             leftWalk[i].scale(leftWalk[i].getWidth() / factor, leftWalk[i].getHeight() / factor);
             rightWalk[i].scale(rightWalk[i].getWidth() / factor, rightWalk[i].getHeight() / factor);
             
         }
-        //idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
+        idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
     }
+    
     /**
      * scale bigger - multiplies the image size of the friend by the factor
      */
-    public void scaleBigger(int factor)
+    /*
+    public void scaleBigger(String name, int factor)
     {
         
         for(int i = 0; i < rightWalk.length; i++)
@@ -79,9 +77,11 @@ public class Friend extends Actor
             rightWalk[i].scale(rightWalk[i].getWidth() * factor, rightWalk[i].getHeight() * factor);
             
         }
+        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         idle.scale(idle.getWidth() * factor, idle.getHeight() * factor);
     
     }
+    */
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */
