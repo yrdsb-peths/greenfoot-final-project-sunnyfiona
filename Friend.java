@@ -61,6 +61,7 @@ public class Friend extends Actor
         }
         GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
+        setImage(idle);
     }
     
     /**
