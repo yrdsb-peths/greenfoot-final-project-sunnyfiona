@@ -55,31 +55,72 @@ public class Maze extends World
         
         //2nd h wall
         int x3 = 75;
-        limit = 19;
+        limit = 17;
         for(int i = 14; i < limit; i++)
         {
             addObject(mazeWall[i], x3, 275);
             x3 += 50;
         }
-        addObject(mazeWall[19], 300, 275);
-        int x4 = 565;
-        limit = 23;
+        addObject(mazeWall[18], 205, 275);
+        int x4 = 517;
+        limit = 22;
         for(int i = 19; i < limit; i++)
         {
             addObject(mazeWall[i], x4, 275);
             x4 -= 50;
         }
-       
-        // 1st v wall
+        
+        //1st v wall
         int y1 = 339;
         limit = 27;
         for(int i = 24; i < limit; i++)
         {
             mazeWall[i].setRotation(90);
-            addObject(mazeWall[i], 315, y1);
+            addObject(mazeWall[i], 311, y1);
             y1 -= 50;
         }
-        mazeWall[27].setRotation(90);
-        addObject(mazeWall[27], 315, 265);
+        mazeWall[46].setRotation(90);
+        addObject(mazeWall[46], 311, 185);
+        mazeWall[47].setRotation(90);
+        addObject(mazeWall[47], 311, 175);
+        
+        // 2nd v wall
+        int y2 = 339;
+        limit = 30;
+        for(int i = 27; i < limit; i++)
+        {
+            mazeWall[i].setRotation(90);
+            addObject(mazeWall[i], 403, y2);
+            y2 -= 50;
+        }
+        
+        // 3rd v wall
+        int y3 = 264;
+        limit = 34;
+        for(int i = 30; i < limit; i++)
+        {
+            mazeWall[i].setRotation(90);
+            addObject(mazeWall[i], 64, y3);
+            y3 -= 50;
+        }
+        
+        //4th h wall
+        int x5 = 75;
+        limit = 46;
+        for(int i = 35; i < limit; i++)
+        {
+            addObject(mazeWall[i], x5, 70);
+            x5 += 50;
+        }
+        
+        //3rd h wall
+        int x6 = 170;
+        limit = 51;
+        for(int i = 48; i < limit; i++)
+        {
+            addObject(mazeWall[i], x6, 180);
+            x6 += 50;
+        }
+        addObject(mazeWall[52], 300, 180);
     }
 }
