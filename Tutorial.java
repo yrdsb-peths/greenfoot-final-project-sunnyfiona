@@ -8,10 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tutorial extends World
 {
-    GreenfootImage bg;
-    Wall[] tree;
-    Friend temmie = new Friend("temmie");
-    Player frisk = new Player();
+    private GreenfootImage bg;
+    private Wall[] tree;
+    private Friend temmie = new Friend("temmie");
+    private Player frisk = new Player();
+    
+    private Textbox textbox = new Textbox();
+    private boolean dialoguePause = false;
+    private Label[] text;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,12 +28,12 @@ public class Tutorial extends World
         bg.scale(getWidth()*2, getHeight()*2); 
         setBackground(bg);
         
-        addObject(frisk, 100, 200);
+        addObject(frisk, 0, 200);
         addObject(temmie, 500, 200);
         temmie.scaleSmaller(5);
         buildTrees();
-        Textbox box = new Textbox();
-        addObject(box, 300, 320);
+        
+        
     }
     public void act()
     {
@@ -38,7 +42,13 @@ public class Tutorial extends World
             Maze world = new Maze();
             Greenfoot.setWorld(world);
         }
-       
+        
+        if(frisk.getX() >= 50)
+        {
+            addObject(textbox, 300, 320);
+            dialoguePause = true;
+        }
+        
     }
     public void buildTrees()
     {
@@ -63,5 +73,26 @@ public class Tutorial extends World
             
         }
         
+    }
+    
+    //needs to be copied accross worlds
+    public void setTextbox()
+    {
+        textbox.setDialogue("hOIIIII!!!!! Hey there!");
+        textbox.setDialogue("Over here!");
+        textbox.setDialogue("I'm Temmie! I'm Temmie the Tem from TEM VILLAGE!!!!!");
+        
+    }
+    public boolean getDialoguePause()
+    {
+        return dialoguePause;
+    }
+    public void initiateDialogueString()
+    {
+        text = new Label[textbox.getDialogueLength()];
+        for(int i = 0; i < text.length; i++)
+        {
+            text[i] = (textbox.getDialogue(i)), 20);
+        }
     }
 }

@@ -68,10 +68,11 @@ public class Player extends Actor
     
     public void walk()
     {
+        Tutorial world = new Tutorial();
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX() + 3, getY());
         
-            if(isTouching(Wall.class) || isTouching(Friend.class))
+            if(isTouching(Wall.class) || isTouching(Friend.class) || world.getDialoguePause())
             {
                 setLocation(getX() - 3, getY());
             }
@@ -80,7 +81,7 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("a")){
             setLocation(getX() - 3, getY());
             
-            if(isTouching(Wall.class) || isTouching(Friend.class))
+            if(isTouching(Wall.class) || isTouching(Friend.class) || world.getDialoguePause())
             {
                 setLocation(getX() + 3, getY());
             }
@@ -89,7 +90,7 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("w")){
             setLocation(getX(), getY() - 3);
            
-            if(isTouching(Wall.class) || isTouching(Friend.class))
+            if(isTouching(Wall.class) || isTouching(Friend.class) || world.getDialoguePause())
             {
                 setLocation(getX(), getY() + 3);
             }
@@ -98,7 +99,7 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(), getY() + 3);
             
-            if(isTouching(Wall.class) || isTouching(Friend.class))
+            if(isTouching(Wall.class) || isTouching(Friend.class)  || world.getDialoguePause())
             {
                 setLocation(getX(), getY() - 3);
             }

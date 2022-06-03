@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Textbox extends Actor
 {
     private static GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
+    private String[] dialogue;
+    
     /**
      * Act - do whatever the Textbox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,6 +23,23 @@ public class Textbox extends Actor
     }
     public void act()
     {
-        // Add your action code here.
+        
+        
+        
+    }
+    int curIndex = 0;
+    public void setDialogue(String text)
+    {
+        dialogue[curIndex] = text;
+        curIndex ++;
+    }
+    
+    public String getDialogue(int index)
+    {
+        return dialogue[index];
+    }
+    public int getDialogueLength()
+    {
+        return dialogue.length;
     }
 }
