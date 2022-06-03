@@ -26,8 +26,10 @@ public class Tutorial extends World
         
         addObject(frisk, 100, 200);
         addObject(temmie, 500, 200);
-        temmie.scaleSmaller("temmie", 5);
+        temmie.scaleSmaller(5);
         buildTrees();
+        Textbox box = new Textbox();
+        addObject(box, 300, 320);
     }
     public void act()
     {
@@ -40,11 +42,26 @@ public class Tutorial extends World
     }
     public void buildTrees()
     {
-        tree = new Wall[10];
-        for(int i = 0; i < tree.length; i++)
+        
+        tree = new Wall[8];
+        int xCoord = 0;
+        for(int i = 0; i < 4; i++)
         {
-            tree[i] = new Wall("tree-group");
+            tree[i] = new Wall("tree-group", 100);
+            
+            xCoord += 150;
+            addObject(tree[i], xCoord, 400);
+            
         }
-        addObject(tree[0], 300, 400);
+        xCoord = 0;
+        for(int i = 0; i < 4; i++)
+        {
+            tree[i] = new Wall("tree-group", 100);
+            
+            xCoord += 150;
+            addObject(tree[i], xCoord, 0);
+            
+        }
+        
     }
 }

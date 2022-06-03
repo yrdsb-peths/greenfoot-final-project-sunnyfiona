@@ -70,13 +70,8 @@ public class Player extends Actor
     {
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX() + 3, getY());
-            /*
-            if(animTimer.millisElapsed() >100)
-            {
-                setImage(rightWalk[curIndex]);
-            }
-            */
-            if(isTouching(Wall.class))
+        
+            if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX() - 3, getY());
             }
@@ -84,12 +79,8 @@ public class Player extends Actor
         }
         if(Greenfoot.isKeyDown("a")){
             setLocation(getX() - 3, getY());
-            /*
-            if(animTimer.millisElapsed() >100){
-                setImage(leftWalk[curIndex]);
-            }
-            */
-            if(isTouching(Wall.class))
+            
+            if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX() + 3, getY());
             }
@@ -97,9 +88,8 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("w")){
             setLocation(getX(), getY() - 3);
-            //resetDirection();
-            //facingUp = true;
-            if(isTouching(Wall.class))
+           
+            if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX(), getY() + 3);
             }
@@ -107,9 +97,8 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(), getY() + 3);
-            //resetDirection();
-            //facingDown = true;
-            if(isTouching(Wall.class))
+            
+            if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX(), getY() - 3);
             }

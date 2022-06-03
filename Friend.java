@@ -51,13 +51,12 @@ public class Friend extends Actor
     /**
      * scale smaller - divides the image size of the friend by the factor
      */
-    public void scaleSmaller(String name, int factor)
+    public void scaleSmaller(int factor)
     {
         for(int i = 0; i < rightWalk.length; i++)
         {
             leftWalk[i].scale(leftWalk[i].getWidth() / factor, leftWalk[i].getHeight() / factor);
             rightWalk[i].scale(rightWalk[i].getWidth() / factor, rightWalk[i].getHeight() / factor);
-            
         }
         GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);

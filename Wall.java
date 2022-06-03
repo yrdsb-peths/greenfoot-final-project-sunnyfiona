@@ -6,14 +6,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
+
 public class Wall extends Actor
 {
+    GreenfootImage image;
+    
     /**
      * Default constructor - sets the image.
      */
     public Wall(String imageName)
     {
-        GreenfootImage image = new GreenfootImage("images/walls/" + imageName + ".png");
+        image = new GreenfootImage("images/walls/" + imageName + ".png");
         setImage(image);
     }
     /**
@@ -36,4 +40,5 @@ public class Wall extends Actor
     {
         // Add your action code here.
     }
+   
 }
