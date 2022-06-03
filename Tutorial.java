@@ -15,7 +15,7 @@ public class Tutorial extends World
     
     private Textbox textbox = new Textbox();
     private boolean dialoguePause = false;
-    private Label[] text;
+    private Label[] text = new Label[3];
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -47,6 +47,14 @@ public class Tutorial extends World
         {
             addObject(textbox, 300, 320);
             dialoguePause = true;
+            addObject(text[0], 300, 320);
+            int curIndex = 0;
+            if(Greenfoot.mouseClicked(Textbox.class))
+            {
+                curIndex++;
+                removeObject(text[curIndex - 1]);
+                addObject(text[curIndex], 300, 320);
+            }
         }
         
     }
@@ -89,10 +97,10 @@ public class Tutorial extends World
     }
     public void initiateDialogueString()
     {
-        text = new Label[textbox.getDialogueLength()];
+        text = new Label[3];
         for(int i = 0; i < text.length; i++)
         {
-            text[i] = (textbox.getDialogue(i)), 20);
+            text[i] = new Label (textbox.getDialogue(i), 20);
         }
     }
 }
