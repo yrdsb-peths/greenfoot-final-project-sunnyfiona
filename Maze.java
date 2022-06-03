@@ -124,7 +124,7 @@ public class Maze extends World
         addObject(mazeWall[52], 300, 180);
         
         // 4th v wall
-        int y4 = 250;
+        int y4 = 264;
         limit = 55;
         for(int i = 53; i < limit; i++)
         {
