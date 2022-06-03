@@ -92,7 +92,7 @@ public class Tutorial extends World
         text = new Label[textbox.getDialogueLength()];
         for(int i = 0; i < text.length; i++)
         {
-            text[i] = (textbox.getDialogue(i)), 20);
+            text[i] = new Label (textbox.getDialogue(i), 20);
         }
     }
 }

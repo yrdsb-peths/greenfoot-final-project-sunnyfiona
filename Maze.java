@@ -19,15 +19,16 @@ public class Maze extends World
         super(600, 400, 1);
         buildMaze();
         //testing frisk
-        Player frisk = new Player();
-        addObject(frisk, 100, 200);
+        GameP frisk = new GameP();
+        
+        addObject(frisk, 20, 384);
         
         //add frisk
         //add grillby
     }
     
     /*
-     * 
+     * Builds maze
      */
     public void buildMaze()
     {
@@ -80,9 +81,9 @@ public class Maze extends World
             y1 -= 50;
         }
         mazeWall[46].setRotation(90);
-        addObject(mazeWall[46], 311, 185);
+        addObject(mazeWall[46], 311, 211);
         mazeWall[47].setRotation(90);
-        addObject(mazeWall[47], 311, 175);
+        addObject(mazeWall[47], 311, 170);
         
         // 2nd v wall
         int y2 = 339;
@@ -90,7 +91,7 @@ public class Maze extends World
         for(int i = 27; i < limit; i++)
         {
             mazeWall[i].setRotation(90);
-            addObject(mazeWall[i], 403, y2);
+            addObject(mazeWall[i], 395, y2);
             y2 -= 50;
         }
         
@@ -113,6 +114,7 @@ public class Maze extends World
             x5 += 50;
         }
         
+        /*
         //3rd h wall
         int x6 = 170;
         limit = 51;
@@ -122,6 +124,7 @@ public class Maze extends World
             x6 += 50;
         }
         addObject(mazeWall[52], 300, 180);
+        */
         
         // 4th v wall
         int y4 = 264;
@@ -129,20 +132,39 @@ public class Maze extends World
         for(int i = 53; i < limit; i++)
         {
             mazeWall[i].setRotation(90);
-            addObject(mazeWall[i], 528, y4);
+            addObject(mazeWall[i], 545, y4);
             y4 -= 50;
         }
+        mazeWall[56].setRotation(90);
+        addObject(mazeWall[56], 545, 170);
         
-        /*
-        //3rd h wall
-        int x7 = 517;
-        limit = 55;
-        for(int i = 53; i < limit; i++)
+        // 6th v wall
+        mazeWall[58].setRotation(90);
+        addObject(mazeWall[58], 395, 115);
+        
+        // 5th v wall
+        int y5 = 165;
+        limit = 61;
+        for(int i = 59; i < limit; i++)
         {
-            addObject(mazeWall[i], x7, 200);
-            x7 -= 50;
+            mazeWall[i].setRotation(90);
+            addObject(mazeWall[i], 470, y5);
+            y5 -= 50;
         }
-        addObject(mazeWall[52], 300, 180);
-        */
+        
+        //3rd h wall
+        int x6 = 165;
+        limit = 51;
+        for(int i = 48; i < limit; i++)
+        {
+            addObject(mazeWall[i], x6, 200);
+            x6 += 50;
+        }
+       
+        // 7th v wall
+        mazeWall[62].setRotation(90);
+        addObject(mazeWall[62], 154, 170);
+        mazeWall[63].setRotation(90);
+        addObject(mazeWall[63], 230, 115);
     }
 }
