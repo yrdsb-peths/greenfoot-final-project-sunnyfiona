@@ -122,5 +122,27 @@ public class Maze extends World
             x6 += 50;
         }
         addObject(mazeWall[52], 300, 180);
+        
+        // 4th v wall
+        int y4 = 250;
+        limit = 55;
+        for(int i = 53; i < limit; i++)
+        {
+            mazeWall[i].setRotation(90);
+            addObject(mazeWall[i], 528, y4);
+            y4 -= 50;
+        }
+        
+        /*
+        //3rd h wall
+        int x7 = 517;
+        limit = 55;
+        for(int i = 53; i < limit; i++)
+        {
+            addObject(mazeWall[i], x7, 200);
+            x7 -= 50;
+        }
+        addObject(mazeWall[52], 300, 180);
+        */
     }
 }
