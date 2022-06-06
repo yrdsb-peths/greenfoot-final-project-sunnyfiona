@@ -27,7 +27,7 @@ public class Maze extends World
         //add grillby
     }
     
-    /*
+    /**
      * Builds maze
      */
     public void buildMaze()

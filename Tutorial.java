@@ -12,10 +12,7 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player();
-    
-    private Textbox textbox = new Textbox();
-    private boolean dialoguePause = false;
-    private Label[] text = new Label[3];
+    private Textbox[] greet;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -33,7 +30,7 @@ public class Tutorial extends World
         temmie.scaleSmaller(5);
         buildTrees();
         
-        
+        setDialogues();
     }
     public void act()
     {
@@ -45,18 +42,27 @@ public class Tutorial extends World
         
         if(frisk.getX() >= 50)
         {
-            addObject(textbox, 300, 320);
-            dialoguePause = true;
-            addObject(text[0], 300, 320);
-            int curIndex = 0;
-            if(Greenfoot.mouseClicked(Textbox.class))
+            
+            for(int i = 0; i < greet.length; i += 0)
             {
-                curIndex++;
-                removeObject(text[curIndex - 1]);
-                addObject(text[curIndex], 300, 320);
+                greet[i].add(greet[i], this);
+                if(Greenfoot.mouseClicked(frisk.getWorld())){
+                    greet[i].remove(greet[i], frisk.getWorld());
+                    i++;
+                }
             }
         }
         
+        
+
+    }
+    public void setDialogues()
+    {
+        greet = new Textbox[4];
+        greet[0] = new Textbox("hOIIII!! Over here!", Color.CYAN);
+        greet[1] = new Textbox("I'm Temmie the temmie from Tem Village!", Color.CYAN);
+        greet[2] = new Textbox("Let's be FRIENDS! See that heart up there?", Color.CYAN);
+        greet[3] = new Textbox("gimmegimmegimme", Color.CYAN);
     }
     public void buildTrees()
     {
@@ -83,24 +89,4 @@ public class Tutorial extends World
         
     }
     
-    //needs to be copied accross worlds
-    public void setTextbox()
-    {
-        textbox.setDialogue("hOIIIII!!!!! Hey there!");
-        textbox.setDialogue("Over here!");
-        textbox.setDialogue("I'm Temmie! I'm Temmie the Tem from TEM VILLAGE!!!!!");
-        
-    }
-    public boolean getDialoguePause()
-    {
-        return dialoguePause;
-    }
-    public void initiateDialogueString()
-    {
-        text = new Label[3];
-        for(int i = 0; i < text.length; i++)
-        {
-            text[i] = new Label (textbox.getDialogue(i), 20);
-        }
-    }
 }

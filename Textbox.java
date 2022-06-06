@@ -8,38 +8,39 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Textbox extends Actor
 {
-    private static GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
-    private String[] dialogue;
+    //private static GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
+    private GreenfootImage text;
+    private static boolean pause = false;
+    
+    public Textbox(String text, Color color){
+        this.text = new GreenfootImage(text, 30, Color.BLACK, color);
+        setImage(this.text);
+        pause = false;
+    }
     
     /**
      * Act - do whatever the Textbox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Textbox()
-    {
-        box.scale(500, 150);
-        setImage(box);
-        
-    }
+    
     public void act()
     {
         
-        
-        
-    }
-    int curIndex = 0;
-    public void setDialogue(String text)
-    {
-        dialogue[curIndex] = text;
-        curIndex ++;
     }
     
-    public String getDialogue(int index)
+    public void add(Textbox textbox, World world)
     {
-        return dialogue[index];
+        world.addObject(textbox, 300, 350);
+        pause = true;
     }
-    public int getDialogueLength()
+    public void remove(Textbox textbox, World world)
     {
-        return dialogue.length;
+        world.removeObject(textbox);
+        pause = false;
+    }
+    
+    public static boolean getPause()
+    {
+        return pause;
     }
 }

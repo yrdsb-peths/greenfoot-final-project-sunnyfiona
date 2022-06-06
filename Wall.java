@@ -40,5 +40,10 @@ public class Wall extends Actor
     {
         // Add your action code here.
     }
-   
+    
+    public void buildWall()
+    {
+        
+        
+    }
 }
