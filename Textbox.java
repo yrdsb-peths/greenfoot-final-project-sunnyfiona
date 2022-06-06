@@ -10,37 +10,46 @@ public class Textbox extends Actor
 {
     //private static GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
     private GreenfootImage text;
-    private static boolean pause = false;
-    
-    public Textbox(String text, Color color){
-        this.text = new GreenfootImage(text, 30, Color.BLACK, color);
-        setImage(this.text);
-        pause = false;
+    private int curTextIndex = 0;
+    private String[] texts;
+    Label messagelabel;
+
+    public Textbox(String[] texts, Color color){
+        //this.text = new GreenfootImage(text, 30, Color.BLACK, color);
+        //setImage(this.text);
+        this.texts = texts;
+        messagelabel = new Label(texts[curTextIndex], 30);
+
     }
-    
-    /**
-     * Act - do whatever the Textbox wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+
+    protected void addedToWorld(World world){
+        messagelabel = new Label(texts[curTextIndex], 30);
+        world.addObject(messagelabel, world.getWidth()/2, world.getHeight()/2);
+    }
+
     public void act()
     {
-        
+        if(Greenfoot.mouseClicked(this)){
+            if(curTextIndex < texts.length) {
+                curTextIndex++;
+                messagelabel.setValue(texts[curTextIndex]);
+            } else {
+                Player.canMove = true;
+                getWorld().removeObject(this);
+            }
+        }
     }
-    
+
     public void add(Textbox textbox, World world)
     {
         world.addObject(textbox, 300, 350);
-        pause = true;
+
     }
+
     public void remove(Textbox textbox, World world)
     {
         world.removeObject(textbox);
-        pause = false;
+
     }
-    
-    public static boolean getPause()
-    {
-        return pause;
-    }
+
 }
