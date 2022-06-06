@@ -42,7 +42,7 @@ public class Tutorial extends World
             Greenfoot.setWorld(world);
         }
 
-        if(frisk.getX() >= 50)
+        if(frisk.getX() >= 50 && Player.canMove)
         {
             Player.canMove = false;
             showDialogue();

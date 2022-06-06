@@ -12,27 +12,27 @@ public class Textbox extends Actor
     private GreenfootImage text;
     private int curTextIndex = 0;
     private String[] texts;
-    Label messagelabel;
+    Label messageLabel;
 
     public Textbox(String[] texts, Color color){
         //this.text = new GreenfootImage(text, 30, Color.BLACK, color);
         //setImage(this.text);
         this.texts = texts;
-        messagelabel = new Label(texts[curTextIndex], 30);
+
 
     }
 
     protected void addedToWorld(World world){
-        messagelabel = new Label(texts[curTextIndex], 30);
-        world.addObject(messagelabel, world.getWidth()/2, world.getHeight()/2);
+        messageLabel = new Label(texts[curTextIndex], 30);
+        world.addObject(messageLabel, world.getWidth()/2, world.getHeight()/2);
     }
 
     public void act()
     {
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(null)){
             if(curTextIndex < texts.length) {
+                messageLabel.setValue(texts[curTextIndex]);
                 curTextIndex++;
-                messagelabel.setValue(texts[curTextIndex]);
             } else {
                 Player.canMove = true;
                 getWorld().removeObject(this);
