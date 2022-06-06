@@ -10,7 +10,7 @@ public class Obstacle extends Wall
 {
     public Obstacle()
     {
-        super("spike", -100);
+        super("spike", -275, -220);
     }
     
     /**
