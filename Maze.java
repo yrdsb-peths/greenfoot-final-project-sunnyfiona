@@ -18,13 +18,18 @@ public class Maze extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         buildMaze();
-        //testing frisk
-        GameP frisk = new GameP();
-        
-        addObject(frisk, 20, 384);
         
         //add frisk
-        //add grillby
+        GameP frisk = new GameP(37, 30);
+        addObject(frisk, 20, 384);
+        
+        //add muffet
+        
+        //add heart
+        Heart heart = new Heart(25, 25);
+        addObject(heart, 430, 313);
+        
+        //add potions
     }
     
     /**

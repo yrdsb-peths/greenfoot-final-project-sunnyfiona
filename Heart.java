@@ -8,9 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Heart extends Actor
 {
-    private GreenfootImage fullHeart = new GreenfootImage("full-heart.png");
-    private GreenfootImage emptyHeart = new GreenfootImage("empty-heart.png");
-    MyWorld world = (MyWorld) getWorld();
+    public Heart(int x, int y)
+    {
+        GreenfootImage heart = new GreenfootImage("images/misc/fullheart.png");
+        heart.scale(x, y);
+        setImage(heart);
+    }
     
     /**
      * Act - do whatever the Heart wants to do. This method is called whenever

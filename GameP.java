@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameP extends Actor
 {
     
-    public GameP()
+    public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
-        head.scale(37, 30);
+        head.scale(x, y);
         setImage(head);
     }
     
