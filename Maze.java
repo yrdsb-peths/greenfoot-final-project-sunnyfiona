@@ -49,15 +49,22 @@ public class Maze extends World
         
         //1st section
         spikeWall[0].setRotation(180);
-        addObject(spikeWall[0], 147, 97);
+        addObject(spikeWall[0], 147, 92);
     
         //2nd section
         spikeWall[1].setRotation(180);
-        addObject(spikeWall[1], 312, 97);
+        addObject(spikeWall[1], 312, 92);
         
         //3rd section
         spikeWall[2].setRotation(180);
-        addObject(spikeWall[2], 555, 97);
+        addObject(spikeWall[2], 555, 92);
+        
+        //4th section
+        spikeWall[3].setRotation(270);
+        addObject(spikeWall[3], 290, 275);
+        
+        //5th section
+        addObject(spikeWall[4], 470, 255);
     }
     
     /**

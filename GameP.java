@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameP extends Actor
 {
-    
+    boolean collectedHeart = false;
     public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
@@ -41,6 +41,7 @@ public class GameP extends Actor
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
+            collectedHeart = true;
         }
     }
     
