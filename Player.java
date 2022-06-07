@@ -20,6 +20,7 @@ public class Player extends Actor
     private boolean facingLeft;
     private boolean facingDown;
     
+    public static boolean canMove = true;
     private static int numLives;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -51,8 +52,7 @@ public class Player extends Actor
     
     public void act()
     {
-        
-        if(!Textbox.getPause())
+        if(canMove)
         {
            walk(); 
            animate();
