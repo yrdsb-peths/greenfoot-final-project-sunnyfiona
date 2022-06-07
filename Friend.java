@@ -66,7 +66,7 @@ public class Friend extends Actor
     /**
      * scale bigger - multiplies the image size of the friend by the factor
      */
-    /*
+    
     public void scaleBigger(String name, int factor)
     {
         
@@ -81,7 +81,7 @@ public class Friend extends Actor
         idle.scale(idle.getWidth() * factor, idle.getHeight() * factor);
     
     }
-    */
+    
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */

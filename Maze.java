@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Maze extends World
 {
+    private GreenfootImage bg;
     Wall[] mazeWall;
+    Obstacle[] spikeWall;
+    private Friend muffet = new Friend("muffet");
     /**
      * Constructor for objects of class Maze.
      * 
@@ -17,6 +20,9 @@ public class Maze extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        bg = new GreenfootImage("images/bg/web.jpg");
+        //bg.scale(getWidth()*2, getHeight()*2); 
+        setBackground(bg);
         buildMaze();
         
         //add frisk
@@ -24,12 +30,47 @@ public class Maze extends World
         addObject(frisk, 20, 384);
         
         //add muffet
+        addObject(muffet, 300, 200);
+        //muffet.scaleBigger);
         
         //add heart
         Heart heart = new Heart(25, 25);
         addObject(heart, 430, 313);
         
         //add potions
+        
+        //add spikes
+        buildSpikes();
+    }
+    
+    public void buildSpikes()
+    {
+        Obstacle spike = new Obstacle();
+        
+        spikeWall = new Obstacle[50];
+        for(int i = 0; i < spikeWall.length; i++)
+        {
+            spikeWall[i] = new Obstacle();
+        }
+        
+        //1st section
+        spikeWall[0].setRotation(180);
+        addObject(spikeWall[0], 147, 92);
+    
+        //2nd section
+        spikeWall[1].setRotation(180);
+        addObject(spikeWall[1], 312, 92);
+        
+        //3rd section
+        spikeWall[2].setRotation(180);
+        addObject(spikeWall[2], 555, 92);
+        
+        //4th section
+        spikeWall[3].setRotation(270);
+        addObject(spikeWall[3], 290, 275);
+        
+        //5th section
+        addObject(spikeWall[4], 470, 255);
     }
     
     /**

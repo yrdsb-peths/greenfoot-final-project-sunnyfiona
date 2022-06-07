@@ -9,61 +9,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Textbox extends Actor
 {
     //private static GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
-    //private GreenfootImage[] textbox;
-    private int curTextIndex = 0;
-    private String[] texts;
-    Label messageLabel;
-    Color color;
-
-    public Textbox(String[] texts, Color color){
-        //this.textbox = new GreenfootImage(texts, 30, Color.BLACK, color);
-        //setImage(this.text);
-        this.texts = texts;
-        this.color = color;
-        /*
-        for(int i = 0; i < texts.length; i++){
-            this.textbox[i] = new GreenfootImage(texts[i], 30, Color.BLACK, color);
-        }
-        */
-
+    private GreenfootImage text;
+    private static boolean pause = false;
+    
+    public Textbox(String text, Color color){
+        this.text = new GreenfootImage(text, 30, Color.BLACK, color);
+        setImage(this.text);
+        pause = false;
     }
-
-    protected void addedToWorld(World world){
-        messageLabel = new Label(texts[curTextIndex], 37);
-        //messageLabel.setImage(texts[curTextIndex], 30, Color.WHITE, Color.CYAN);
-        messageLabel.setFillColor(color);
-        messageLabel.setLineColor(Color.WHITE);
-        world.addObject(messageLabel, 300, 350);
-        
-    }
-
+    
+    /**
+     * Act - do whatever the Textbox wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    
     public void act()
     {
-        if(Greenfoot.mouseClicked(null)){
-            if(curTextIndex < texts.length) {
-                messageLabel.setValue(texts[curTextIndex]);
-                curTextIndex++;
-            } else {
-                Player.canMove = true;
-                getWorld().removeObject(this);
-            }
-            if(curTextIndex >= texts.length){
-                getWorld().removeObject(this);
-                Player.canMove = true;
-            }
-        }
+        
     }
-
+    
     public void add(Textbox textbox, World world)
     {
         world.addObject(textbox, 300, 350);
-
+        pause = true;
     }
-
     public void remove(Textbox textbox, World world)
     {
         world.removeObject(textbox);
-
+        pause = false;
     }
-
+    
+    public static boolean getPause()
+    {
+        return pause;
+    }
 }
