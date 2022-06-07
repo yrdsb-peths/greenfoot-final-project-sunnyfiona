@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameP extends Actor
 {
-    boolean collectedHeart = false;
+    
     public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
@@ -22,18 +22,8 @@ public class GameP extends Actor
      */
     public void act()
     {
-        restart();
         walk();
         pickUpHeart();
-    }
-    
-    public void restart()
-    {
-        Maze w = (Maze) getWorld();
-        if(isTouching(Obstacle.class))
-        {
-            setLocation(20, 384);
-        }
     }
     
     public void pickUpHeart()
@@ -41,7 +31,6 @@ public class GameP extends Actor
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
-            collectedHeart = true;
         }
     }
     
@@ -50,7 +39,7 @@ public class GameP extends Actor
         Tutorial world = new Tutorial();
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX() + 3, getY());
-            restart();
+        
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX() - 3, getY());
@@ -59,7 +48,7 @@ public class GameP extends Actor
         }
         if(Greenfoot.isKeyDown("a")){
             setLocation(getX() - 3, getY());
-            restart();
+            
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX() + 3, getY());
@@ -68,7 +57,7 @@ public class GameP extends Actor
         
         if(Greenfoot.isKeyDown("w")){
             setLocation(getX(), getY() - 3);
-            restart();
+           
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX(), getY() + 3);
@@ -77,7 +66,7 @@ public class GameP extends Actor
         
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(), getY() + 3);
-            restart();
+            
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX(), getY() - 3);

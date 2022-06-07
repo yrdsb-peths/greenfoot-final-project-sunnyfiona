@@ -32,20 +32,6 @@ public class Wall extends Actor
         
         image.scale(image.getWidth() + scale, image.getHeight() + scale);
     }
-    
-    /**
-     * Constructor - sets the image and scales x and y differently.
-     * when the scale is negative, image is shrunk.
-     * when the scale is positive, image is enlarged.
-     */
-    public Wall(String imageName, int scaleX, int scaleY)
-    {
-        GreenfootImage image = new GreenfootImage("images/walls/" + imageName + ".png");
-        setImage(image);
-        
-        image.scale(image.getWidth() + scaleX, image.getHeight() + scaleY);
-    }
-    
     /**
      * Act - do whatever the Wall wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
