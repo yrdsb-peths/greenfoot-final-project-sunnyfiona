@@ -12,7 +12,7 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     public Player frisk = new Player(); 
-    private Textbox[] greet;
+    private String[] greet;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -42,7 +42,7 @@ public class Tutorial extends World
             Greenfoot.setWorld(world);
         }
 
-        if(frisk.getX() >= 50 && Player.canMove)
+        if(frisk.getX() >= 50 && Player.canMove && !greetInitiated)
         {
             Player.canMove = false;
             showDialogue();
@@ -57,21 +57,23 @@ public class Tutorial extends World
         }
 
     }
+    boolean greetInitiated = false;
     public void showDialogue()
     {
         // Show textbox
+        greetInitiated = true;
         String[] phrases = {"Hello", "How are you?", "Bye!"};
-        Textbox tb = new Textbox(phrases, Color.BLUE);
-        addObject(tb, getWidth()/2, getHeight()/2);
+        Textbox tb = new Textbox(greet, Color.BLUE);
+        addObject(tb, 300, 350);
     }
 
     public void setDialogues()
     {
-        // greet = new Textbox[4];
-        // greet[0] = new Textbox("hOIIII!! Over here!", Color.CYAN);
-        // greet[1] = new Textbox("I'm Temmie the temmie from Tem Village!", Color.CYAN);
-        // greet[2] = new Textbox("Let's be FRIENDS! See that heart up there?", Color.CYAN);
-        // greet[3] = new Textbox("gimmegimmegimme", Color.CYAN);
+        greet = new String[4];
+        greet[0] = new String("hOIIII!! Over here!");
+        greet[1] = new String("I'm Temmie the temmie from Tem Village!");
+        greet[2] = new String("Let's be FRIENDS! See that heart up there?");
+        greet[3] = new String("gimmegimmegimme");
     }
 
     public void buildTrees()

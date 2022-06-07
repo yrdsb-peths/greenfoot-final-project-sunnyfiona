@@ -9,22 +9,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Textbox extends Actor
 {
     //private static GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
-    private GreenfootImage text;
+    //private GreenfootImage[] textbox;
     private int curTextIndex = 0;
     private String[] texts;
     Label messageLabel;
+    Color color;
 
     public Textbox(String[] texts, Color color){
-        //this.text = new GreenfootImage(text, 30, Color.BLACK, color);
+        //this.textbox = new GreenfootImage(texts, 30, Color.BLACK, color);
         //setImage(this.text);
         this.texts = texts;
-
+        this.color = color;
+        /*
+        for(int i = 0; i < texts.length; i++){
+            this.textbox[i] = new GreenfootImage(texts[i], 30, Color.BLACK, color);
+        }
+        */
 
     }
 
     protected void addedToWorld(World world){
         messageLabel = new Label(texts[curTextIndex], 30);
-        world.addObject(messageLabel, world.getWidth()/2, world.getHeight()/2);
+        messageLabel.setImage(texts[curTextIndex], 30, Color.WHITE, Color.CYAN);
+        //world.addObject(messageLabel, 300, 350);
+        
     }
 
     public void act()
@@ -36,6 +44,10 @@ public class Textbox extends Actor
             } else {
                 Player.canMove = true;
                 getWorld().removeObject(this);
+            }
+            if(curTextIndex >= texts.length){
+                getWorld().removeObject(this);
+                Player.canMove = true;
             }
         }
     }
