@@ -93,6 +93,10 @@ public class Label extends Actor
     {
         setImage(new GreenfootImage(value, fontSize, fillColor, transparent, lineColor));
     }
+    //wrote this myself
+    public void setImage(String value,int fontSize, Color fillColor, Color lineColor){
+        setImage(new GreenfootImage(value, fontSize, fillColor, lineColor));
+    }
     
     /**
      * Returns whether the current fill color is transparent or not.
