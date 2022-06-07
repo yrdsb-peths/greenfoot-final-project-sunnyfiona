@@ -21,7 +21,7 @@ public class Maze extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         bg = new GreenfootImage("images/bg/web.jpg");
-        //bg.scale(getWidth()*2, getHeight()*2); 
+        bg.scale(getWidth()*1, getHeight()*1); 
         setBackground(bg);
         buildMaze();
         
