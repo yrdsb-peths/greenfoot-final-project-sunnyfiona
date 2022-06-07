@@ -29,8 +29,10 @@ public class Textbox extends Actor
     }
 
     protected void addedToWorld(World world){
-        messageLabel = new Label(texts[curTextIndex], 30);
+        messageLabel = new Label(texts[curTextIndex], 37);
         //messageLabel.setImage(texts[curTextIndex], 30, Color.WHITE, Color.CYAN);
+        messageLabel.setFillColor(color);
+        messageLabel.setLineColor(Color.WHITE);
         world.addObject(messageLabel, 300, 350);
         
     }

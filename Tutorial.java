@@ -63,7 +63,7 @@ public class Tutorial extends World
         // Show textbox
         greetInitiated = true;
         String[] phrases = {"Hello", "How are you?", "Bye!"};
-        Textbox tb = new Textbox(greet, Color.BLUE);
+        Textbox tb = new Textbox(greet, Color.CYAN);
         addObject(tb, 300, 350);
     }
 
@@ -86,7 +86,7 @@ public class Tutorial extends World
             tree[i] = new Wall("tree-group", 100);
 
             xCoord += 150;
-            addObject(tree[i], xCoord, 400);
+            addObject(tree[i], xCoord, 500);
 
         }
         xCoord = 0;
