@@ -73,7 +73,7 @@ public class Tutorial extends World
         greet[2] = new String("Let's be FRIENDS! See that heart up there?");
         greet[3] = new String("gimmegimmegimme");
 
-        Dialogue greeting = new Dialogue(greet, Color.BLACK);
+        Dialogue greeting = new Dialogue(greet, Color.WHITE);
 
         addObject(greeting, 0, 0);
 
@@ -89,7 +89,7 @@ public class Tutorial extends World
         bye[3] = new String("gj");
         bye[4] = new String("aaand that was the tutorial.");
         bye[5] = new String("some-tem-body needs tem nap now. byEE");
-        Dialogue goodbye = new Dialogue(bye, Color.BLACK);
+        Dialogue goodbye = new Dialogue(bye, Color.WHITE);
         addObject(goodbye, 0, 0);
         //}
         
