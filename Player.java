@@ -20,6 +20,8 @@ public class Player extends Actor
     private boolean facingLeft;
     private boolean facingDown;
     public static boolean canMove = true;
+    public boolean collectedHeart = false;
+    public boolean deliveredHeart;
     
     private static int numLives;
     /**
@@ -48,6 +50,7 @@ public class Player extends Actor
         }
         setImage(rightWalk[2]);
         animTimer = new SimpleTimer();
+        deliveredHeart = false;
     }
     
     public void act()
@@ -58,8 +61,10 @@ public class Player extends Actor
            walk(); 
            animate();
         }
-        
         pickUpHeart();
+        if(collectedHeart && isTouching(Friend.class)){
+            deliveredHeart = true;
+        }
     }
     
     public void pickUpHeart()
@@ -67,7 +72,8 @@ public class Player extends Actor
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
-            MyWorld world = (MyWorld) getWorld();
+            //MyWorld world = (MyWorld) getWorld();
+            collectedHeart = true;
             //need to increase score
         }
     }

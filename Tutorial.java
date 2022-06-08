@@ -12,6 +12,7 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player();
+    private Heart heart = new Heart(20, 20);
     private Textbox[] greet;
     /**
      * Constructor for objects of class MyWorld.
@@ -45,12 +46,19 @@ public class Tutorial extends World
         {
             Player.canMove = false;
             greetInitiated = true;
-            showDialogue();
+            showGreet();
+        }
+        if(greetInitiated && !frisk.collectedHeart){
+            addObject(heart, 20, 20);
+        }
+        
+        if(frisk.deliveredHeart){
+            showBye();
         }
         
     }
 
-    public void showDialogue()
+    public void showGreet()
     {
         // Show Text
         //String[] phrases = {"Hello", "How are you?", "Bye!"};
@@ -60,11 +68,22 @@ public class Tutorial extends World
         greet[2] = new String("Let's be FRIENDS! See that heart up there?");
         greet[3] = new String("gimmegimmegimme");
 
-        Dialogue tb = new Dialogue(greet, Color.BLACK);
+        Dialogue greeting = new Dialogue(greet, Color.BLACK);
         
-        addObject(tb, 0, 0);
+        addObject(greeting, 0, 0);
         
         
+    }
+    boolean byeInitiated = false;
+    public void showBye(){
+        String[] bye = new String[4];
+        bye[0] = new String(".....");
+        bye[1] = new String("...!!!!!!!!!!");
+        bye[2] = new String("That's how you make FRIENDS!");
+        bye[3] = new String("gj");
+        
+        Dialogue goodbye = new Dialogue(bye, Color.BLACK);
+        addObject(goodbye, 0, 0);
     }
     public void buildTrees()
     {
