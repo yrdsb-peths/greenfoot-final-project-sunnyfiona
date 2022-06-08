@@ -14,7 +14,7 @@ public class Friend extends Actor
     GreenfootImage idle;
     SimpleTimer animTimer;
     private boolean isFacingRight = true;
-    
+    public boolean exit = false;
     /**
      * Constructor for the class. Sets the images of the NPCs 
      * and sets the animations.
@@ -65,7 +65,27 @@ public class Friend extends Actor
         int x = world.frisk.getX();
         walkX(x);
         */
+    }
+    public void exit(World world, int x, int y){
+        if(getX() > x)
+        {
+            this.setLocation(getX() - 2, getY());
+        } 
+        else if(getX() < x)
+        {
+            this.setLocation(getX() + 2, getY());
+        }else
+        {
+        //nothing happens
         }
+        if(getY() > y)
+        {
+            this.setLocation(getX(), getY() - 2);
+        } 
+        else if(getY() < y){
+            this.setLocation(getX(), getY() + 2);
+        }
+    }
     /**
      * scale smaller - divides the image size of the friend by the factor
      */

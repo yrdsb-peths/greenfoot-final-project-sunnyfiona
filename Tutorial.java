@@ -25,7 +25,7 @@ public class Tutorial extends World
         bg = new GreenfootImage("images/bg/snow.jpg");
         bg.scale(getWidth()*2, getHeight()*2); 
         setBackground(bg);
-        
+
         addObject(frisk, 0, 200);
         addObject(temmie, 500, 200);
         temmie.scaleSmaller(5);
@@ -51,14 +51,16 @@ public class Tutorial extends World
         if(greetInitiated && !frisk.collectedHeart){
             addObject(heart, 20, 20);
         }
-        
+
         if(frisk.collectedHeart && frisk.getX() == 420 && Player.canMove && !byeInitiated){
             Player.canMove = false;
             byeInitiated = true;
             showBye();
-            temmie.walkX(0);
+            byeFinished = true;
         }
-        
+        if(byeInitiated && byeFinished){
+            temmie.exit(this, temmie.getX(), 400);
+        }
     }
 
     public void showGreet()
@@ -72,47 +74,50 @@ public class Tutorial extends World
         greet[3] = new String("gimmegimmegimme");
 
         Dialogue greeting = new Dialogue(greet, Color.BLACK);
-        
+
         addObject(greeting, 0, 0);
-        
-        
+
     }
     boolean byeInitiated = false;
+    boolean byeFinished = false;
     public void showBye(){
         //if(frisk.deliveredHeart){
-        String[] bye = new String[4];
+        String[] bye = new String[6];
         bye[0] = new String(".....");
         bye[1] = new String("...!!!!!!!!!!");
         bye[2] = new String("That's how you make FRIENDS!");
         bye[3] = new String("gj");
-        bye[4] = new String("some-tem-body needs tem nap now. byEE");
+        bye[4] = new String("aaand that was the tutorial.");
+        bye[5] = new String("some-tem-body needs tem nap now. byEE");
         Dialogue goodbye = new Dialogue(bye, Color.BLACK);
         addObject(goodbye, 0, 0);
         //}
+        
     }
+
     public void buildTrees()
     {
-        
+
         tree = new Wall[8];
         int xCoord = 0;
         for(int i = 0; i < 4; i++)
         {
             tree[i] = new Wall("tree-group", 100);
-            
+
             xCoord += 150;
             addObject(tree[i], xCoord, 400);
-            
+
         }
         xCoord = 0;
         for(int i = 0; i < 4; i++)
         {
             tree[i] = new Wall("tree-group", 100);
-            
+
             xCoord += 150;
             addObject(tree[i], xCoord, 0);
-            
+
         }
-        
+
     }
-    
+
 }
