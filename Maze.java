@@ -30,17 +30,20 @@ public class Maze extends World
         addObject(frisk, 20, 384);
         
         //add muffet
-        addObject(muffet, 300, 200);
-        //muffet.scaleBigger);
+        addObject(muffet, 575, 25);
         
         //add heart
         Heart heart = new Heart(25, 25);
         addObject(heart, 430, 313);
         
         //add potions
+        //no
         
         //add spikes
         buildSpikes();
+        
+        //give heart
+        
     }
     
     public void buildSpikes()
