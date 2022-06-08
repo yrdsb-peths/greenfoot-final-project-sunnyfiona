@@ -29,9 +29,10 @@ public class Tutorial extends World
         addObject(temmie, 500, 200);
         temmie.scaleSmaller(5);
         buildTrees();
-        
-        setDialogues();
+        setPaintOrder(Dialogue.class);
+        //setDialogues();
     }
+    boolean greetInitiated = false;
     public void act()
     {
         if(frisk.getX() >= 599)
@@ -39,30 +40,31 @@ public class Tutorial extends World
             Maze world = new Maze();
             Greenfoot.setWorld(world);
         }
-        
-        if(frisk.getX() >= 50)
+
+        if(frisk.getX() >= 50 && Player.canMove && !greetInitiated)
         {
-            
-            for(int i = 0; i < greet.length; i += 0)
-            {
-                greet[i].add(greet[i], this);
-                if(Greenfoot.mouseClicked(frisk.getWorld())){
-                    greet[i].remove(greet[i], frisk.getWorld());
-                    i++;
-                }
-            }
+            Player.canMove = false;
+            greetInitiated = true;
+            showDialogue();
         }
         
-        
-
     }
-    public void setDialogues()
+
+    public void showDialogue()
     {
-        greet = new Textbox[4];
-        greet[0] = new Textbox("hOIIII!! Over here!", Color.CYAN);
-        greet[1] = new Textbox("I'm Temmie the temmie from Tem Village!", Color.CYAN);
-        greet[2] = new Textbox("Let's be FRIENDS! See that heart up there?", Color.CYAN);
-        greet[3] = new Textbox("gimmegimmegimme", Color.CYAN);
+        // Show Text
+        //String[] phrases = {"Hello", "How are you?", "Bye!"};
+        String[] greet = new String[4];
+        greet[0] = new String("hOIIII!! Over here!");
+        greet[1] = new String("I'm Temmie the temmie from Tem Village!");
+        greet[2] = new String("Let's be FRIENDS! See that heart up there?");
+        greet[3] = new String("gimmegimmegimme");
+
+        Dialogue tb = new Dialogue(greet, Color.BLACK);
+        
+        addObject(tb, 0, 0);
+        
+        
     }
     public void buildTrees()
     {
