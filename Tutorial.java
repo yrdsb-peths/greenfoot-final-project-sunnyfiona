@@ -52,11 +52,11 @@ public class Tutorial extends World
             addObject(heart, 20, 20);
         }
         
-        if(frisk.getX() == 300){
+        if(frisk.collectedHeart && frisk.getX() == 420 && Player.canMove && !byeInitiated){
             Player.canMove = false;
             byeInitiated = true;
             showBye();
-            
+            temmie.walkX(0);
         }
         
     }
@@ -85,7 +85,7 @@ public class Tutorial extends World
         bye[1] = new String("...!!!!!!!!!!");
         bye[2] = new String("That's how you make FRIENDS!");
         bye[3] = new String("gj");
-        
+        bye[4] = new String("some-tem-body needs tem nap now. byEE");
         Dialogue goodbye = new Dialogue(bye, Color.BLACK);
         addObject(goodbye, 0, 0);
         //}
