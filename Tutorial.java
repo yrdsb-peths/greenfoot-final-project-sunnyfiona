@@ -52,8 +52,11 @@ public class Tutorial extends World
             addObject(heart, 20, 20);
         }
         
-        if(frisk.deliveredHeart){
+        if(frisk.getX() == 300){
+            Player.canMove = false;
+            byeInitiated = true;
             showBye();
+            
         }
         
     }
@@ -76,6 +79,7 @@ public class Tutorial extends World
     }
     boolean byeInitiated = false;
     public void showBye(){
+        //if(frisk.deliveredHeart){
         String[] bye = new String[4];
         bye[0] = new String(".....");
         bye[1] = new String("...!!!!!!!!!!");
@@ -84,6 +88,7 @@ public class Tutorial extends World
         
         Dialogue goodbye = new Dialogue(bye, Color.BLACK);
         addObject(goodbye, 0, 0);
+        //}
     }
     public void buildTrees()
     {

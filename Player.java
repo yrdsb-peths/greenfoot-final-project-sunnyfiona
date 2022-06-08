@@ -62,7 +62,7 @@ public class Player extends Actor
            animate();
         }
         pickUpHeart();
-        if(collectedHeart && isTouching(Friend.class)){
+        if(collectedHeart && Greenfoot.mouseClicked(Friend.class)){
             deliveredHeart = true;
         }
     }
