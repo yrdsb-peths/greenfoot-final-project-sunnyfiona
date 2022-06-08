@@ -72,9 +72,7 @@ public class Player extends Actor
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
-            //MyWorld world = (MyWorld) getWorld();
             collectedHeart = true;
-            //need to increase score
         }
     }
     
