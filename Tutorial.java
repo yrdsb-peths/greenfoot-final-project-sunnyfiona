@@ -11,7 +11,7 @@ public class Tutorial extends World
     private GreenfootImage bg;
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
-    private Player frisk = new Player();
+    private Player frisk = new Player(true);
     private Heart heart = new Heart(20, 20);
     private Textbox[] greet;
     /**
