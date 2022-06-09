@@ -22,14 +22,16 @@ public class Player extends Actor
     public static boolean canMove = true;
     public boolean collectedHeart = false;
     public boolean deliveredHeart;
+    public boolean canMoveVertical;
     
     private static int numLives;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Player()
+    public Player(boolean canMoveVertical)
     {
+        this.canMoveVertical = canMoveVertical;
         rightWalk = new GreenfootImage[4];
         leftWalk = new GreenfootImage[4];
         fwdWalk = new GreenfootImage[4];
@@ -97,7 +99,7 @@ public class Player extends Actor
             }
         }
         
-        if(Greenfoot.isKeyDown("w")){
+        if(Greenfoot.isKeyDown("w") && canMoveVertical){
             setLocation(getX(), getY() - 3);
            
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -106,7 +108,7 @@ public class Player extends Actor
             }
         }
         
-        if(Greenfoot.isKeyDown("s")){
+        if(Greenfoot.isKeyDown("s") && canMoveVertical){
             setLocation(getX(), getY() + 3);
             
             if(isTouching(Wall.class) || isTouching(Friend.class))

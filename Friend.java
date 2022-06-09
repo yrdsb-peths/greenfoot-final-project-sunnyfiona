@@ -10,6 +10,7 @@ public class Friend extends Actor
 {
     GreenfootImage[] leftWalk = new GreenfootImage[4];
     GreenfootImage[] rightWalk = new GreenfootImage[4];
+    GreenfootImage[] frontAnim = new GreenfootImage[4];
     private String name;
     GreenfootImage idle;
     SimpleTimer animTimer;
@@ -19,23 +20,10 @@ public class Friend extends Actor
      * Constructor for the class. Sets the images of the NPCs 
      * and sets the animations.
      */
+    /*
     public Friend(String name)
     {
         this.name = name;
-        /*
-        //rightWalk = new GreenfootImage[4];
-        //leftWalk = new GreenfootImage[4];
-        for(int i = 0; i < rightWalk.length; i++)
-        {
-            //idle[i] = new GreenfootImage("images/" + name + "/" + name + "-idle-" + i + ".png");
-            leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            rightWalk[i].mirrorHorizontally();
-        }
-        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
-        setImage(idle);
-        animTimer = new SimpleTimer();
-        */
         
         //GreenfootImage image = new GreenfootImage("images/elephant_idle/idle0.png");
         rightWalk = new GreenfootImage[4];
@@ -52,7 +40,16 @@ public class Friend extends Actor
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
-    
+    */
+    public Friend(String name){
+        this.name = name;
+        for(int i = 0; i < frontAnim.length; i++){
+            frontAnim[i] = new GreenfootImage("images/" + name + "/" + name + "-" + i + ".png");
+        }
+        setImage(frontAnim[0]);
+        animTimer = new SimpleTimer();
+        animTimer.mark();
+    }
     /**
      * Act - do whatever the Friend wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -91,6 +88,7 @@ public class Friend extends Actor
      */
     public void scaleSmaller(int factor)
     {
+        /*
         for(int i = 0; i < rightWalk.length; i++)
         {
             leftWalk[i].scale(leftWalk[i].getWidth() / factor, leftWalk[i].getHeight() / factor);
@@ -99,6 +97,11 @@ public class Friend extends Actor
         GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
         idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
         setImage(idle);
+        */
+       for(int i = 0; i < frontAnim.length; i++){
+           frontAnim[i].scale(frontAnim[i].getWidth() / factor, frontAnim[i].getHeight() / factor);
+       }
+       setImage(frontAnim[0]);
     }
     
     /**
@@ -122,43 +125,27 @@ public class Friend extends Actor
     /**
      * WalkX - moves the Friend horizontally towards an x coordinate
      */
+    /*
     public void walkX(int toX)
     {
         
         if(toX > getX())
         {
             setLocation(getX() + 2, getY());
-            animate(true, false);
+            //animate(true, false);
         }
         else{
             setLocation(getX() - 2, getY());
-            animate(false, false);
+            //animate(false, false);
         }
 
     }
+    */
 
     int curIndex = 0;
-    public void animate(boolean goRight, boolean stopped)
+    public void animate()//(boolean goRight, boolean stopped)
     {
         /*
-        if(animTimer.millisElapsed() > 110)
-        {
-            if(stopped == true){
-
-            }
-            else if (goRight == true)
-            {
-                setImage(rightWalk[curIndex]);
-            }
-            else
-            {
-                setImage(leftWalk[curIndex]);
-            }
-            curIndex++;
-            curIndex %= 3;
-            animTimer.mark();
-        }
-        */
         if(animTimer.millisElapsed() > 100){
             if(isFacingRight){
                 setImage(rightWalk[curIndex]);
@@ -169,5 +156,12 @@ public class Friend extends Actor
             curIndex %= 4;
             animTimer.mark();
         }
+        */
+       if(animTimer.millisElapsed() > 100){
+           setImage(frontAnim[curIndex]);
+           curIndex++;
+           curIndex %= 4;
+           animTimer.mark();
+       }
     }
 }
