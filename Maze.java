@@ -12,6 +12,8 @@ public class Maze extends World
     Wall[] mazeWall;
     Obstacle[] spikeWall;
     private Friend muffet = new Friend("muffet");
+    public boolean speechInitiated = false;
+    GameP frisk = new GameP(37, 30);
     /**
      * Constructor for objects of class Maze.
      * 
@@ -26,24 +28,46 @@ public class Maze extends World
         buildMaze();
         
         //add frisk
-        GameP frisk = new GameP(37, 30);
         addObject(frisk, 20, 384);
         
         //add muffet
         addObject(muffet, 575, 25);
         
         //add heart
-        Heart heart = new Heart(25, 25);
+        Heart heart = new Heart("full", 25, 25);
         addObject(heart, 430, 313);
-        
-        //add potions
-        //no
-        
+        if(frisk.collectedHeart){
+            Heart newHeart = new Heart("empty", 25, 25);
+            addObject(newHeart, 430, 313);
+        }
+                
         //add spikes
         buildSpikes();
         
         //give heart
-        
+        speechInitiated = false;
+    }
+    
+    public void act()
+    {
+        if(frisk.collectedHeart && frisk.getX() >= 525 && frisk.getY() <= 100 && Player.canMove && !speechInitiated){
+            Player.canMove = false;
+            speechInitiated = true;
+            talkMuffet();
+        }
+    }
+    
+    public void talkMuffet()
+    {
+        String[] greet = new String[5];
+        greet[0] = new String("Oh");
+        greet[1] = new String("Thank u for the heart >:)");
+        greet[2] = new String("[Muffet will remember your contribution to the eternal spider empire]");
+        greet[3] = new String("Okay bestie");
+
+        Dialogue greeting = new Dialogue(greet, Color.WHITE);
+
+        addObject(greeting, 0, 0);
     }
     
     public void buildSpikes()

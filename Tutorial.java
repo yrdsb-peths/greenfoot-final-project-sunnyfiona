@@ -12,8 +12,9 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player();
-    private Heart heart = new Heart(20, 20);
+    private Heart heart = new Heart("full", 20, 20);
     private Textbox[] greet;
+    int delay;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -32,6 +33,7 @@ public class Tutorial extends World
         buildTrees();
         setPaintOrder(Dialogue.class);
         //setDialogues();
+        delay = 240;
     }
     boolean greetInitiated = false;
     public void act()
@@ -56,10 +58,12 @@ public class Tutorial extends World
             Player.canMove = false;
             byeInitiated = true;
             showBye();
-            byeFinished = true;
         }
-        if(byeInitiated && byeFinished){
-            temmie.exit(this, temmie.getX(), 400);
+        if(byeInitiated){
+            delay--;
+            if(delay <= 0){
+                temmie.exit(this, temmie.getX(), 400);
+            }
         }
     }
 

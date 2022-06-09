@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Heart extends Actor
 {
-    public Heart(int x, int y)
+    public Heart(String type,int x, int y)
     {
-        GreenfootImage heart = new GreenfootImage("images/misc/fullheart.png");
+        GreenfootImage heart = new GreenfootImage("images/misc/" + type + "heart.png");
         heart.scale(x, y);
         setImage(heart);
     }

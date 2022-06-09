@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.target=Friend
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Friend\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Friend\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=name
 comment1.target=Friend(java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ the\ class.\ Sets\ the\ images\ of\ the\ NPCs\ \r\n\ and\ sets\ the\ animations.\r\n
+comment1.text=\n\ Constructor\ for\ the\ class.\ Sets\ the\ images\ of\ the\ NPCs\ \n\ and\ sets\ the\ animations.\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Friend\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Friend\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=world\ x\ y
 comment3.target=void\ exit(greenfoot.World,\ int,\ int)
 comment4.params=factor
 comment4.target=void\ scaleSmaller(int)
-comment4.text=\r\n\ scale\ smaller\ -\ divides\ the\ image\ size\ of\ the\ friend\ by\ the\ factor\r\n
+comment4.text=\n\ scale\ smaller\ -\ divides\ the\ image\ size\ of\ the\ friend\ by\ the\ factor\n
 comment5.params=toX
 comment5.target=void\ walkX(int)
-comment5.text=\r\n\ WalkX\ -\ moves\ the\ Friend\ horizontally\ towards\ an\ x\ coordinate\r\n
+comment5.text=\n\ WalkX\ -\ moves\ the\ Friend\ horizontally\ towards\ an\ x\ coordinate\n
 comment6.params=goRight\ stopped
 comment6.target=void\ animate(boolean,\ boolean)
 numComments=7
