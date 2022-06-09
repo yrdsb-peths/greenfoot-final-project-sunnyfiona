@@ -52,6 +52,7 @@ public class Maze extends World
     {
         if(frisk.collectedHeart && frisk.getX() >= 525 && frisk.getY() <= 100 && Player.canMove && !speechInitiated){
             Player.canMove = false;
+            GameP.canMove = false;
             speechInitiated = true;
             talkMuffet();
         }
@@ -59,6 +60,7 @@ public class Maze extends World
     
     public void talkMuffet()
     {
+        
         String[] greet = new String[5];
         greet[0] = new String("Oh");
         greet[1] = new String("Thank u for the heart >:)");

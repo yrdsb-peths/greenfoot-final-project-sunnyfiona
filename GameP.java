@@ -9,13 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameP extends Actor
 {
     public boolean collectedHeart = false;
+    public static boolean canMove = true;
     public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
         head.scale(x, y);
         setImage(head);
     }
-    
+
     /**
      * Act - do whatever the GameP wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,10 +24,12 @@ public class GameP extends Actor
     public void act()
     {
         restart();
-        walk();
+        if(canMove){
+            walk();
+        }
         pickUpHeart();
     }
-    
+
     public void restart()
     {
         Maze w = (Maze) getWorld();
@@ -35,7 +38,7 @@ public class GameP extends Actor
             setLocation(20, 384);
         }
     }
-    
+
     public void pickUpHeart()
     {
         if(isTouching(Heart.class))
@@ -44,7 +47,7 @@ public class GameP extends Actor
             collectedHeart = true;
         }
     }
-    
+
     public void walk()
     {
         Tutorial world = new Tutorial();
@@ -55,7 +58,7 @@ public class GameP extends Actor
             {
                 setLocation(getX() - 3, getY());
             }
-            
+
         }
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             setLocation(getX() - 3, getY());
@@ -65,7 +68,7 @@ public class GameP extends Actor
                 setLocation(getX() + 3, getY());
             }
         }
-        
+
         if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")){
             setLocation(getX(), getY() - 3);
             restart();
@@ -74,7 +77,7 @@ public class GameP extends Actor
                 setLocation(getX(), getY() + 3);
             }
         }
-        
+
         if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")){
             setLocation(getX(), getY() + 3);
             restart();
@@ -82,8 +85,8 @@ public class GameP extends Actor
             {
                 setLocation(getX(), getY() - 3);
             }
-            
+
         }
-        
+
     }
 }

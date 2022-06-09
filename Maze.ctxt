@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Maze
-comment0.text=\n\ Write\ a\ description\ of\ class\ Maze\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Maze\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Maze()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Maze.\n\ \n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Maze.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
@@ -12,5 +12,5 @@ comment4.params=
 comment4.target=void\ buildSpikes()
 comment5.params=
 comment5.target=void\ buildMaze()
-comment5.text=\n\ Builds\ maze\n
+comment5.text=\r\n\ Builds\ maze\r\n
 numComments=6
