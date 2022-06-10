@@ -39,7 +39,7 @@ public class TitleScreen extends World
         animTimer = new SimpleTimer();
         animTimer.mark();
         
-        narration = new Label("you gaze into the distance, \n longing for something to fill your void of loneliness...", 30);
+        narration = new Label("you gaze into the distance, \n longing for something to fill your void of loneliness...", 25);
         narration.setLineColor(Color.GRAY);
         narration.setFillColor(Color.WHITE);
         addObject(narration, 300, 100);
