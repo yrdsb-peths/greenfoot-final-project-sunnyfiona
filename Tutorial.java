@@ -12,7 +12,7 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player(true);
-    private Heart heart = new Heart("full", 20, 20);//(20, 20);
+    private Heart heart = new Heart("full", 20, 20, false);//(20, 20);
     private Textbox[] greet;
     /**
      * Constructor for objects of class MyWorld.
@@ -74,7 +74,6 @@ public class Tutorial extends World
         greet[3] = new String("gimmegimmegimme");
 
         Dialogue greeting = new Dialogue(greet, Color.WHITE);
-
         addObject(greeting, 0, 0);
 
     }

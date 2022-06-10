@@ -8,13 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Textbox extends Actor
 {
+    
     public Textbox(){
         GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
-        setImage("images/misc/textbox.png");
+        box.scale(box.getWidth(), box.getHeight() / 2);
+        setImage(box);
+        //setImage("images/misc/textbox.png");
+        //GreenfootImage("images/misc/
     
     }
     /**
-     * Act - do whatever the Texbox wants to do. This method is called whenever
+     * Act - do whatever the Textbox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

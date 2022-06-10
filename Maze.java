@@ -34,10 +34,10 @@ public class Maze extends World
         addObject(muffet, 575, 25);
         
         //add heart
-        Heart heart = new Heart("full", 25, 25);
+        Heart heart = new Heart("full", 25, 25, false);
         addObject(heart, 430, 313);
         if(frisk.collectedHeart){
-            Heart newHeart = new Heart("empty", 25, 25);
+            Heart newHeart = new Heart("empty", 25, 25, false);
             addObject(newHeart, 430, 313);
         }
                 

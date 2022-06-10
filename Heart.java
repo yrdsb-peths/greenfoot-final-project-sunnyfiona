@@ -8,11 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Heart extends Actor
 {
-    public Heart(String type,int x, int y)
+    public boolean isFalling;
+    public Heart(String type,int x, int y, boolean isFalling)
     {
         GreenfootImage heart = new GreenfootImage("images/misc/" + type + "heart.png");
         heart.scale(x, y);
         setImage(heart);
+        this.isFalling = isFalling;
     }
     
     /**
@@ -21,6 +23,8 @@ public class Heart extends Actor
      */
     public void act()
     {
-        
+        if(isFalling){
+            setLocation(getX(), getY() + 1);
+        }
     }
 }

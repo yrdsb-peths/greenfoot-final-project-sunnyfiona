@@ -119,14 +119,7 @@ public class Player extends Actor
         }
         
     }
-    /*
-    public void resetDirection()
-    {
-        facingUp = false;
-        facingRight = false;
-        facingDown = false;
-        facingLeft = false;
-    */
+    
     int curIndex = 0;
     public void animate()
     {
@@ -152,6 +145,12 @@ public class Player extends Actor
             animTimer.mark();
         }
         
+    }
+    public void dropHeart(){
+        if(Greenfoot.isKeyDown("s")){
+            Heart heart = new Heart("full", 20, 20, true);
+            getWorld().addObject(heart, getX(), 100);
+        }
     }
 }
     
