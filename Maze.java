@@ -14,7 +14,7 @@ public class Maze extends World
     private Friend muffet = new Friend("muffet");
     public boolean greetInitiated;
     public boolean byeInitiated;
-    GameP frisk = new GameP();
+    GameP frisk = new GameP(37, 30);;
     /**
      * Constructor for objects of class Maze.
      * 
@@ -67,7 +67,7 @@ public class Maze extends World
     
     public void hiMuffet()
     {
-        String[] greet = new String[13];
+        String[] greet = new String[21];
         greet[0] = new String("boohoo :'(");
         greet[1] = new String("boo :''''((((( hoo");
         greet[2] = new String("!!");
@@ -77,12 +77,18 @@ public class Maze extends World
         greet[6] = new String("Why am I sad?");
         greet[7] = new String("I just want to make friends");
         greet[8] = new String("and share my spider bake sale.");
-        greet[7] = new String("But instead people always just think I'm some mean guy,");
-        greet[8] = new String("and the next thing I know I'm being thrown onto some bad spikes.");
-        greet[9] = new String("It's not my fault I'm a spider :(");
-        greet[10] = new String("Just because I'm spooky doesn't mean I'm mean !!!");
-        greet[11] = new String("And here I thought video game society was evolving past vibes :(");
-        greet[12] = new String("[become friends with Muffet");
+        greet[9] = new String("But instead people always just think");
+        greet[10] = new String("that I'm some mean guy,");
+        greet[11] = new String("people always just think I'm some mean guy,");
+        greet[12] = new String("and the next thing I know");
+        greet[13] = new String("I'm being thrown onto some bad spikes.");
+        greet[14] = new String("That HURTS, you know >:(");
+        greet[15] = new String("It's not my fault I'm a spider :(");
+        greet[16] = new String("Just because I'm spooky");
+        greet[17] = new String("doesn't mean I'm mean !!!");
+        greet[18] = new String("And here I thought");
+        greet[19] = new String("video game society was evolving past vibes :(");
+        greet[20] = new String("[become friends with Muffet]");
 
         Dialogue greeting = new Dialogue(greet, Color.WHITE);
         addObject(greeting, 0, 0);

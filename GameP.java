@@ -6,15 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameP extends Player
+public class GameP extends Actor
 {
     public boolean collectedHeart = false;
     public static boolean canMove = true;
-    public GameP()
+    public GameP(int x, int y)
     {
-        super(true);
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
-        head.scale(37, 30);
+        head.scale(x,y);
         setImage(head);
     }
 
