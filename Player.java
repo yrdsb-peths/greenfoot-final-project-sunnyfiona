@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    
+
     private GreenfootImage[] rightWalk;
     private GreenfootImage[] leftWalk;
     private GreenfootImage[] fwdWalk;
     private GreenfootImage[] bwdWalk;
     private SimpleTimer animTimer;
-    
+
     private boolean facingRight;
     private boolean facingUp;
     private boolean facingLeft;
@@ -23,7 +23,7 @@ public class Player extends Actor
     public boolean collectedHeart = false;
     public boolean deliveredHeart;
     public boolean canMoveVertical;
-    
+
     private static int numLives;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -43,10 +43,10 @@ public class Player extends Actor
             leftWalk[i] = new GreenfootImage("images/frisk/frisk-walk/frisk-walk-" + i + ".png");
             leftWalk[i].mirrorHorizontally();
             leftWalk[i].scale(rightWalk[i].getWidth(), rightWalk[i].getHeight());
-            
+
             fwdWalk[i] = new GreenfootImage("images/frisk/frisk-walk/frisk-walk-fwd-" + i + ".png");
             fwdWalk[i].scale(rightWalk[i].getWidth(), rightWalk[i].getHeight());
-            
+
             bwdWalk[i] = new GreenfootImage("images/frisk/frisk-walk/frisk-walk-bwd-" + i + ".png");
             bwdWalk[i].scale(rightWalk[i].getWidth(), rightWalk[i].getHeight());
         }
@@ -54,21 +54,21 @@ public class Player extends Actor
         animTimer = new SimpleTimer();
         deliveredHeart = false;
     }
-    
+
     public void act()
     {
-        
+
         if(canMove)
         {
-           walk(); 
-           animate();
+            walk(); 
+            animate();
         }
         pickUpHeart();
         if(collectedHeart && Greenfoot.mouseClicked(Friend.class)){
             deliveredHeart = true;
         }
     }
-    
+
     public void pickUpHeart()
     {
         if(isTouching(Heart.class))
@@ -77,49 +77,53 @@ public class Player extends Actor
             collectedHeart = true;
         }
     }
-    
+
     public void walk()
     {
         Tutorial world = new Tutorial();
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             setLocation(getX() + 3, getY());
-        
+
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX() - 3, getY());
             }
-            
+
         }
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             setLocation(getX() - 3, getY());
-            
+
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX() + 3, getY());
             }
         }
-        
+
         if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up") && canMoveVertical){
             setLocation(getX(), getY() - 3);
-           
+
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX(), getY() + 3);
             }
         }
-        
+
         if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down") && canMoveVertical){
             setLocation(getX(), getY() + 3);
-            
+
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
                 setLocation(getX(), getY() - 3);
             }
-            
+
         }
-        
+
+        if(Greenfoot.isKeyDown("space")){
+            dropHeart();
+        }
+
     }
-    
+
     int curIndex = 0;
     public void animate()
     {
@@ -144,14 +148,12 @@ public class Player extends Actor
             curIndex %= 3;
             animTimer.mark();
         }
-        
+
     }
+
     public void dropHeart(){
-        if(Greenfoot.isKeyDown("s")){
-            Heart heart = new Heart("full", 20, 20, true);
-            getWorld().addObject(heart, getX(), 100);
-        }
+        Heart heart = new Heart("full", 20, 20, true);
+        getWorld().addObject(heart, getX(), 100);
     }
 }
-    
 
