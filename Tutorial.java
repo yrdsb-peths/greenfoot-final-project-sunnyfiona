@@ -14,6 +14,7 @@ public class Tutorial extends World
     private Player frisk = new Player(true);
     private Heart heart = new Heart("full", 20, 20, false);//(20, 20);
     private Textbox[] greet;
+    private int delay;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -31,6 +32,7 @@ public class Tutorial extends World
         temmie.scaleSmaller(5);
         buildTrees();
         setPaintOrder(Dialogue.class);
+        delay = 250;
         //setDialogues();
     }
     boolean greetInitiated = false;
@@ -58,8 +60,12 @@ public class Tutorial extends World
             showBye();
             byeFinished = true;
         }
+        
         if(byeInitiated && byeFinished){
+            delay--;
+            if(delay <= 0){
             temmie.exit(this, temmie.getX(), 400);
+            }
         }
     }
 

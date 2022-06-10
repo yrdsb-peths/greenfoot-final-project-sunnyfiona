@@ -81,7 +81,7 @@ public class Player extends Actor
     public void walk()
     {
         Tutorial world = new Tutorial();
-        if(Greenfoot.isKeyDown("d")){
+        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             setLocation(getX() + 3, getY());
         
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -90,7 +90,7 @@ public class Player extends Actor
             }
             
         }
-        if(Greenfoot.isKeyDown("a")){
+        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
             setLocation(getX() - 3, getY());
             
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -99,7 +99,7 @@ public class Player extends Actor
             }
         }
         
-        if(Greenfoot.isKeyDown("w") && canMoveVertical){
+        if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up") && canMoveVertical){
             setLocation(getX(), getY() - 3);
            
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -108,7 +108,7 @@ public class Player extends Actor
             }
         }
         
-        if(Greenfoot.isKeyDown("s") && canMoveVertical){
+        if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down") && canMoveVertical){
             setLocation(getX(), getY() + 3);
             
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -125,18 +125,18 @@ public class Player extends Actor
     {
         if(animTimer.millisElapsed() > 110)
         {
-            if(Greenfoot.isKeyDown("d"))
+            if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
             {
                 setImage(rightWalk[curIndex]);
             }
-            else if(Greenfoot.isKeyDown("a"))
+            else if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
             {
                 setImage(leftWalk[curIndex]);
             }
-            else if(Greenfoot.isKeyDown("s")){
+            else if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")){
                 setImage(fwdWalk[curIndex]);
             }
-            else if(Greenfoot.isKeyDown("w")){
+            else if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")){
                 setImage(bwdWalk[curIndex]);
             }
             else{}

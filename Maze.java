@@ -12,8 +12,9 @@ public class Maze extends World
     Wall[] mazeWall;
     Obstacle[] spikeWall;
     private Friend muffet = new Friend("muffet");
-    public boolean speechInitiated = false;
-    GameP frisk = new GameP(37, 30);
+    public boolean greetInitiated;
+    public boolean byeInitiated;
+    GameP frisk = new GameP();
     /**
      * Constructor for objects of class Maze.
      * 
@@ -45,30 +46,58 @@ public class Maze extends World
         buildSpikes();
         
         //give heart
-        speechInitiated = false;
+        greetInitiated = false;
+        byeInitiated = false;
     }
     
     public void act()
     {
-        if(frisk.collectedHeart && frisk.getX() >= 525 && frisk.getY() <= 100 && Player.canMove && !speechInitiated){
-            Player.canMove = false;
+        if(frisk.getX() >= 20 && frisk.getY() <= 384 && GameP.canMove && !greetInitiated){
             GameP.canMove = false;
-            speechInitiated = true;
-            talkMuffet();
+            hiMuffet();
+            greetInitiated = true;
         }
+        if(frisk.collectedHeart && frisk.getX() >= 525 && frisk.getY() <= 100 && GameP.canMove && !byeInitiated){
+            GameP.canMove = false;
+            byeInitiated = true;
+            byeMuffet();
+        }
+        GameP.canMove = true;
     }
     
-    public void talkMuffet()
+    public void hiMuffet()
     {
-        
-        String[] greet = new String[5];
-        greet[0] = new String("Oh");
-        greet[1] = new String("Thank u for the heart >:)");
-        greet[2] = new String("[Muffet will remember your contribution to the eternal spider empire]");
-        greet[3] = new String("Okay bestie");
+        String[] greet = new String[13];
+        greet[0] = new String("boohoo :'(");
+        greet[1] = new String("boo :''''((((( hoo");
+        greet[2] = new String("!!");
+        greet[3] = new String("Oh hello.");
+        greet[4] = new String("Move along now, :(");
+        greet[5] = new String("this isn't a place you want to be.");
+        greet[6] = new String("Why am I sad?");
+        greet[7] = new String("I just want to make friends");
+        greet[8] = new String("and share my spider bake sale.");
+        greet[7] = new String("But instead people always just think I'm some mean guy,");
+        greet[8] = new String("and the next thing I know I'm being thrown onto some bad spikes.");
+        greet[9] = new String("It's not my fault I'm a spider :(");
+        greet[10] = new String("Just because I'm spooky doesn't mean I'm mean !!!");
+        greet[11] = new String("And here I thought video game society was evolving past vibes :(");
+        greet[12] = new String("[become friends with Muffet");
 
         Dialogue greeting = new Dialogue(greet, Color.WHITE);
+        addObject(greeting, 0, 0);
+    }
+    
+    public void byeMuffet()
+    {
+        
+        String[] bye = new String[4];
+        bye[0] = new String("Oh");
+        bye[1] = new String("Thank u for the heart :)");
+        bye[2] = new String("[Muffet will remember your contribution to the eternal spider empire]");
+        bye[3] = new String("Okay bestie");
 
+        Dialogue greeting = new Dialogue(bye, Color.WHITE);
         addObject(greeting, 0, 0);
     }
     
