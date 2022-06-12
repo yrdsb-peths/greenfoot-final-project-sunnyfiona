@@ -26,5 +26,8 @@ public class Heart extends Actor
         if(isFalling){
             setLocation(getX(), getY() + 1);
         }
+        if(getY() >= 370){
+            getWorld().removeObject(this);
+        }
     }
 }

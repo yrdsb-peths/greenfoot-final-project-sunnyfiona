@@ -31,7 +31,7 @@ public class Dialogue extends Actor
         box = new Textbox();
         world.addObject(box, 300, 330);
         
-        messageLabel = new Label(texts[curTextIndex], 25);
+        messageLabel = new Label(texts[curTextIndex], 20);
         messageLabel.setLineColor(color);
         //setImage(messageLabel);
         world.addObject(messageLabel, 300, 330);

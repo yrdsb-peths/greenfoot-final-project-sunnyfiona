@@ -22,7 +22,7 @@ public class Player extends Actor
     public static boolean canMove = true;
     public boolean collectedHeart = false;
     public boolean deliveredHeart;
-    public boolean canMoveVertical;
+    public static boolean canMoveVertical;
 
     private static int numLives;
     /**
@@ -99,7 +99,7 @@ public class Player extends Actor
             }
         }
 
-        if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up") && canMoveVertical){
+        if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && canMoveVertical){
             setLocation(getX(), getY() - 3);
 
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -108,7 +108,7 @@ public class Player extends Actor
             }
         }
 
-        if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down") && canMoveVertical){
+        if((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")) && canMoveVertical){
             setLocation(getX(), getY() + 3);
 
             if(isTouching(Wall.class) || isTouching(Friend.class))
@@ -153,7 +153,7 @@ public class Player extends Actor
 
     public void dropHeart(){
         Heart heart = new Heart("full", 20, 20, true);
-        getWorld().addObject(heart, getX(), 100);
+        getWorld().addObject(heart, getX(), 150);
     }
 }
 

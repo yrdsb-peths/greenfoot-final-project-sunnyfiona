@@ -20,27 +20,6 @@ public class Friend extends Actor
      * Constructor for the class. Sets the images of the NPCs 
      * and sets the animations.
      */
-    /*
-    public Friend(String name)
-    {
-        this.name = name;
-        
-        //GreenfootImage image = new GreenfootImage("images/elephant_idle/idle0.png");
-        rightWalk = new GreenfootImage[4];
-        leftWalk = new GreenfootImage[4];
-        for(int i = 0; i < rightWalk.length; i++){
-            leftWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            leftWalk[i].scale(100,100);
-            rightWalk[i] = new GreenfootImage("images/" + name + "/" + name + "-walk-" + i + ".png");
-            rightWalk[i].mirrorHorizontally();
-            rightWalk[i].scale(100,100);
-        }
-        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
-        setImage(idle);
-        animTimer = new SimpleTimer();
-        animTimer.mark();
-    }
-    */
     public Friend(String name){
         this.name = name;
         for(int i = 0; i < frontAnim.length; i++){
@@ -56,14 +35,18 @@ public class Friend extends Actor
      */
     public void act()
     {
-        // Add your action code here.
-        /*
-        Tutorial world = (Tutorial) getWorld();
-        int x = world.frisk.getX();
-        walkX(x);
-        */
+        animate();
+        if(isTouching(Heart.class)){
+            removeTouching(Heart.class);
+            GrillbysBar world = (GrillbysBar) getWorld();
+            world.increaseScore();
+        }
     }
-    public void exit(World world, int x, int y){
+    /* public void slide(int leftBoundary, int rightBoundary){
+        walk(getWorld(), leftBoundary, getY());
+        walk(getWorld(), rightBoundary, getY());
+    } */
+    public void walk(World world, int x, int y){
         if(getX() > x)
         {
             this.setLocation(getX() - 2, getY());
@@ -121,43 +104,12 @@ public class Friend extends Actor
     
     }
     */
-    
-    /**
-     * WalkX - moves the Friend horizontally towards an x coordinate
-     */
-    /*
-    public void walkX(int toX)
-    {
-        
-        if(toX > getX())
-        {
-            setLocation(getX() + 2, getY());
-            //animate(true, false);
-        }
-        else{
-            setLocation(getX() - 2, getY());
-            //animate(false, false);
-        }
-
-    }
-    */
 
     int curIndex = 0;
     public void animate()//(boolean goRight, boolean stopped)
     {
-        /*
-        if(animTimer.millisElapsed() > 100){
-            if(isFacingRight){
-                setImage(rightWalk[curIndex]);
-            } else {
-                setImage(leftWalk[curIndex]);
-            }
-            curIndex++;
-            curIndex %= 4;
-            animTimer.mark();
-        }
-        */
-       if(animTimer.millisElapsed() > 100){
+        
+       if(animTimer.millisElapsed() > 150){
            setImage(frontAnim[curIndex]);
            curIndex++;
            curIndex %= 4;

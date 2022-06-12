@@ -3,12 +3,13 @@ comment0.target=Friend
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Friend\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=name
 comment1.target=Friend(java.lang.String)
-comment1.text=\r\n\ \ \ \ public\ Friend(String\ name)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ this.name\ \=\ name;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ //GreenfootImage\ image\ \=\ new\ GreenfootImage("images/elephant_idle/idle0.png");\r\n\ \ \ \ \ \ \ \ rightWalk\ \=\ new\ GreenfootImage[4];\r\n\ \ \ \ \ \ \ \ leftWalk\ \=\ new\ GreenfootImage[4];\r\n\ \ \ \ \ \ \ \ for(int\ i\ \=\ 0;\ i\ <\ rightWalk.length;\ i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ leftWalk[i]\ \=\ new\ GreenfootImage("images/"\ +\ name\ +\ "/"\ +\ name\ +\ "-walk-"\ +\ i\ +\ ".png");\r\n\ \ \ \ \ \ \ \ \ \ \ \ leftWalk[i].scale(100,100);\r\n\ \ \ \ \ \ \ \ \ \ \ \ rightWalk[i]\ \=\ new\ GreenfootImage("images/"\ +\ name\ +\ "/"\ +\ name\ +\ "-walk-"\ +\ i\ +\ ".png");\r\n\ \ \ \ \ \ \ \ \ \ \ \ rightWalk[i].mirrorHorizontally();\r\n\ \ \ \ \ \ \ \ \ \ \ \ rightWalk[i].scale(100,100);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ GreenfootImage\ idle\ \=\ new\ GreenfootImage("images/"\ +\ name\ +\ "/"\ +\ name\ +\ "-idle-0.png");\r\n\ \ \ \ \ \ \ \ setImage(idle);\r\n\ \ \ \ \ \ \ \ animTimer\ \=\ new\ SimpleTimer();\r\n\ \ \ \ \ \ \ \ animTimer.mark();\r\n\ \ \ \ }\r\n
+comment1.text=\r\n\ Constructor\ for\ the\ class.\ Sets\ the\ images\ of\ the\ NPCs\ \r\n\ and\ sets\ the\ animations.\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Friend\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=world\ x\ y
-comment3.target=void\ exit(greenfoot.World,\ int,\ int)
+comment3.target=void\ walk(greenfoot.World,\ int,\ int)
+comment3.text=\ public\ void\ slide(int\ leftBoundary,\ int\ rightBoundary){\r\n\ \ \ \ \ \ \ \ walk(getWorld(),\ leftBoundary,\ getY());\r\n\ \ \ \ \ \ \ \ walk(getWorld(),\ rightBoundary,\ getY());\r\n}
 comment4.params=factor
 comment4.target=void\ scaleSmaller(int)
 comment4.text=\r\n\ scale\ smaller\ -\ divides\ the\ image\ size\ of\ the\ friend\ by\ the\ factor\r\n

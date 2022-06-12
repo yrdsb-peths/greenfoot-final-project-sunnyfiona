@@ -15,6 +15,7 @@ public class Tutorial extends World
     private Heart heart = new Heart("full", 20, 20, false);//(20, 20);
     private Textbox[] greet;
     private int delay;
+    GreenfootSound ambient = new GreenfootSound("sounds/tutorial-ambient.mp3");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -35,12 +36,16 @@ public class Tutorial extends World
         delay = 250;
         //setDialogues();
     }
+    public void started(){
+        ambient.playLoop();
+    }
     boolean greetInitiated = false;
     public void act()
     {
         if(frisk.getX() >= 599)
         {
             Maze world = new Maze();
+            ambient.stop();
             Greenfoot.setWorld(world);
         }
 
@@ -64,7 +69,7 @@ public class Tutorial extends World
         if(byeInitiated && byeFinished){
             delay--;
             if(delay <= 0){
-            temmie.exit(this, temmie.getX(), 400);
+            temmie.walk(this, temmie.getX(), 400);
             }
         }
     }
