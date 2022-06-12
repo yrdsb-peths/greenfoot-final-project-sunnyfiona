@@ -10,6 +10,9 @@ public class GameP extends Actor
 {
     public boolean collectedHeart = false;
     public static boolean canMove = true;
+    public int speed;
+    public boolean drankPotion = false;
+    public int pCount = 0;
     public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
@@ -28,6 +31,7 @@ public class GameP extends Actor
             walk();
         }
         pickUpHeart();
+        drinkPotion();
     }
 
     public void restart()
@@ -39,6 +43,23 @@ public class GameP extends Actor
         }
     }
 
+    public void drinkPotion()
+    {
+        speed = 3;
+        if(isTouching(Potion.class) && !drankPotion)
+        {
+            removeTouching(Potion.class);
+            pCount++;
+            if(pCount == 1) {
+                speed = 1;
+                drankPotion = false;
+            }
+            else {
+                speed = 3;
+            }
+        }
+    }
+    
     public void pickUpHeart()
     {
         if(isTouching(Heart.class))
@@ -52,7 +73,7 @@ public class GameP extends Actor
     {
         Tutorial world = new Tutorial();
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
-            setLocation(getX() + 3, getY());
+            setLocation(getX() + speed, getY());
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
@@ -61,7 +82,7 @@ public class GameP extends Actor
 
         }
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
-            setLocation(getX() - 3, getY());
+            setLocation(getX() - speed, getY());
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
@@ -70,7 +91,7 @@ public class GameP extends Actor
         }
 
         if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")){
-            setLocation(getX(), getY() - 3);
+            setLocation(getX(), getY() - speed);
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
@@ -79,7 +100,7 @@ public class GameP extends Actor
         }
 
         if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")){
-            setLocation(getX(), getY() + 3);
+            setLocation(getX(), getY() + speed);
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {

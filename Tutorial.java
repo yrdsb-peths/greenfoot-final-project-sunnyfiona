@@ -12,7 +12,7 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player(true);
-    private Heart heart = new Heart("full", 20, 20, false);//(20, 20);
+    private Heart heart = new Heart("fullheart", 20, 20, false);//(20, 20);
     private Textbox[] greet;
     private int delay;
     GreenfootSound ambient = new GreenfootSound("sounds/tutorial-ambient.mp3");

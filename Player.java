@@ -152,7 +152,7 @@ public class Player extends Actor
     }
 
     public void dropHeart(){
-        Heart heart = new Heart("full", 20, 20, true);
+        Heart heart = new Heart("fullheart", 20, 20, true);
         getWorld().addObject(heart, getX(), 150);
     }
 }

@@ -35,15 +35,21 @@ public class Maze extends World
         addObject(muffet, 575, 25);
         
         //add heart
-        Heart heart = new Heart("full", 25, 25, false);
+        Heart heart = new Heart("fullheart", 25, 25, false);
         addObject(heart, 430, 313);
         if(frisk.collectedHeart){
-            Heart newHeart = new Heart("empty", 25, 25, false);
+            Heart newHeart = new Heart("emptyheart", 25, 25, false);
             addObject(newHeart, 430, 313);
         }
                 
         //add spikes
         buildSpikes();
+        
+        //add potions
+        Potion p1 = new Potion(1);
+        addObject(p1, 585, 383);
+        Potion p2 = new Potion(2);
+        addObject(p2, 433, 105);
         
         //give heart
         greetInitiated = false;
@@ -67,7 +73,7 @@ public class Maze extends World
     
     public void hiMuffet()
     {
-        String[] greet = new String[21];
+        String[] greet = new String[20];
         greet[0] = new String("boohoo :'(");
         greet[1] = new String("boo :''''((((( hoo");
         greet[2] = new String("!!");
@@ -79,16 +85,15 @@ public class Maze extends World
         greet[8] = new String("and share my spider bake sale.");
         greet[9] = new String("But instead people always just think");
         greet[10] = new String("that I'm some mean guy,");
-        greet[11] = new String("people always just think I'm some mean guy,");
-        greet[12] = new String("and the next thing I know");
-        greet[13] = new String("I'm being thrown onto some bad spikes.");
-        greet[14] = new String("That HURTS, you know >:(");
-        greet[15] = new String("It's not my fault I'm a spider :(");
-        greet[16] = new String("Just because I'm spooky");
-        greet[17] = new String("doesn't mean I'm mean !!!");
-        greet[18] = new String("And here I thought");
-        greet[19] = new String("video game society was evolving past vibes :(");
-        greet[20] = new String("[become friends with Muffet]");
+        greet[11] = new String("and the next thing I know");
+        greet[12] = new String("I'm being thrown onto some bad spikes.");
+        greet[13] = new String("That HURTS, you know >:(");
+        greet[14] = new String("It's not my fault I'm a spider :(");
+        greet[15] = new String("Just because I'm spooky");
+        greet[16] = new String("doesn't mean I'm mean !!!");
+        greet[17] = new String("And here I thought");
+        greet[18] = new String("video game society was evolving :(");
+        greet[19] = new String("[make friends with Muffet]");
 
         Dialogue greeting = new Dialogue(greet, Color.WHITE);
         addObject(greeting, 0, 0);

@@ -11,7 +11,7 @@ public class Heart extends Actor
     public boolean isFalling;
     public Heart(String type,int x, int y, boolean isFalling)
     {
-        GreenfootImage heart = new GreenfootImage("images/misc/" + type + "heart.png");
+        GreenfootImage heart = new GreenfootImage("images/misc/" + type + ".png");
         heart.scale(x, y);
         setImage(heart);
         this.isFalling = isFalling;
