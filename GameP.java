@@ -10,7 +10,7 @@ public class GameP extends Actor
 {
     public boolean collectedHeart = false;
     public static boolean canMove = true;
-    private int speed;
+    private int speed = 3;
     public boolean drankPotion = false;
     public int pCount = 0;
     public GameP(int x, int y)
@@ -30,8 +30,24 @@ public class GameP extends Actor
         if(canMove){
             walk();
         }
-        pickUpHeart();
-        drinkPotion();
+        
+        // Pick up heart
+        if(isTouching(Heart.class))
+        {
+            removeTouching(Heart.class);
+            collectedHeart = true;
+        }
+        
+        if(isTouching(SpeedPotion.class)){
+            speed = 15;   
+            removeTouching(SpeedPotion.class);
+        }
+        
+        if(isTouching(ResetPotion.class)){
+            speed = 3;
+            removeTouching(ResetPotion.class);
+        }
+
     }
 
     public void restart()
@@ -43,35 +59,28 @@ public class GameP extends Actor
         }
     }
 
-    public void drinkPotion()
-    {
-        speed = 3;
-        if(isTouching(Potion.class) && !drankPotion)
-        {
-            removeTouching(Potion.class);
-            pCount++;
-            if(pCount == 1) {
-                speed = 1;
-                drankPotion = false;
-            }
-            else {
-                speed = 3;
-            }
-        }
-    }
-    
-    public void pickUpHeart()
-    {
-        if(isTouching(Heart.class))
-        {
-            removeTouching(Heart.class);
-            collectedHeart = true;
-        }
-    }
 
+    // public void drinkPotion()
+    // {
+    // speed = 8;
+    // if(isTouching(Potion.class) && !drankPotion)
+    // {
+    // removeTouching(Potion.class);
+    // pCount++;
+    // if(pCount == 1) {
+    // speed = 1;
+    // drankPotion = false;
+    // }
+    // else {
+    // speed = 3;
+    // }
+    // }
+    // }
+
+    
     public void walk()
     {
-        Tutorial world = new Tutorial();
+        //Tutorial world = new Tutorial();
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
             setLocation(getX() + speed, getY());
             restart();

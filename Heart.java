@@ -9,14 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Heart extends Actor
 {
     public boolean isFalling;
-    public Heart(String type,int x, int y, boolean isFalling)
+    public Heart(String filename,int x, int y, boolean isFalling)
     {
-        GreenfootImage heart = new GreenfootImage("images/misc/" + type + ".png");
+        GreenfootImage heart = new GreenfootImage("images/misc/" + filename + ".png");
         heart.scale(x, y);
         setImage(heart);
         this.isFalling = isFalling;
     }
-    
+
     /**
      * Act - do whatever the Heart wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

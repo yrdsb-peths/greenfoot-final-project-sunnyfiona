@@ -6,11 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Potion extends Heart
+public class SpeedPotion extends Actor
 {
-    public Potion(int number)
+    public SpeedPotion()
     {
-        super("potion" + number,25, 25, false);
+        setImage(new GreenfootImage("images/misc/speed_potion.png"));
     }
     
     /**
