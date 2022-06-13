@@ -14,7 +14,11 @@ public class Maze extends World
     private Friend muffet = new Friend("muffet");
     public boolean greetInitiated;
     public boolean byeInitiated;
-    GameP frisk = new GameP(37, 30);;
+    public boolean byeFinished;
+    GameP frisk = new GameP(37, 30);
+    GreenfootSound sad = new GreenfootSound("sounds/maze-sad.mp3");
+    GreenfootSound hopeful = new GreenfootSound("sounds/maze-hopeful.mp3");
+    private int delay;
     /**
      * Constructor for objects of class Maze.
      * 
@@ -27,7 +31,7 @@ public class Maze extends World
         bg.scale(getWidth()*1, getHeight()*1); 
         setBackground(bg);
         buildMaze();
-        
+        sad.playLoop();
         //add frisk
         addObject(frisk, 20, 384);
         
@@ -35,13 +39,14 @@ public class Maze extends World
         addObject(muffet, 575, 25);
         
         //add heart
-        Heart heart = new Heart("fullheart", 25, 25, false);
+        Heart heart = new Heart(25, 25);
         addObject(heart, 430, 313);
+        /*
         if(frisk.collectedHeart){
             Heart newHeart = new Heart("emptyheart", 25, 25, false);
             addObject(newHeart, 430, 313);
         }
-                
+        */
         //add spikes
         buildSpikes();
         
@@ -54,6 +59,8 @@ public class Maze extends World
         //give heart
         greetInitiated = false;
         byeInitiated = false;
+        byeFinished = false;
+        delay = 250;
     }
     
     public void act()
@@ -64,11 +71,24 @@ public class Maze extends World
             greetInitiated = true;
         }
         if(frisk.collectedHeart && frisk.getX() >= 525 && frisk.getY() <= 100 && GameP.canMove && !byeInitiated){
+            sad.stop();
+            hopeful.playLoop();
             GameP.canMove = false;
             byeInitiated = true;
             byeMuffet();
         }
         GameP.canMove = true;
+        if(byeInitiated){
+            delay--;
+            if(delay <= 0){
+            muffet.walk(this, muffet.getX(), 400);
+            }
+        }
+        if(byeInitiated && frisk.getX() >= 590){
+            GrillbysBar world = new GrillbysBar();
+            Greenfoot.setWorld(world);
+            hopeful.stop();
+        }
     }
     
     public void hiMuffet()
@@ -96,9 +116,9 @@ public class Maze extends World
         greet[19] = new String("What's that??");
         greet[19] = new String("YOU want to be my friend :0");
         greet[19] = new String("A lot of people say that, you know");
-        greet[19] = new String("");
+        greet[19] = new String("[become friends with Muffet]");
 
-        Dialogue greeting = new Dialogue(greet, Color.WHITE);
+        Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
     }
     
@@ -115,7 +135,7 @@ public class Maze extends World
         bye[7] = new String("Friends.");
         bye[8] = new String(":)");
 
-        Dialogue greeting = new Dialogue(bye, Color.WHITE);
+        Dialogue greeting = new Dialogue(bye);//, Color.WHITE);
         addObject(greeting, 0, 0);
     }
     

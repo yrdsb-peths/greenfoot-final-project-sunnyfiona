@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GrillbysBar extends World
+public class GrillbysBar extends FallingHeartGame
 {
     /**
      *  Instance variables
@@ -20,20 +20,22 @@ public class GrillbysBar extends World
     //GreenfootSound inGame = new GreenfootSound("sounds/grillbys-bar-game.mp3");
     public Player frisk;
     Grillby grillby;
+    DropHeart heart;
     /**
-     * Constructor for objects of class Heartsfall.
+     * Constructor for objects of class GrillbysBar.
      * 
      */
     public GrillbysBar()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
 
-        super(600, 400, 1, false); 
+        super(); 
         GreenfootImage bar = new GreenfootImage("images/bg/grillbys.png");
         bar.scale(600, 400);
         setBackground(bar);
         //addObject("images/grillby/00.png", 300, 300);
         grillby = new Grillby();
+        heart = new DropHeart(30, 30);
         grillby.scaleSmaller(3);
         addObject(grillby, 300, 270);
         frisk = new Player(false);
@@ -67,7 +69,7 @@ public class GrillbysBar extends World
         boolean grillbyRightWalk = true;
         if(gameIntroInitiated && !win){
             if(Greenfoot.isKeyDown("space")){
-                frisk.dropHeart();
+                addObject(heart, frisk.getX(), 150);
             }
             /*if(!soundStarted){
             inGame.playLoop();
@@ -77,7 +79,7 @@ public class GrillbysBar extends World
 
         }
 
-        if(score >= 1000 && Player.canMove && !finishInitiated){
+        if(score >= 30 && Player.canMove && !finishInitiated){
             Player.canMove = false;
             win = true;
             finishInitiated = true;
@@ -105,7 +107,7 @@ public class GrillbysBar extends World
         greet[8] = new String("...");
         greet[9] = new String("..nah.");
 
-        Dialogue greeting = new Dialogue(greet, Color.WHITE);
+        Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
     }
     boolean gameIntroInitiated = false;
@@ -124,21 +126,21 @@ public class GrillbysBar extends World
         intro[10] = new String("But don't think it'll be easy kiddo.");
         intro[11] = new String("I still need to serve my bar.");
 
-        Dialogue gameIntro = new Dialogue(intro, Color.WHITE);
+        Dialogue gameIntro = new Dialogue(intro);//, Color.WHITE);
         addObject(gameIntro, 0, 0);
     }
     boolean finishInitiated = false;
     public void showFinished(){
         String[] finished = new String[7];
         finished[0] = new String("Wow.");
-        finished[1] = new String("I have " + score + " HEARTS now, huh?");
-        finished[2] = new String("...");
-        finished[3] = new String("This kinda... feels...");
-        finished[4] = new String("feels...");
-        finished[5] = new String("...nice. This feels nice.");
+        finished[1] = new String("I have so many HEARTS.");
+        finished[2] = new String("...heh, what if I just run off with them, yk");
+        finished[3] = new String("sell em for 10 pence each");
+        finished[4] = new String("hahaha");
+        finished[5] = new String("jk. kidding, kidding.");
         finished[6] = new String("I'm glad we're FRIENDS now, kiddo.");
 
-        Dialogue gameFinished = new Dialogue(finished, Color.WHITE);
+        Dialogue gameFinished = new Dialogue(finished);//, Color.WHITE);
         addObject(gameFinished, 0, 0);
     }
 

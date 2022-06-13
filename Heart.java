@@ -8,13 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Heart extends Actor
 {
-    public boolean isFalling;
-    public Heart(String filename,int x, int y, boolean isFalling)
+    
+    public Heart(int x, int y)
     {
-        GreenfootImage heart = new GreenfootImage("images/misc/" + filename + ".png");
+        GreenfootImage heart = new GreenfootImage("images/misc/fullheart.png");
         heart.scale(x, y);
         setImage(heart);
-        this.isFalling = isFalling;
     }
 
     /**
@@ -23,11 +22,6 @@ public class Heart extends Actor
      */
     public void act()
     {
-        if(isFalling){
-            setLocation(getX(), getY() + 1);
-        }
-        if(getY() >= 370){
-            getWorld().removeObject(this);
-        }
+        
     }
 }

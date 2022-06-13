@@ -12,7 +12,7 @@ public class Tutorial extends World
     private Wall[] tree;
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player(true);
-    private Heart heart = new Heart("fullheart", 20, 20, false);//(20, 20);
+    private Heart heart = new Heart(20, 20);//(20, 20);
     private Textbox[] greet;
     private int delay;
     GreenfootSound ambient = new GreenfootSound("sounds/tutorial-ambient.mp3");
@@ -84,7 +84,7 @@ public class Tutorial extends World
         greet[2] = new String("Let's be FRIENDS! See that heart up there?");
         greet[3] = new String("gimmegimmegimme");
 
-        Dialogue greeting = new Dialogue(greet, Color.WHITE);
+        Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
 
     }
@@ -92,6 +92,7 @@ public class Tutorial extends World
     boolean byeFinished = false;
     public void showBye(){
         //if(frisk.deliveredHeart){
+        ambient.stop();
         String[] bye = new String[6];
         bye[0] = new String(".....");
         bye[1] = new String("...!!!!!!!!!!");
@@ -99,7 +100,7 @@ public class Tutorial extends World
         bye[3] = new String("gj");
         bye[4] = new String("aaand that was the tutorial.");
         bye[5] = new String("some-tem-body needs tem nap now. byEE");
-        Dialogue goodbye = new Dialogue(bye, Color.WHITE);
+        Dialogue goodbye = new Dialogue(bye);//, Color.WHITE);
         addObject(goodbye, 0, 0);
         //}
         
