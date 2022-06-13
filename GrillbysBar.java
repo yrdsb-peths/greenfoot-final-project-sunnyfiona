@@ -19,7 +19,7 @@ public class GrillbysBar extends World
     //GreenfootSound ambient = new GreenfootSound("sounds/grillbys-bar-ambient.mp3");
     //GreenfootSound inGame = new GreenfootSound("sounds/grillbys-bar-game.mp3");
     public Player frisk;
-    Friend grillby;
+    Grillby grillby;
     /**
      * Constructor for objects of class Heartsfall.
      * 
@@ -33,7 +33,7 @@ public class GrillbysBar extends World
         bar.scale(600, 400);
         setBackground(bar);
         //addObject("images/grillby/00.png", 300, 300);
-        grillby = new Friend("grillby");
+        grillby = new Grillby();
         grillby.scaleSmaller(3);
         addObject(grillby, 300, 270);
         frisk = new Player(false);
