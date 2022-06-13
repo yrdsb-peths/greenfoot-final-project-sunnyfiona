@@ -10,7 +10,7 @@ public class GameP extends Actor
 {
     public boolean collectedHeart = false;
     public static boolean canMove = true;
-    public int speed;
+    private int speed;
     public boolean drankPotion = false;
     public int pCount = 0;
     public GameP(int x, int y)
@@ -77,7 +77,7 @@ public class GameP extends Actor
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX() - 3, getY());
+                setLocation(getX() - speed, getY());
             }
 
         }
@@ -86,7 +86,7 @@ public class GameP extends Actor
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX() + 3, getY());
+                setLocation(getX() + speed, getY());
             }
         }
 
@@ -95,7 +95,7 @@ public class GameP extends Actor
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX(), getY() + 3);
+                setLocation(getX(), getY() + speed);
             }
         }
 
@@ -104,7 +104,7 @@ public class GameP extends Actor
             restart();
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX(), getY() - 3);
+                setLocation(getX(), getY() - speed);
             }
 
         }

@@ -78,7 +78,7 @@ public class Maze extends World
         greet[1] = new String("boo :''''((((( hoo");
         greet[2] = new String("!!");
         greet[3] = new String("Oh hello.");
-        greet[4] = new String("Move along now, :(");
+        greet[4] = new String("Move along now");
         greet[5] = new String("this isn't a place you want to be.");
         greet[6] = new String("Why am I sad?");
         greet[7] = new String("I just want to make friends");
@@ -88,25 +88,32 @@ public class Maze extends World
         greet[11] = new String("and the next thing I know");
         greet[12] = new String("I'm being thrown onto some bad spikes.");
         greet[13] = new String("That HURTS, you know >:(");
-        greet[14] = new String("It's not my fault I'm a spider :(");
+        greet[14] = new String("It's not my fault I'm a spider");
         greet[15] = new String("Just because I'm spooky");
         greet[16] = new String("doesn't mean I'm mean !!!");
         greet[17] = new String("And here I thought");
         greet[18] = new String("video game society was evolving :(");
-        greet[19] = new String("[make friends with Muffet]");
+        greet[19] = new String("What's that??");
+        greet[19] = new String("YOU want to be my friend :0");
+        greet[19] = new String("A lot of people say that, you know");
+        greet[19] = new String("");
 
         Dialogue greeting = new Dialogue(greet, Color.WHITE);
         addObject(greeting, 0, 0);
     }
     
     public void byeMuffet()
-    {
-        
-        String[] bye = new String[4];
-        bye[0] = new String("Oh");
-        bye[1] = new String("Thank u for the heart :)");
-        bye[2] = new String("[Muffet will remember your contribution to the eternal spider empire]");
-        bye[3] = new String("Okay bestie");
+    {        
+        String[] bye = new String[9];
+        bye[0] = new String("!!");
+        bye[1] = new String("Oh");
+        bye[2] = new String("A heart");
+        bye[3] = new String("I've never received one before");
+        bye[4] = new String("Okay bestie");
+        bye[5] = new String("I suppose we can be");
+        bye[6] = new String("...");
+        bye[7] = new String("Friends.");
+        bye[8] = new String(":)");
 
         Dialogue greeting = new Dialogue(bye, Color.WHITE);
         addObject(greeting, 0, 0);
