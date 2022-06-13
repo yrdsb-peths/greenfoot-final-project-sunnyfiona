@@ -46,9 +46,9 @@ public class Maze extends World
         buildSpikes();
         
         //add potions
-        Potion p1 = new Potion(1);
+        SpeedPotion p1 = new SpeedPotion();
         addObject(p1, 585, 383);
-        Potion p2 = new Potion(2);
+        ResetPotion p2 = new ResetPotion();
         addObject(p2, 433, 105);
         
         //give heart
