@@ -35,5 +35,11 @@ public class Grillby extends Friend
         if(getX() <= 100){
             movingRight = true;
         }
+        
+        if(isTouching(Heart.class)){
+            removeTouching(Heart.class);
+            GrillbysBar world = (GrillbysBar) getWorld();
+            world.increaseScore();
+        }
     }
 }

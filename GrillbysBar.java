@@ -74,18 +74,7 @@ public class GrillbysBar extends World
             soundStarted = true;
             }*/
             addObject(scoreLabel, 550, 50);
-            if(grillbyRightWalk){
-                grillby.walk(this, 450, grillby.getY());
-            }
-            else{
-                grillby.walk(this, 150, grillby.getY());
-            }
-            if(grillby.getX() == 450){
-                grillbyRightWalk = false;
-            }
-            if(grillby.getX() == 150){
-                grillbyRightWalk = true;
-            }
+
         }
 
         if(score >= 1000 && Player.canMove && !finishInitiated){
@@ -98,7 +87,8 @@ public class GrillbysBar extends World
         }
 
         if(frisk.getX() >= 580 && finishInitiated){
-
+            Final world = new Final();
+            Greenfoot.setWorld(world);
         }
     }
     boolean greetInitiated = false;

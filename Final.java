@@ -14,6 +14,7 @@ public class Final extends World
     private GreenfootImage[] scaryScreen; 
     private SimpleTimer animTimer;
     private Wall[] mazeWall;
+    private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
      * Constructor for objects of class Final.
      * 
@@ -22,7 +23,7 @@ public class Final extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        Player.canMoveVertical = false;
+        //Player.canMoveVertical = t;
         addObject(doggo, 300, 150);
         doggo.scaleSmaller(3);
         addObject(frisk, 0, 380);
@@ -51,17 +52,16 @@ public class Final extends World
             revealInitiated = true;
             removeObject(doggo);
             setBackground(scaryScreen[0]);
-            buildMaze();
         }
         if(revealInitiated){
             animate();
-            Player.canMoveVertical = true;
+            ambient.playLoop();
         }
     }
     int curIndex = 1;
     public void animate()
     {
-        if(animTimer.millisElapsed() > 100)
+        if(animTimer.millisElapsed() > 50)
         {
             setBackground(scaryScreen[curIndex]);
             curIndex++;
