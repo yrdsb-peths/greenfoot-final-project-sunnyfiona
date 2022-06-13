@@ -24,6 +24,9 @@ public class Player extends Actor
     public boolean deliveredHeart;
     public static boolean canMoveVertical;
 
+    private int xSpeed = 3;
+    private int ySpeed = 3;
+    
     private static int numLives;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -32,6 +35,9 @@ public class Player extends Actor
     public Player(boolean canMoveVertical)
     {
         this.canMoveVertical = canMoveVertical;
+        if(!canMoveVertical){
+            ySpeed = 0;
+        }
         rightWalk = new GreenfootImage[4];
         leftWalk = new GreenfootImage[4];
         fwdWalk = new GreenfootImage[4];
@@ -82,38 +88,38 @@ public class Player extends Actor
     {
         Tutorial world = new Tutorial();
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")){
-            setLocation(getX() + 3, getY());
+            setLocation(getX() + xSpeed, getY());
 
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX() - 3, getY());
+                setLocation(getX() - xSpeed, getY());
             }
 
         }
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")){
-            setLocation(getX() - 3, getY());
+            setLocation(getX() - xSpeed, getY());
 
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX() + 3, getY());
+                setLocation(getX() + xSpeed, getY());
             }
         }
 
         if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && canMoveVertical){
-            setLocation(getX(), getY() - 3);
+            setLocation(getX(), getY() - ySpeed);
 
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX(), getY() + 3);
+                setLocation(getX(), getY() + ySpeed);
             }
         }
 
         if((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")) && canMoveVertical){
-            setLocation(getX(), getY() + 3);
+            setLocation(getX(), getY() + ySpeed);
 
             if(isTouching(Wall.class) || isTouching(Friend.class))
             {
-                setLocation(getX(), getY() - 3);
+                setLocation(getX(), getY() - ySpeed);
             }
 
         }
