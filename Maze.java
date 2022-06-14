@@ -14,7 +14,7 @@ public class Maze extends World
     private Friend muffet = new Friend("muffet");
     public boolean greetInitiated;
     public boolean byeInitiated;
-    public boolean byeFinished;
+    //public boolean byeFinished;
     GameP frisk = new GameP(37, 30);
     GreenfootSound sad = new GreenfootSound("sounds/maze-sad.mp3");
     GreenfootSound hopeful = new GreenfootSound("sounds/maze-hopeful.mp3");
@@ -59,7 +59,7 @@ public class Maze extends World
         //give heart
         greetInitiated = false;
         byeInitiated = false;
-        byeFinished = false;
+        //byeFinished = false;
         delay = 250;
     }
     
