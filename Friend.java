@@ -36,11 +36,7 @@ public class Friend extends Actor
     public void act()
     {
         animate();
-        if(isTouching(Heart.class)){
-            removeTouching(Heart.class);
-            GrillbysBar world = (GrillbysBar) getWorld();
-            world.increaseScore();
-        }
+        
     }
     /* public void slide(int leftBoundary, int rightBoundary){
         walk(getWorld(), leftBoundary, getY());
@@ -71,39 +67,12 @@ public class Friend extends Actor
      */
     public void scaleSmaller(int factor)
     {
-        /*
-        for(int i = 0; i < rightWalk.length; i++)
-        {
-            leftWalk[i].scale(leftWalk[i].getWidth() / factor, leftWalk[i].getHeight() / factor);
-            rightWalk[i].scale(rightWalk[i].getWidth() / factor, rightWalk[i].getHeight() / factor);
-        }
-        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
-        idle.scale(idle.getWidth() / factor, idle.getHeight() / factor);
-        setImage(idle);
-        */
+        
        for(int i = 0; i < frontAnim.length; i++){
            frontAnim[i].scale(frontAnim[i].getWidth() / factor, frontAnim[i].getHeight() / factor);
        }
        setImage(frontAnim[0]);
     }
-    
-    /**
-     * scale bigger - multiplies the image size of the friend by the factor
-     */
-    
-    /*
-    public void scaleBigger(String name, int factor)
-    {
-        for(int i = 0; i < rightWalk.length; i++)
-        {
-            leftWalk[i].scale(leftWalk[i].getWidth() * factor, leftWalk[i].getHeight() * factor);
-            rightWalk[i].scale(rightWalk[i].getWidth() * factor, rightWalk[i].getHeight() * factor);
-        }
-        GreenfootImage idle = new GreenfootImage("images/" + name + "/" + name + "-idle-0.png");
-        idle.scale(idle.getWidth() * factor, idle.getHeight() * factor);
-    
-    }
-    */
 
     int curIndex = 0;
     public void animate()//(boolean goRight, boolean stopped)

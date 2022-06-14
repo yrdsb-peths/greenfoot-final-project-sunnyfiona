@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Final extends World
+public class Final extends FallingHeartGame
 {
     private Friend doggo = new Friend("annoying-dog");
     private Player frisk = new Player(false);
@@ -14,6 +14,8 @@ public class Final extends World
     private GreenfootImage[] scaryScreen; 
     private SimpleTimer animTimer;
     private Wall[] mazeWall;
+    public Label scoreLabel = new Label(0, 70);
+    private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
      * Constructor for objects of class Final.
      * 
@@ -21,8 +23,8 @@ public class Final extends World
     public Final()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        Player.canMoveVertical = false;
+        super(); 
+        //Player.canMoveVertical = t;
         addObject(doggo, 300, 150);
         doggo.scaleSmaller(3);
         addObject(frisk, 0, 380);
@@ -51,17 +53,21 @@ public class Final extends World
             revealInitiated = true;
             removeObject(doggo);
             setBackground(scaryScreen[0]);
-            buildMaze();
         }
         if(revealInitiated){
             animate();
-            Player.canMoveVertical = true;
+            ambient.playLoop();
         }
     }
+    
+    public void dropHeart(){
+        
+    }
+    
     int curIndex = 1;
     public void animate()
     {
-        if(animTimer.millisElapsed() > 100)
+        if(animTimer.millisElapsed() > 50)
         {
             setBackground(scaryScreen[curIndex]);
             curIndex++;
@@ -75,14 +81,14 @@ public class Final extends World
         greet[1] = new String("You've been making FRIENDS, ay?");
         greet[2] = new String("Well... guess what --");
         
-        Dialogue greeting = new Dialogue(greet, Color.WHITE);
+        Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
     }
     public void showReveal(){
         String[] reveal = new String[1];
         reveal[0] = new String("I DONT WANNA BE YOUR FWRIEND >;(");
         
-        Dialogue dramaticReveal = new Dialogue(reveal, Color.BLACK);
+        Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
     }
     public void buildMaze(){
