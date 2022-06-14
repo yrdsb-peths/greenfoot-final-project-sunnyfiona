@@ -10,7 +10,7 @@ public class GameP extends Actor
 {
     public boolean collectedHeart = false;
     public static boolean canMove = true;
-    private int speed = 5;
+    private int speed = 4;
     public boolean drankPotion = false;
     public int pCount = 0;
     public boolean spawnReset;
@@ -47,7 +47,7 @@ public class GameP extends Actor
         }
         
         if(isTouching(ResetPotion.class)){
-            speed = 5;
+            speed = 4;
             removeTouching(ResetPotion.class);
         }
 

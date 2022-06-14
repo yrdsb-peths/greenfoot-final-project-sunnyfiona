@@ -59,7 +59,7 @@ public class Maze extends World
         greetInitiated = false;
         byeInitiated = false;
         //byeFinished = false;
-        delay = 250;
+        delay = 300;
     }
     
     public void act()
