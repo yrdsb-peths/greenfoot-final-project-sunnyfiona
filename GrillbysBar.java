@@ -13,14 +13,13 @@ public class GrillbysBar extends FallingHeartGame
      */
     private GreenfootImage bar;
     private SimpleTimer delay;
-    public Label scoreLabel = new Label(0, 70);
-    public static int score = 0;
+    
     public boolean win = false;
     //GreenfootSound ambient = new GreenfootSound("sounds/grillbys-bar-ambient.mp3");
     //GreenfootSound inGame = new GreenfootSound("sounds/grillbys-bar-game.mp3");
     public Player frisk;
     Grillby grillby;
-    DropHeart heart;
+    
     /**
      * Constructor for objects of class GrillbysBar.
      * 
@@ -29,19 +28,19 @@ public class GrillbysBar extends FallingHeartGame
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
 
-        super(); 
+        super(false); 
         GreenfootImage bar = new GreenfootImage("images/bg/grillbys.png");
         bar.scale(600, 400);
         setBackground(bar);
-        //addObject("images/grillby/00.png", 300, 300);
         grillby = new Grillby();
-        heart = new DropHeart(30, 30);
+        
         grillby.scaleSmaller(3);
         addObject(grillby, 300, 270);
         frisk = new Player(false);
         addObject(frisk, 20, 50);
         delay = new SimpleTimer();
         delay.mark();
+        
         //ambient.playLoop();
     }
 
@@ -144,8 +143,5 @@ public class GrillbysBar extends FallingHeartGame
         addObject(gameFinished, 0, 0);
     }
 
-    public void increaseScore(){
-        score++;
-        scoreLabel.setValue(score);
-    }
+    
 }

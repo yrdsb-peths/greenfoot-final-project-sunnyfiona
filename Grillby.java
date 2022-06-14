@@ -38,7 +38,7 @@ public class Grillby extends Friend
         
         if(isTouching(Heart.class)){
             removeTouching(Heart.class);
-            GrillbysBar world = (GrillbysBar) getWorld();
+            FallingHeartGame world = (FallingHeartGame) getWorld();
             world.increaseScore();
         }
     }

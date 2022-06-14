@@ -9,12 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Final extends FallingHeartGame
 {
     private Friend doggo = new Friend("annoying-dog");
-    private Player frisk = new Player(false);
+    private Player frisk = new Player(true);
     private Friend scaryDog = new Friend("scary-dog");
     private GreenfootImage[] scaryScreen; 
     private SimpleTimer animTimer;
     private Wall[] mazeWall;
     public Label scoreLabel = new Label(0, 70);
+    public static int score = 0;
+    public boolean win = false;
+
     private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
      * Constructor for objects of class Final.
@@ -23,8 +26,8 @@ public class Final extends FallingHeartGame
     public Final()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(); 
-        //Player.canMoveVertical = t;
+        super(true); 
+
         addObject(doggo, 300, 150);
         doggo.scaleSmaller(3);
         addObject(frisk, 0, 380);
@@ -34,14 +37,15 @@ public class Final extends FallingHeartGame
             scaryScreen[i] = new GreenfootImage("images/bg/scary-screen/scary-dog-" + i + ".png");
             scaryScreen[i].scale(scaryScreen[i].getWidth() * 2, scaryScreen[i].getHeight() * 2);
         }
-        
+
         animTimer = new SimpleTimer();
         animTimer.mark();
-        buildMaze();
+        //buildMaze();
     }
     boolean greetInitiated = false;
     boolean revealInitiated = false;
     public void act(){
+
         if(frisk.getX() >= 50 && Player.canMove && !greetInitiated){
             Player.canMove = false;
             showGreet();
@@ -57,17 +61,26 @@ public class Final extends FallingHeartGame
         if(revealInitiated){
             animate();
             ambient.playLoop();
+            
+            addObject(scoreLabel, 550, 50);
+            if(frisk.getX() > 300){
+                addObject(heart, frisk.getX() - 150, 0);
+            } else{
+                addObject(heart, frisk.getX() + 150, 150);
+            }
         }
-    }
-    
-    public void dropHeart(){
         
     }
-    
+
+    public void increaseScore(){
+        score++;
+        scoreLabel.setValue(score);
+    }
+
     int curIndex = 1;
     public void animate()
     {
-        if(animTimer.millisElapsed() > 50)
+        if(animTimer.millisElapsed() > 200)
         {
             setBackground(scaryScreen[curIndex]);
             curIndex++;
@@ -75,22 +88,25 @@ public class Final extends FallingHeartGame
             animTimer.mark();
         }
     }
+
     public void showGreet(){
         String[] greet = new String[3];
         greet[0] = new String("heywro.");
         greet[1] = new String("You've been making FRIENDS, ay?");
         greet[2] = new String("Well... guess what --");
-        
+
         Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
     }
+
     public void showReveal(){
         String[] reveal = new String[1];
         reveal[0] = new String("I DONT WANNA BE YOUR FWRIEND >;(");
-        
+
         Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
     }
+
     public void buildMaze(){
         mazeWall = new Wall[13];
         for(int i = 0; i < mazeWall.length; i++)
