@@ -27,7 +27,7 @@ public class Maze extends World
     public Maze()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         bg = new GreenfootImage("images/bg/web.jpg");
         bg.scale(getWidth()*1, getHeight()*1); 
         setBackground(bg);
@@ -141,7 +141,7 @@ public class Maze extends World
     
     public void byeMuffet()
     {        
-        String[] bye = new String[9];
+        String[] bye = new String[11];
         bye[0] = new String("!!");
         bye[1] = new String("Oh");
         bye[2] = new String("A heart");
