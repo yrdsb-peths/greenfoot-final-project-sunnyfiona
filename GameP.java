@@ -10,9 +10,10 @@ public class GameP extends Actor
 {
     public boolean collectedHeart = false;
     public static boolean canMove = true;
-    private int speed = 3;
+    private int speed = 5;
     public boolean drankPotion = false;
     public int pCount = 0;
+    public boolean spawnReset;
     public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
@@ -31,20 +32,22 @@ public class GameP extends Actor
             walk();
         }
         
-        // Pick up heart
+        //pick up heart
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
             collectedHeart = true;
+            spawnReset = true;
         }
         
-        if(isTouching(SpeedPotion.class)){
-            speed = 15;   
-            removeTouching(SpeedPotion.class);
+        //get potions
+        if(isTouching(SlowPotion.class)){
+            speed = 2;   
+            removeTouching(SlowPotion.class);
         }
         
         if(isTouching(ResetPotion.class)){
-            speed = 3;
+            speed = 5;
             removeTouching(ResetPotion.class);
         }
 
