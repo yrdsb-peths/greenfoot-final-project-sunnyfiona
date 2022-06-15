@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FallingHeartGame extends World
 {
-    public Label scoreLabel;
+    public static Label scoreLabel;
     public static int score = 0;
     DropHeart heart;
     /**
@@ -21,13 +21,18 @@ public class FallingHeartGame extends World
         super(600, 400, 1, worldBoundary); 
         heart = new DropHeart(30, 30);
         scoreLabel = new Label(0, 70);
+        //score = 0;
     }
-    public void increaseScore(){
+    public static void increaseScore(){
         score++;
         scoreLabel.setValue(score);
     }
-    public void decreaseScore(){
+    public static void decreaseScore(){
         score--;
+        scoreLabel.setValue(score);
+    }
+    public void reset(){
+        score = 0;
         scoreLabel.setValue(score);
     }
 }

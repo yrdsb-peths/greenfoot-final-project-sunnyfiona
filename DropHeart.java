@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class DropHeart extends Heart
 {
     //public static boolean onScreen;
+    Final world = (Final) getWorld();
     public DropHeart(int x, int y){
         super(x, y);
         //onScreen = true;
@@ -19,12 +20,18 @@ public class DropHeart extends Heart
      */
     public void act()
     {
-        FallingHeartGame world = (FallingHeartGame) getWorld();
+        
         setLocation(getX(), getY() + 2);
         if(getY() >= 399 || isTouching(Wall.class))
         {
-            world.removeObject(this);
-            
+            setLocation(getX() - 30, 30);
+            FallingHeartGame.decreaseScore();
+        }
+        
+        if(isTouching(Player.class))
+        {
+            setLocation(getX() - 30, 30);
+            FallingHeartGame.increaseScore();
         }
         
     }

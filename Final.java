@@ -61,7 +61,7 @@ public class Final extends FallingHeartGame
         if(revealInitiated){
             animate();
             ambient.playLoop();
-            
+            frisk.collectFallingHeart();
             addObject(scoreLabel, 550, 50);
             if(frisk.getX() > 300){
                 addObject(heart, frisk.getX() - 150, 0);
@@ -71,11 +71,14 @@ public class Final extends FallingHeartGame
         }
         
     }
+<<<<<<< Updated upstream
 
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
     }
+=======
+>>>>>>> Stashed changes
 
     int curIndex = 1;
     public void animate()

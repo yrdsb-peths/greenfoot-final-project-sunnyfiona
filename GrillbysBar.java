@@ -75,7 +75,7 @@ public class GrillbysBar extends FallingHeartGame
             soundStarted = true;
             }*/
             addObject(scoreLabel, 550, 50);
-
+            
         }
 
         if(score >= 30 && Player.canMove && !finishInitiated){

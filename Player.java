@@ -26,7 +26,7 @@ public class Player extends Actor
 
     private int xSpeed = 3;
     private int ySpeed = 3;
-    
+
     private static int numLives;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -69,27 +69,34 @@ public class Player extends Actor
             walk(); 
             animate();
         }
-        pickUpHeart();
+        //pickUpHeart();
         if(collectedHeart && Greenfoot.mouseClicked(Friend.class)){
             deliveredHeart = true;
         }
         /*
         if(isTouching(Heart.class)){
-            removeTouching(Heart.class);
-            FallingHeartGame world = (FallingHeartGame) getWorld();
-            world.increaseScore();
+        removeTouching(Heart.class);
+        FallingHeartGame world = (FallingHeartGame) getWorld();
+        world.increaseScore();
         }
-        */
+         */
     }
 
     public void pickUpHeart()
     {
-        FallingHeartGame world = (FallingHeartGame) getWorld();
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
             collectedHeart = true;
-            world.increaseScore();
+            
+        }
+    }
+
+    public void collectFallingHeart(){
+        FallingHeartGame world = (FallingHeartGame) getWorld();
+        if(isTouching(Wall.class)){
+            //world.decreaseScore();
+            setLocation(0, 400);
         }
     }
 
@@ -133,7 +140,6 @@ public class Player extends Actor
 
         }
 
-        
 
     }
 
@@ -164,6 +170,4 @@ public class Player extends Actor
 
     }
 
-    
 }
-
