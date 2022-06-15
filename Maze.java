@@ -18,7 +18,7 @@ public class Maze extends World
     private boolean spawnReset;
     GreenfootSound sad = new GreenfootSound("sounds/maze-sad.mp3");
     GreenfootSound hopeful = new GreenfootSound("sounds/maze-hopeful.mp3");
-    //public boolean byeFinished;
+    private boolean muffetExit = false;
     private int delay;
     /**
      * Constructor for objects of class Maze.
@@ -27,7 +27,7 @@ public class Maze extends World
     public Maze()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, false);
+        super(600, 400, 1);
         bg = new GreenfootImage("images/bg/web.jpg");
         bg.scale(getWidth()*1, getHeight()*1); 
         setBackground(bg);
@@ -91,14 +91,12 @@ public class Maze extends World
         //makes muffet move after finished talking, can move to GrillbysBar
         if(byeInitiated) {
             delay--;
-            if(delay <= 0) {
-                muffet.walk(this, muffet.getX(), 400);
-            }
-        }
-        if(byeInitiated){
-            delay--;
-            if(delay <= 0){
-                muffet.walk(this, muffet.getX(), 400);
+            if(delay <= 0 && !muffetExit) {
+                muffet.walk(this, 0, muffet.getY());
+                if(muffet.getX() <= 0) {
+                    removeObject(muffet);
+                    muffetExit = true;
+                }
             }
         }
         if(byeInitiated && frisk.getX() >= 590){
@@ -151,7 +149,7 @@ public class Maze extends World
         bye[6] = new String("...");
         bye[7] = new String("Friends.");
         bye[8] = new String(":)");
-        bye[9] = new String("Proceed left now, I guess.");
+        bye[9] = new String("Proceed now, I guess.");
         bye[10] = new String("I'm glad we met.");
 
         Dialogue greeting = new Dialogue(bye);//, Color.WHITE);
