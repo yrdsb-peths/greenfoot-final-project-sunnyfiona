@@ -17,6 +17,7 @@ public class Final extends FallingHeartGame
     public Label scoreLabel = new Label(0, 70);
     public static int score = 0;
     public boolean win = false;
+    Slider[] walls;
 
     private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
@@ -40,7 +41,7 @@ public class Final extends FallingHeartGame
 
         animTimer = new SimpleTimer();
         animTimer.mark();
-        //buildMaze();
+        buildWalls();
     }
     boolean greetInitiated = false;
     boolean revealInitiated = false;
@@ -69,9 +70,28 @@ public class Final extends FallingHeartGame
                 addObject(heart, frisk.getX() + 150, 150);
             }
         }
-        
     }
 
+    public void buildWalls()
+    {
+        walls = new Slider[5];
+        for(int i = 0; i < walls.length; i++) {
+            walls[i] = new Slider("maze-wall");
+        }
+        
+        //slider 1
+        addObject(walls[0], 57, 315);
+        
+        //slider 2
+        addObject(walls[1], 171, 230);
+        
+        //slider 3
+        addObject(walls[2], 285, 145);
+        
+        //slider 4
+        addObject(walls[3], 399, 60);
+    }
+    
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);

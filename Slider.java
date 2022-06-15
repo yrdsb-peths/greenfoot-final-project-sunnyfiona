@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Slider extends Wall
 {
     boolean movingRight = true;
-    int speed = 2;
+    int speed = 3;
     
     public Slider(String text)
     {
@@ -29,10 +29,10 @@ public class Slider extends Wall
             setLocation(getX() - speed, getY());
         }
         
-        if(getX() >= getWorld().getWidth() - 100){
+        if(getX() >= getWorld().getWidth() -10){
             movingRight = false;
         }
-        if(getX() <= 100){
+        if(getX() <= 10){
             movingRight = true;
         }
         
