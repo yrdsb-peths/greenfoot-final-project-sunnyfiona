@@ -19,16 +19,14 @@ public class DropHeart extends Heart
      */
     public void act()
     {
-        World world = getWorld();
+        FallingHeartGame world = (FallingHeartGame) getWorld();
         setLocation(getX(), getY() + 2);
-        if(isTouching(Wall.class)){
-            world.removeObject(this);
-        }
-        if(getY() >= 399)
+        if(getY() >= 399 || isTouching(Wall.class))
         {
             world.removeObject(this);
-            //onScreen = false;
+            
         }
+        
     }
     /*
     public void dropHeart(){

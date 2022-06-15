@@ -73,14 +73,23 @@ public class Player extends Actor
         if(collectedHeart && Greenfoot.mouseClicked(Friend.class)){
             deliveredHeart = true;
         }
+        /*
+        if(isTouching(Heart.class)){
+            removeTouching(Heart.class);
+            FallingHeartGame world = (FallingHeartGame) getWorld();
+            world.increaseScore();
+        }
+        */
     }
 
     public void pickUpHeart()
     {
+        FallingHeartGame world = (FallingHeartGame) getWorld();
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
             collectedHeart = true;
+            world.increaseScore();
         }
     }
 
