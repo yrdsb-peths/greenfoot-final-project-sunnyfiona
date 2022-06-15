@@ -93,6 +93,7 @@ public class Player extends Actor
         }
     }
 
+    
     public void walk()
     {
         Tutorial world = new Tutorial();
