@@ -17,7 +17,8 @@ public class Final extends FallingHeartGame
     public static int score = 0;
     public boolean win = false;
     private Slider[] walls;
-
+    public DropHeart heart = new DropHeart(30, 30);
+    
     private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
      * Constructor for objects of class Final.

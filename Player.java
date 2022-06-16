@@ -94,7 +94,7 @@ public class Player extends Actor
     }
 
     public void collectFallingHeart(){
-        FallingHeartGame world = (FallingHeartGame) getWorld();
+        Final world = (Final) getWorld();
         if(isTouching(Wall.class)){
             setLocation(0, 400);
         }

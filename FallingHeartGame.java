@@ -22,12 +22,11 @@ public class FallingHeartGame extends World
         heart = new DropHeart(30, 30);
         scoreLabel = new Label(0, 70);
     }
-    public void increaseScore(){
-        score++;
-        scoreLabel.setValue(score);
-    }
+    
+    /*
     public void decreaseScore(){
         score--;
         scoreLabel.setValue(score);
     }
+    */
 }

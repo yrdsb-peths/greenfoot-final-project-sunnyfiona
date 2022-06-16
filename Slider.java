@@ -39,7 +39,7 @@ public class Slider extends Wall
         
         if(isTouching(Heart.class)){
             removeTouching(Heart.class);
-            FallingHeartGame world = (FallingHeartGame) getWorld();
+            Final world = (Final) getWorld();
             world.increaseScore();
         }
     }
