@@ -98,6 +98,10 @@ public class Player extends Actor
         if(isTouching(Wall.class)){
             setLocation(0, 400);
         }
+        if(isTouching(DropHeart.class)){
+            world.increaseScore();
+            
+        }
     }
     
     public void walk()

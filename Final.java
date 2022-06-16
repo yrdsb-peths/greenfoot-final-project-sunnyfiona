@@ -63,11 +63,15 @@ public class Final extends FallingHeartGame
             ambient.playLoop();
             
             addObject(scoreLabel, 550, 50);
+            addObject(heart, 300, 0);
+            frisk.collectFallingHeart();
+            /*
             if(frisk.getX() > 300){
-                addObject(heart, frisk.getX() - 150, 0);
+            addObject(heart, frisk.getX() - 150, 0);
             } else{
-                addObject(heart, frisk.getX() + 150, 150);
+            addObject(heart, frisk.getX() + 150, 150);
             }
+             */
         }
     }
 
@@ -77,23 +81,28 @@ public class Final extends FallingHeartGame
         for(int i = 0; i < walls.length; i++) {
             walls[i] = new Slider("slider");
         }
-        
+
         //slider 1
         addObject(walls[0], 50, 315);
-        
+
         //slider 2
         addObject(walls[1], 200, 230);
-        
+
         //slider 3
         addObject(walls[2], 350, 145);
-        
+
         //slider 4
         addObject(walls[3], 500, 60);
     }
-    
+
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
+        if(frisk.getX() > 300){
+            addObject(heart, frisk.getX() - 150, 0);
+        } else{
+            addObject(heart, frisk.getX() + 150, 0);
+        }
     }
 
     int curIndex = 1;
