@@ -13,11 +13,10 @@ public class Final extends FallingHeartGame
     private Friend scaryDog = new Friend("scary-dog");
     private GreenfootImage[] scaryScreen; 
     private SimpleTimer animTimer;
-    private Wall[] mazeWall;
     public Label scoreLabel = new Label(0, 70);
     public static int score = 0;
     public boolean win = false;
-    Slider[] walls;
+    private Slider[] walls;
 
     private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
@@ -76,20 +75,20 @@ public class Final extends FallingHeartGame
     {
         walls = new Slider[5];
         for(int i = 0; i < walls.length; i++) {
-            walls[i] = new Slider("maze-wall");
+            walls[i] = new Slider("slider");
         }
         
         //slider 1
-        addObject(walls[0], 57, 315);
+        addObject(walls[0], 50, 315);
         
         //slider 2
-        addObject(walls[1], 171, 230);
+        addObject(walls[1], 200, 230);
         
         //slider 3
-        addObject(walls[2], 285, 145);
+        addObject(walls[2], 350, 145);
         
         //slider 4
-        addObject(walls[3], 399, 60);
+        addObject(walls[3], 500, 60);
     }
     
     public void increaseScore(){
@@ -125,27 +124,5 @@ public class Final extends FallingHeartGame
 
         Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
-    }
-
-    public void buildMaze(){
-        mazeWall = new Wall[13];
-        for(int i = 0; i < mazeWall.length; i++)
-        {
-            mazeWall[i] = new Wall("maze-wall");
-        }
-        int x1 = 0;
-        int limit = 7;
-        for(int i = 0; i < limit; i++)
-        {
-            addObject(mazeWall[i], x1, 300);
-            x1 += 50;
-        }
-        int x2 = 615;
-        limit = 13;
-        for(int i = 8; i < limit; i++)
-        {
-            addObject(mazeWall[i], x2, 200);
-            x2 -= 50;
-        }
     }
 }

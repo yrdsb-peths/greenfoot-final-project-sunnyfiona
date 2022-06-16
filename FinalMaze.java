@@ -22,12 +22,15 @@ public class FinalMaze extends World
     
     public void buildWalls()
     {
-        walls = new Slider[5];
+        walls = new Slider[3];
+        /*
         for(int i = 0; i < walls.length; i++) {
-            walls[i] = new Slider("maze-wall");
+            walls[i] = new Slider("maze-wall", 57, 315);
         }
+        */
         
         //slider 1
+        walls[0] = new Slider("maze-wall");
         addObject(walls[0], 57, 315);
         
         //slider 2

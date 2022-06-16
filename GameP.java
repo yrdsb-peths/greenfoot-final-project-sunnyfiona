@@ -61,25 +61,6 @@ public class GameP extends Actor
             setLocation(20, 384);
         }
     }
-
-
-    // public void drinkPotion()
-    // {
-    // speed = 8;
-    // if(isTouching(Potion.class) && !drankPotion)
-    // {
-    // removeTouching(Potion.class);
-    // pCount++;
-    // if(pCount == 1) {
-    // speed = 1;
-    // drankPotion = false;
-    // }
-    // else {
-    // speed = 3;
-    // }
-    // }
-    // }
-
     
     public void walk()
     {

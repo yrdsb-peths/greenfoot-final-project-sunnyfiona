@@ -10,10 +10,11 @@ public class Slider extends Wall
 {
     boolean movingRight = true;
     int speed = 3;
+    Obstacle[] spikes;
     
     public Slider(String text)
     {
-        super(text);
+        super("slider", -200, -140);
     }
     
     /**

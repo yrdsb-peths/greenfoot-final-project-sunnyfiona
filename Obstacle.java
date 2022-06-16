@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Obstacle extends Wall
 {
-    public Obstacle()
+    public Obstacle(int scaleX, int scaleY)
     {
-        super("spike", -275, -230);
+        super("spike", scaleX, scaleY);
     }
     
     /**

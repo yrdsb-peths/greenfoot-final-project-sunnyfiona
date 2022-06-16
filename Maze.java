@@ -158,12 +158,12 @@ public class Maze extends World
     
     public void buildSpikes()
     {
-        Obstacle spike = new Obstacle();
+        //Obstacle spike = new Obstacle();
         
         spikeWall = new Obstacle[50];
         for(int i = 0; i < spikeWall.length; i++)
         {
-            spikeWall[i] = new Obstacle();
+            spikeWall[i] = new Obstacle(-275, -230);
         }
         
         //1st section
@@ -272,18 +272,6 @@ public class Maze extends World
             addObject(mazeWall[i], x5, 70);
             x5 += 50;
         }
-        
-        /*
-        //3rd h wall
-        int x6 = 170;
-        limit = 51;
-        for(int i = 48; i < limit; i++)
-        {
-            addObject(mazeWall[i], x6, 180);
-            x6 += 50;
-        }
-        addObject(mazeWall[52], 300, 180);
-        */
         
         // 4th v wall
         int y4 = 264;
