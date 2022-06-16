@@ -15,7 +15,7 @@ public class Dialogue extends Actor
     private String[] texts;
     //private Color color;
     Label messageLabel;
-    private static GreenfootImage sunnySucks;
+    
     Textbox box; 
 
     public Dialogue(String[] texts){
@@ -31,7 +31,7 @@ public class Dialogue extends Actor
         box = new Textbox();
         world.addObject(box, 300, 330);
         
-        messageLabel = new Label(texts[curTextIndex], 25);
+        messageLabel = new Label(texts[curTextIndex], 23);
         messageLabel.setLineColor(Color.GRAY);
         messageLabel.setFillColor(Color.BLACK);
         //setImage(messageLabel);

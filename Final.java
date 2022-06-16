@@ -15,10 +15,10 @@ public class Final extends FallingHeartGame
     private SimpleTimer animTimer;
     public Label scoreLabel = new Label(0, 70);
     public static int score = 0;
-    public boolean win = false;
+    
     private Slider[] walls;
     public DropHeart heart = new DropHeart(30, 30);
-    
+
     private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
      * Constructor for objects of class Final.
@@ -45,6 +45,7 @@ public class Final extends FallingHeartGame
     }
     boolean greetInitiated = false;
     boolean revealInitiated = false;
+    boolean win = false;
     public void act(){
 
         if(frisk.getX() >= 50 && Player.canMove && !greetInitiated){
@@ -59,20 +60,19 @@ public class Final extends FallingHeartGame
             removeObject(doggo);
             setBackground(scaryScreen[0]);
         }
-        if(revealInitiated){
+        if(revealInitiated && !win){
             animate();
             ambient.playLoop();
-            
+
             addObject(scoreLabel, 550, 50);
             addObject(heart, 300, 0);
             frisk.collectFallingHeart();
-            /*
-            if(frisk.getX() > 300){
-            addObject(heart, frisk.getX() - 150, 0);
-            } else{
-            addObject(heart, frisk.getX() + 150, 150);
-            }
-             */
+            
+        }
+        if(score == 30){
+            win = true;
+            setBackground("scaryScreen[0]");
+            showBye();
         }
     }
 
@@ -129,10 +129,22 @@ public class Final extends FallingHeartGame
     }
 
     public void showReveal(){
-        String[] reveal = new String[1];
+        String[] reveal = new String[3];
         reveal[0] = new String("I DONT WANNA BE YOUR FWRIEND >;(");
+        reveal[1] = new String("[Annoying Dog will get wary");
+        reveal[2] = new String("if humans move too much.]");
 
         Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
     }
+    
+    public void showBye(){
+        String[] bye = new String[2];
+        bye[0] = new String("..");
+        bye[1] = new String("..");
+
+        Dialogue goodBye = new Dialogue(bye);
+        addObject(goodBye, 0, 0);
+    }
+    
 }
