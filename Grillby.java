@@ -22,6 +22,7 @@ public class Grillby extends Friend
     public void act()
     {
         // Add your action code here.
+        animate();
         if(movingRight){
             setLocation(getX() + speed, getY());
         } else {
