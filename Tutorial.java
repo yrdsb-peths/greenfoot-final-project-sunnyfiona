@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Player begins in this world after passing the title screen and learns how to navigate the world and collect hearts.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny 
+ * @version June 16, 2022
  */
 public class Tutorial extends World
 {
@@ -17,8 +17,7 @@ public class Tutorial extends World
     private int delay;
     GreenfootSound ambient = new GreenfootSound("sounds/tutorial-ambient.mp3");
     /**
-     * Constructor for objects of class MyWorld.
-     * 
+     * Constructor for objects of class Tutorial.
      */
     public Tutorial()
     {    
@@ -36,6 +35,10 @@ public class Tutorial extends World
         delay = 250;
         //setDialogues();
     }
+    
+    /**
+     * This method plays the Temmie's background music.
+     */
     public void started(){
         ambient.playLoop();
     }
@@ -55,6 +58,7 @@ public class Tutorial extends World
             greetInitiated = true;
             showGreet();
         }
+        
         if(greetInitiated && !frisk.collectedHeart){
             addObject(heart, 20, 20);
         }
@@ -74,6 +78,9 @@ public class Tutorial extends World
         }
     }
 
+    /**
+     * This method sets the dialogue for Temmie's greeting.
+     */
     public void showGreet()
     {
         // Show Text
@@ -90,6 +97,9 @@ public class Tutorial extends World
     }
     boolean byeInitiated = false;
     boolean byeFinished = false;
+    /**
+     *  This method sets the dialogue for Temmie's goodbye.
+     */
     public void showBye(){
         //if(frisk.deliveredHeart){
         ambient.stop();
@@ -102,13 +112,13 @@ public class Tutorial extends World
         bye[5] = new String("some-tem-body needs tem nap now. byEE");
         Dialogue goodbye = new Dialogue(bye);//, Color.WHITE);
         addObject(goodbye, 0, 0);
-        //}
-        
     }
 
+    /**
+     * This method uses the image of a tree to function as a part of the Wall class, and adds the object to the world.
+     */
     public void buildTrees()
     {
-
         tree = new Wall[8];
         int xCoord = 0;
         for(int i = 0; i < 4; i++)
@@ -128,7 +138,6 @@ public class Tutorial extends World
             addObject(tree[i], xCoord, 0);
 
         }
-
     }
 
 }

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * In this world, the player chooses to enter the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 16, 2022
  */
 public class TitleScreen extends World
 {
