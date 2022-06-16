@@ -84,15 +84,21 @@ public class Player extends Actor
 
     public void pickUpHeart()
     {
-        FallingHeartGame world = (FallingHeartGame) getWorld();
+        //FallingHeartGame world = (FallingHeartGame) getWorld();
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
             collectedHeart = true;
-            world.increaseScore();
+            //world.increaseScore();
         }
     }
 
+    public void collectFallingHeart(){
+        FallingHeartGame world = (FallingHeartGame) getWorld();
+        if(isTouching(Wall.class)){
+            setLocation(0, 400);
+        }
+    }
     
     public void walk()
     {
