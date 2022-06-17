@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Friend
-comment0.text=\n\ Write\ a\ description\ of\ class\ Friend\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Friend\ here.\n\ \n\ @author\ Finny\n\ @version\ June\ 17,\ 2022\n
 comment1.params=name
 comment1.target=Friend(java.lang.String)
 comment1.text=\n\ Constructor\ for\ the\ class.\ Sets\ the\ images\ of\ the\ NPCs\ \n\ and\ sets\ the\ animations.\n
@@ -9,10 +9,11 @@ comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ Friend\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=world\ x\ y
 comment3.target=void\ walk(greenfoot.World,\ int,\ int)
-comment3.text=\ public\ void\ slide(int\ leftBoundary,\ int\ rightBoundary){\n\ \ \ \ \ \ \ \ walk(getWorld(),\ leftBoundary,\ getY());\n\ \ \ \ \ \ \ \ walk(getWorld(),\ rightBoundary,\ getY());\n}
+comment3.text=\n\ Moves\ friend\ around\ world\n\ \n\ @param\ world\:\ which\ world\ friend\ is\ in\n\ @param\ x\:\ desired\ horizontal\ position\ in\ coordinates\n\ @param\ y\:\ desired\ vertical\ position\ in\ coordinates\n
 comment4.params=factor
 comment4.target=void\ scaleSmaller(int)
-comment4.text=\n\ scale\ smaller\ -\ divides\ the\ image\ size\ of\ the\ friend\ by\ the\ factor\n
+comment4.text=\n\ Scales\ images\ smaller\ (divides\ the\ image\ size\ of\ the\ friend\ by\ the\ factor)\n\ \n\ @param\ factor\:\ the\ number\ the\ friend\ image\ will\ be\ divided\ by\n
 comment5.params=
 comment5.target=void\ animate()
+comment5.text=\n\ Animates\ the\ image\ of\ friend\n
 numComments=6

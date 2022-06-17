@@ -30,7 +30,6 @@ public class Maze extends World
     GreenfootSound hopeful = new GreenfootSound("sounds/maze-hopeful.mp3");
     /**
      * Constructor for objects of class Maze.
-     * 
      */
     public Maze()
     {    
