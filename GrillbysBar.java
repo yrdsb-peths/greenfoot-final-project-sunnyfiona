@@ -8,18 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GrillbysBar extends FallingHeartGame
 {
-    /**
-     *  Instance variables
-     */
+    // used for images in world
     private GreenfootImage bar;
+    
+    // used for gameplay
     private SimpleTimer delay;
+    public boolean win = false;
+    
+    // list of actors
     public DropHeart heart;
     private Label scoreLabel;
-    public boolean win = false;
+    public Player frisk;
+    public Grillby grillby;
+    
     //GreenfootSound ambient = new GreenfootSound("sounds/grillbys-bar-ambient.mp3");
     //GreenfootSound inGame = new GreenfootSound("sounds/grillbys-bar-game.mp3");
-    public Player frisk;
-    Grillby grillby;
 
     /**
      * Constructor for objects of class GrillbysBar.
@@ -28,7 +31,6 @@ public class GrillbysBar extends FallingHeartGame
     public GrillbysBar()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-
         super(false); 
         GreenfootImage bar = new GreenfootImage("images/bg/grillbys.png");
         bar.scale(600, 400);
@@ -95,11 +97,17 @@ public class GrillbysBar extends FallingHeartGame
         }
     }
 
+    /**
+     * Score increases by 1
+     */
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
     }
     boolean greetInitiated = false;
+    /**
+     * Sets dialogue for Grillby's greeting
+     */
     public void showGreet(){
         String[] greet = new String[10];
         greet[0] = new String("Oh boy, I sure love my bar.");
@@ -117,13 +125,16 @@ public class GrillbysBar extends FallingHeartGame
         addObject(greeting, 0, 0);
     }
     boolean gameIntroInitiated = false;
+    /**
+     * Sets dialogue for Grillby's game rules
+     */
     public void showGameIntro(){
         String[] intro = new String[12];
         intro[0] = new String("So, uh, you getting down anytime soon, or..?");
         intro[1] = new String("...");
         intro[2] = new String("What? You want to make friends?");
         intro[3] = new String("Temmie said you need to give FRIENDS hearts?");
-        intro[4] = new String("You do know that's not how you actually make friends, right?");
+        intro[4] = new String("You do know that's not how \n you actually make friends, right?");
         intro[5] = new String("Alright, how 'bout this.");
         intro[6] = new String("You can DROP hearts to me with the SPACE BAR.");
         intro[7] = new String("Hm? DROP how many? Until when?");
@@ -136,6 +147,9 @@ public class GrillbysBar extends FallingHeartGame
         addObject(gameIntro, 0, 0);
     }
     boolean finishInitiated = false;
+    /**
+     * Sets dialogue for Grillby's goodbye
+     */
     public void showFinished(){
         String[] finished = new String[7];
         finished[0] = new String("Wow.");
@@ -149,5 +163,4 @@ public class GrillbysBar extends FallingHeartGame
         Dialogue gameFinished = new Dialogue(finished);//, Color.WHITE);
         addObject(gameFinished, 0, 0);
     }
-
 }
