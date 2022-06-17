@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Friend here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 17, 2022
  */
 public class Friend extends Actor
 {
@@ -42,6 +42,13 @@ public class Friend extends Actor
         walk(getWorld(), leftBoundary, getY());
         walk(getWorld(), rightBoundary, getY());
     } */
+    /**
+     * Moves friend around world
+     * 
+     * @param world: which world friend is in
+     * @param x: desired horizontal position in coordinates
+     * @param y: desired vertical position in coordinates
+     */
     public void walk(World world, int x, int y){
         if(getX() > x)
         {
@@ -60,10 +67,12 @@ public class Friend extends Actor
         } 
         else if(getY() < y){
             this.setLocation(getX(), getY() + 2);
-        }
+        }else{}
     }
     /**
-     * scale smaller - divides the image size of the friend by the factor
+     * Scales images smaller (divides the image size of the friend by the factor)
+     * 
+     * @param factor: the number the friend image will be divided by
      */
     public void scaleSmaller(int factor)
     {
@@ -75,6 +84,9 @@ public class Friend extends Actor
     }
 
     int curIndex = 0;
+    /**
+     * Animates the image of friend
+     */
     public void animate()//(boolean goRight, boolean stopped)
     {
         
