@@ -60,7 +60,7 @@ public class Friend extends Actor
         } 
         else if(getY() < y){
             this.setLocation(getX(), getY() + 2);
-        }
+        }else{}
     }
     /**
      * scale smaller - divides the image size of the friend by the factor

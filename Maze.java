@@ -18,7 +18,8 @@ public class Maze extends World
     public boolean byeInitiated;
     private boolean spawnReset;
     private boolean muffetExit = false;
-    private int delay;
+    private int delay1;
+    private int delay2;
     
     // list of actors
     private Friend muffet = new Friend("muffet");
@@ -44,7 +45,9 @@ public class Maze extends World
         addObject(frisk, 20, 384);
         
         //add muffet
-        addObject(muffet, 575, 25);
+        //addObject(muffet, 575, 25);
+        addObject(muffet, 60, 390);
+        delay1 = 600;
         
         //add heart
         Heart heart = new Heart(25, 25);
@@ -65,17 +68,22 @@ public class Maze extends World
         //give heart
         greetInitiated = false;
         byeInitiated = false;
-        //byeFinished = false;
-        delay = 300;
+        delay2 = 300;
     }
     
     public void act()
     {
-        //say hi
         if(frisk.getX() >= 20 && frisk.getY() <= 384 && GameP.canMove && !greetInitiated){
             GameP.canMove = false;
             hiMuffet();
             greetInitiated = true;
+        }
+        if(greetInitiated && GameP.canMove) {
+            delay1--;
+            if(delay1 <= 0) {
+            muffet.walk(this, 575, muffet.getY());
+            muffet.walk(this, muffet.getX(), 25);
+            }
         }
         
         //spawn reset potion
@@ -97,8 +105,8 @@ public class Maze extends World
         
         //makes muffet move after finished talking, can move to GrillbysBar
         if(byeInitiated) {
-            delay--;
-            if(delay <= 0 && !muffetExit) {
+            delay2--;
+            if(delay2 <= 0 && !muffetExit) {
                 muffet.walk(this, 0, muffet.getY());
                 if(muffet.getX() <= 0) {
                     removeObject(muffet);
@@ -118,7 +126,7 @@ public class Maze extends World
      */
     public void hiMuffet()
     {
-        String[] greet = new String[19];
+        String[] greet = new String[18];
         greet[0] = new String("boohoo :'(");
         greet[1] = new String("boo :''''((((( hoo");
         greet[2] = new String("!!");
@@ -131,13 +139,12 @@ public class Maze extends World
         greet[9] = new String("That HURTS, you know >:(");
         greet[10] = new String("It's not my fault I'm a spider");
         greet[11] = new String("Just because I'm spooky \n doesn't mean I'm mean!");
-        greet[12] = new String("doesn't mean I'm mean!");
-        greet[13] = new String("And here I thought video \n game society was evolving :(");
-        greet[14] = new String("..");
-        greet[15] = new String("What's that??");
-        greet[16] = new String("YOU want to be my friend :0");
-        greet[17] = new String("A lot of people say that, you know.");
-        greet[18] = new String("So I guess we'll see.");
+        greet[12] = new String("And here I thought video \n game society was evolving :(");
+        greet[13] = new String("..");
+        greet[14] = new String("What's that??");
+        greet[15] = new String("YOU want to be my friend :0");
+        greet[16] = new String("A lot of people say that, you know.");
+        greet[17] = new String("So I guess we'll see.");
 
         Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
