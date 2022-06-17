@@ -45,6 +45,7 @@ public class Maze extends World
         
         //add muffet
         addObject(muffet, 575, 25);
+        muffet.scaleSmaller(25);
         
         //add heart
         Heart heart = new Heart(25, 25);
