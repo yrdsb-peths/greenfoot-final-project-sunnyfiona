@@ -42,7 +42,7 @@ public class GameP extends Actor
         
         //get potions
         if(isTouching(SlowPotion.class)){
-            speed = 2;   
+            speed -= 2;   
             removeTouching(SlowPotion.class);
         }
         

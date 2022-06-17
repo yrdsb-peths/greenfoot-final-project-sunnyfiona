@@ -46,7 +46,7 @@ public class Maze extends World
         //add muffet
         //addObject(muffet, 575, 25);
         addObject(muffet, 60, 390);
-        delay1 = 600;
+        delay1 = 700;
         
         //add heart
         Heart heart = new Heart(25, 25);
