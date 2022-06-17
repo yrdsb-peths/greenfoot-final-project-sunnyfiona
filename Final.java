@@ -81,10 +81,12 @@ public class Final extends FallingHeartGame
             byeInitiated = true;
             setBackground(scaryScreen[1]);
         }
+        /*
         if(byeInitiated && Player.canMove){
             TitleScreen world = new TitleScreen();
             Greenfoot.setWorld(world);
         }
+        */
     }
 
     /**
