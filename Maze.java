@@ -118,30 +118,26 @@ public class Maze extends World
      */
     public void hiMuffet()
     {
-        String[] greet = new String[23];
+        String[] greet = new String[19];
         greet[0] = new String("boohoo :'(");
         greet[1] = new String("boo :''''((((( hoo");
         greet[2] = new String("!!");
         greet[3] = new String("Oh hello.");
-        greet[4] = new String("Move along now");
-        greet[5] = new String("this isn't a place you want to be.");
-        greet[6] = new String("Why am I sad?");
-        greet[7] = new String("I just want to make friends");
-        greet[8] = new String("and share my spider bake sale.");
-        greet[9] = new String("But instead people always just think");
-        greet[10] = new String("that I'm some mean guy,");
-        greet[11] = new String("and the next thing I know");
-        greet[12] = new String("I'm being thrown onto some bad spikes.");
-        greet[13] = new String("That HURTS, you know >:(");
-        greet[14] = new String("It's not my fault I'm a spider");
-        greet[15] = new String("Just because I'm spooky");
-        greet[16] = new String("doesn't mean I'm mean !!!");
-        greet[17] = new String("And here I thought");
-        greet[18] = new String("video game society was evolving :(");
-        greet[19] = new String("What's that??");
-        greet[20] = new String("YOU want to be my friend :0");
-        greet[21] = new String("A lot of people say that, you know");
-        greet[22] = new String("So I guess we'll see.");
+        greet[4] = new String("Move along now, this isn't \n a place you want to be.");
+        greet[5] = new String("Why am I sad?");
+        greet[6] = new String("I just want to make friends \n and share my spider bake sale.");
+        greet[7] = new String("But instead people always just think \n that I'm some mean guy,");
+        greet[8] = new String("and the next thing I know \n I'm being thrown onto some bad spikes.");
+        greet[9] = new String("That HURTS, you know >:(");
+        greet[10] = new String("It's not my fault I'm a spider");
+        greet[11] = new String("Just because I'm spooky \n doesn't mean I'm mean!");
+        greet[12] = new String("doesn't mean I'm mean!");
+        greet[13] = new String("And here I thought video \n game society was evolving :(");
+        greet[14] = new String("..");
+        greet[15] = new String("What's that??");
+        greet[16] = new String("YOU want to be my friend :0");
+        greet[17] = new String("A lot of people say that, you know.");
+        greet[18] = new String("So I guess we'll see.");
 
         Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);

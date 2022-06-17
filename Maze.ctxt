@@ -1,18 +1,21 @@
 #BlueJ class context
 comment0.target=Maze
-comment0.text=\r\n\ Spawns\ player\ in\ a\ maze\ minigame.\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 16,\ 2022\r\n
+comment0.text=\n\ Spawns\ player\ in\ a\ maze\ minigame.\n\ \n\ @author\ Finny\n\ @version\ June\ 16,\ 2022\n
 comment1.params=
 comment1.target=Maze()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Maze.\r\n\ \r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Maze.\n\ \n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ hiMuffet()
+comment3.text=\n\ Sets\ dialogue\ for\ greeting\ Muffet\n
 comment4.params=
 comment4.target=void\ byeMuffet()
+comment4.text=\n\ Sets\ dialogue\ for\ leaving\ Muffet\n
 comment5.params=
 comment5.target=void\ buildSpikes()
+comment5.text=\n\ Sets\ images\ for\ the\ spikes\ on\ maze\ walls\n
 comment6.params=
 comment6.target=void\ buildMaze()
-comment6.text=\r\n\ Builds\ maze\r\n
+comment6.text=\n\ Sets\ images\ for\ the\ maze\ walls\n
 numComments=7
