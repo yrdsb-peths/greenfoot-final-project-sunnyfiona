@@ -8,17 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Final extends FallingHeartGame
 {
+    // used for images in world
+    private GreenfootImage[] scaryScreen; 
+    
+    // used for gameplay
+    private SimpleTimer animTimer;
+    public static int score = 0;
+    private Slider[] walls;
+    
+    // list of actors
     private Friend doggo = new Friend("annoying-dog");
     private Player frisk = new Player(true);
     private Friend scaryDog = new Friend("scary-dog");
-    private GreenfootImage[] scaryScreen; 
-    private SimpleTimer animTimer;
     public Label scoreLabel = new Label(0, 70);
-    public static int score = 0;
-
-    private Slider[] walls;
     public DropHeart heart = new DropHeart(30, 30);
 
+    // sounds
     private GreenfootSound ambient = new GreenfootSound("sounds/final-ambient.mp3");
     /**
      * Constructor for objects of class Final.
@@ -70,7 +75,7 @@ public class Final extends FallingHeartGame
 
         }
         boolean byeInitiated = false;
-        if(score == 2 && Player.canMove && !win){
+        if(score == 15 && Player.canMove && !win){
             win = true;
             Player.canMove = false;
             showBye();
@@ -83,6 +88,9 @@ public class Final extends FallingHeartGame
         }
     }
 
+    /**
+     * Sets the sliders into world
+     */
     public void buildWalls()
     {
         walls = new Slider[5];
@@ -103,6 +111,9 @@ public class Final extends FallingHeartGame
         addObject(walls[3], 500, 60);
     }
 
+    /**
+     * Increases score with heart collection
+     */
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
@@ -114,6 +125,9 @@ public class Final extends FallingHeartGame
     }
 
     int curIndex = 1;
+    /**
+     * Animates Annoying Dog bg
+     */
     public void animate()
     {
         if(animTimer.millisElapsed() > 200)
@@ -125,43 +139,54 @@ public class Final extends FallingHeartGame
         }
     }
 
+    /**
+     * Sets Annoying Dog greeting dialogue
+     */
     public void showGreet(){
-        String[] greet = new String[3];
+        String[] greet = new String[4];
         greet[0] = new String("heywro.");
         greet[1] = new String("You've been making FRIENDS, ay?");
-        greet[2] = new String("Well... guess what --");
+        greet[2] = new String("Well... guess what");
+        greet[3] = new String("owo");
 
         Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
     }
 
+    /** 
+     * Continues dialogue after bg change
+     */
     public void showReveal(){
-        String[] reveal = new String[3];
+        String[] reveal = new String[2];
         reveal[0] = new String("I DONT WANNA BE YOUR FWRIEND >;(");
-        reveal[1] = new String("[Annoying Dog will get wary");
-        reveal[2] = new String("if humans move too much.]");
+        reveal[1] = new String("[Annoying Dog will get wary \n if humans move too much.]");
 
         Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
     }
 
+    /**
+     * Sets Annoying Dog goodbye dialogue
+     */
     public void showBye(){
         String[] bye = new String[15];
         bye[0] = new String("...");
         bye[1] = new String("you...");
         bye[2] = new String("...you...");
-        bye[3] = new String("YOU THINK THIS IS HOW IT WORKS?");
+        bye[3] = new String("You think ???? \n YOU THINK THIS IS HOW IT WORKS??????");
         bye[4] = new String("YOU THINK YOU CAN JUST KEEP TRYING?? I \n SAID I DIDN'T WANT TO BE FRIENDS!!");
         bye[5] = new String("What did you think the spikes were for? \n Just a little bit of CHALLENGE?");
         bye[6] = new String("no.");
-        bye[7] = new String("I said I didn't want to be friends.");
-        bye[8] = new String("You don't get a [make it up to Annoying-Dog] \n button. I just didn't want to be friends.");
-        bye[9] = new String("And you don't get a redeeming ending. Because \n that's how life is.");
-        bye[10] = new String("Icky, uncomfortable. Bittersweet.");
-        bye[11] = new String("Maybe we can be friends one day.");
-        bye[12] = new String("But not today.");
-        bye[13] = new String("...");
-        bye[14] = new String("Goodbye.");
+        bye[7] = new String("I said I didn't want to be friends >:(");
+        bye[8] = new String("you don't get to keep trying.");
+        bye[9] = new String("you don't get to bully me into doing what you want.");
+        bye[10] = new String("and you don't get to be my friend \n until you learn to respect that.");
+        bye[11] = new String("owo");
+        bye[12] = new String("maybe you'll learn that someday. \n if you keep trying.");
+        bye[13] = new String("and if you keep learning.");
+        bye[14] = new String("but i don't think that's today.");
+        bye[15] = new String("...");
+        bye[16] = new String("Goodbye.");
 
         Dialogue goodBye = new Dialogue(bye);
         addObject(goodBye, 0, 0);
