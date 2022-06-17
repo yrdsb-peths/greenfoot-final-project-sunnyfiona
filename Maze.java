@@ -117,6 +117,7 @@ public class Maze extends World
             GrillbysBar world = new GrillbysBar();
             Greenfoot.setWorld(world);
             hopeful.stop();
+            sad.stop();
         }
     }
     
