@@ -15,7 +15,7 @@ public class Final extends FallingHeartGame
     private SimpleTimer animTimer;
     public Label scoreLabel = new Label(0, 70);
     public static int score = 0;
-    
+
     private Slider[] walls;
     public DropHeart heart = new DropHeart(30, 30);
 
@@ -67,12 +67,19 @@ public class Final extends FallingHeartGame
             addObject(scoreLabel, 550, 50);
             addObject(heart, 300, 0);
             frisk.collectFallingHeart();
-            
+
         }
-        if(score == 30){
+        boolean byeInitiated = false;
+        if(score == 2 && Player.canMove && !win){
             win = true;
-            setBackground("scaryScreen[0]");
+            Player.canMove = false;
             showBye();
+            byeInitiated = true;
+            setBackground(scaryScreen[1]);
+        }
+        if(byeInitiated && Player.canMove){
+            TitleScreen world = new TitleScreen();
+            Greenfoot.setWorld(world);
         }
     }
 
@@ -137,14 +144,27 @@ public class Final extends FallingHeartGame
         Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
     }
-    
+
     public void showBye(){
-        String[] bye = new String[2];
-        bye[0] = new String("..");
-        bye[1] = new String("..");
+        String[] bye = new String[15];
+        bye[0] = new String("...");
+        bye[1] = new String("you...");
+        bye[2] = new String("...you...");
+        bye[3] = new String("YOU THINK THIS IS HOW IT WORKS?");
+        bye[4] = new String("YOU THINK YOU CAN JUST KEEP TRYING?? I \n SAID I DIDN'T WANT TO BE FRIENDS!!");
+        bye[5] = new String("What did you think the spikes were for? \n Just a little bit of CHALLENGE?");
+        bye[6] = new String("no.");
+        bye[7] = new String("I said I didn't want to be friends.");
+        bye[8] = new String("You don't get a [make it up to Annoying-Dog] \n button. I just didn't want to be friends.");
+        bye[9] = new String("And you don't get a redeeming ending. Because \n that's how life is.");
+        bye[10] = new String("Icky, uncomfortable. Bittersweet.");
+        bye[11] = new String("Maybe we can be friends one day.");
+        bye[12] = new String("But not today.");
+        bye[13] = new String("...");
+        bye[14] = new String("Goodbye.");
 
         Dialogue goodBye = new Dialogue(bye);
         addObject(goodBye, 0, 0);
     }
-    
+
 }
