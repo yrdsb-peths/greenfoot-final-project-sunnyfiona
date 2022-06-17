@@ -8,16 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-
-    /**
-     *  Instance variables
-     */
+    // used for images in world
     private GreenfootImage[] titleScreen;
+    
+    // used for gameplay
     private SimpleTimer animTimer;
     private SimpleTimer textTimer;
     private SimpleTimer clickLabelTimer;
     private Label narration;
     private Label clickToPlay;
+    
+    // sounds
     GreenfootSound loaded = new GreenfootSound("sounds/title-screen-loaded.mp3");
     GreenfootSound ambient = new GreenfootSound("sounds/title-screen-ambient.mp3");
         

@@ -8,13 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tutorial extends World
 {
+    // used for images in world
     private GreenfootImage bg;
     private Wall[] tree;
+    private Textbox[] greet;
+    
+    // used for gameplay
+    private int delay;
+    
+    // list of actors
     private Friend temmie = new Friend("temmie");
     private Player frisk = new Player(true);
-    private Heart heart = new Heart(20, 20);//(20, 20);
-    private Textbox[] greet;
-    private int delay;
+    private Heart heart = new Heart(20, 20);
+    
+    // sounds
     GreenfootSound ambient = new GreenfootSound("sounds/tutorial-ambient.mp3");
     /**
      * Constructor for objects of class Tutorial.

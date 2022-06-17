@@ -8,18 +8,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Maze extends World
 {
+    // used for images in world
     private GreenfootImage bg;
     Wall[] mazeWall;
     Obstacle[] spikeWall;
-    private Friend muffet = new Friend("muffet");
+    
+    // used for gameplay
     public boolean greetInitiated;
     public boolean byeInitiated;
-    GameP frisk = new GameP(37, 30);
     private boolean spawnReset;
-    GreenfootSound sad = new GreenfootSound("sounds/maze-sad.mp3");
-    GreenfootSound hopeful = new GreenfootSound("sounds/maze-hopeful.mp3");
     private boolean muffetExit = false;
     private int delay;
+    
+    // list of actors
+    private Friend muffet = new Friend("muffet");
+    GameP frisk = new GameP(37, 30);
+    
+    // sounds
+    GreenfootSound sad = new GreenfootSound("sounds/maze-sad.mp3");
+    GreenfootSound hopeful = new GreenfootSound("sounds/maze-hopeful.mp3");
     /**
      * Constructor for objects of class Maze.
      * 
@@ -106,6 +113,9 @@ public class Maze extends World
         }
     }
     
+    /**
+     * Sets dialogue for greeting Muffet
+     */
     public void hiMuffet()
     {
         String[] greet = new String[23];
@@ -137,6 +147,9 @@ public class Maze extends World
         addObject(greeting, 0, 0);
     }
     
+    /**
+     * Sets dialogue for leaving Muffet
+     */
     public void byeMuffet()
     {        
         String[] bye = new String[11];
@@ -156,6 +169,9 @@ public class Maze extends World
         addObject(greeting, 0, 0);
     }
     
+    /**
+     * Sets images for the spikes on maze walls
+     */
     public void buildSpikes()
     {
         //Obstacle spike = new Obstacle();
@@ -187,7 +203,7 @@ public class Maze extends World
     }
     
     /**
-     * Builds maze
+     * Sets images for the maze walls
      */
     public void buildMaze()
     {
