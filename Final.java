@@ -87,7 +87,7 @@ public class Final extends FallingHeartGame
             setBackground(scaryScreen[1]);
         }
 
-        if(win && frisk.getX() >= 390){
+        if(win && frisk.getX() >= 399){
             EndScreen world = new EndScreen();
             Greenfoot.setWorld(world);
             ambient.stop();
