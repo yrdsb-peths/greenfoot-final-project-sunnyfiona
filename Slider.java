@@ -12,6 +12,11 @@ public class Slider extends Wall
     int speed = 3;
     Obstacle[] spikes;
     
+    /**
+     * Constructor for a slider obstacle with a set scale
+     * 
+     * @param text the name of the png in the Walls folder from Images
+     */
     public Slider(String text)
     {
         super("slider", -200, -140);

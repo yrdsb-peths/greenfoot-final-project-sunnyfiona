@@ -1,18 +1,16 @@
 #BlueJ class context
 comment0.target=Wall
-comment0.text=\n\ Write\ a\ description\ of\ class\ Wall\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Wall\ here.\n\ \n\ @author\ Finny\n\ @version\ June\ 17,\ 2022\n
 comment1.params=imageName
 comment1.target=Wall(java.lang.String)
-comment1.text=\n\ Default\ constructor\ -\ sets\ the\ image.\n
+comment1.text=\n\ Default\ constructor\ (sets\ the\ image)\n\ \n\ @param\ imageName\ name\ of\ the\ png\ file\ in\ Walls\ folder\ from\ Images\n
 comment2.params=imageName\ scale
 comment2.target=Wall(java.lang.String,\ int)
-comment2.text=\n\ Constructor\ -\ sets\ the\ image\ and\ scales\ it.\n\ when\ the\ scale\ is\ negative,\ image\ is\ shrunk.\n\ when\ the\ scale\ is\ positive,\ image\ is\ enlarged.\n
+comment2.text=\n\ Constructor\ -\ sets\ the\ image\ and\ scales\ it.\n\ when\ the\ scale\ is\ negative,\ image\ is\ shrunk.\n\ when\ the\ scale\ is\ positive,\ image\ is\ enlarged.\n\ \n\ @param\ imageName\ name\ of\ the\ png\ file\ in\ Walls\ folder\ from\ Images\n\ @param\ scale\ the\ number\ added\ to\ the\ width\ and\ height\ of\ the\ image\n
 comment3.params=imageName\ scaleX\ scaleY
 comment3.target=Wall(java.lang.String,\ int,\ int)
-comment3.text=\n\ Constructor\ -\ sets\ the\ image\ and\ scales\ x\ and\ y\ differently.\n\ when\ the\ scale\ is\ negative,\ image\ is\ shrunk.\n\ when\ the\ scale\ is\ positive,\ image\ is\ enlarged.\n
+comment3.text=\n\ Constructor\ -\ sets\ the\ image\ and\ scales\ x\ and\ y\ differently.\n\ when\ the\ scale\ is\ negative,\ image\ is\ shrunk.\n\ when\ the\ scale\ is\ positive,\ image\ is\ enlarged.\n\ \n\ @param\ imageName\ name\ of\ the\ png\ file\ in\ Walls\ folder\ from\ Images\n\ @param\ scaleX\ the\ number\ added\ to\ the\ width\ of\ the\ image\n\ @param\ scaleY\ the\ number\ added\ to\ the\ height\ of\ the\ image\n
 comment4.params=
 comment4.target=void\ act()
 comment4.text=\n\ Act\ -\ do\ whatever\ the\ Wall\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment5.params=
-comment5.target=void\ buildWall()
-numComments=6
+numComments=5

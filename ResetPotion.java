@@ -3,11 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ResetPotion here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 17, 2022
  */
 public class ResetPotion extends Actor
 {
+    /**
+     * Sets image of the Reset Potion and scales it to a smaller size
+     */
     public ResetPotion(){
         GreenfootImage image = new GreenfootImage("images/misc/reset_potion.png");
         image.scale(25,25);

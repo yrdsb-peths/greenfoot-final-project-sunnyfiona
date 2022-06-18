@@ -13,8 +13,8 @@ public class Heart extends Actor
      * Constructor for the class Heart, setting the images of the complete heart
      * and allowing it to be scaled
      * 
-     * @param x the horizontal length of the image
-     * @param y the vertical length of the image
+     * @param x the desired scaled width of the image
+     * @param y the desired scaled height of the image
      */
     public Heart(int x, int y)
     {

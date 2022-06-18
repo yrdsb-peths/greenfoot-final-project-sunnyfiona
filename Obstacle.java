@@ -3,11 +3,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Obstacle here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 17, 2022
  */
 public class Obstacle extends Wall
 {
+    /**
+     * Constructor for an obstacle (the spikes) that sets and scales
+     * the image
+     * 
+     * @param scaleX the desired scaled width of the image
+     * @param scaleY the desired scaled height of the image
+     */
     public Obstacle(int scaleX, int scaleY)
     {
         super("spike", scaleX, scaleY);

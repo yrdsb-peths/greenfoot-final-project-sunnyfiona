@@ -3,11 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Potion here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny 
+ * @version June 17, 2022
  */
 public class SlowPotion extends Actor
 {
+    /**
+     * Sets image of the Slow Potion and scales it to a smaller size
+     */
     public SlowPotion()
     {
         GreenfootImage image = new GreenfootImage("images/misc/slow_potion.png");
