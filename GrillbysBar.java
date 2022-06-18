@@ -123,7 +123,7 @@ public class GrillbysBar extends FallingHeartGame
         intro[1] = new String("...");
         intro[2] = new String("What? You want to make friends?");
         intro[3] = new String("Temmie said you need to give FRIENDS hearts?");
-        intro[4] = new String("You do know that's not how you actually make friends, right?");
+        intro[4] = new String("You do know that's not how \n you actually make friends, right?");
         intro[5] = new String("Alright, how 'bout this.");
         intro[6] = new String("You can DROP hearts to me with the SPACE BAR.");
         intro[7] = new String("Hm? DROP how many? Until when?");

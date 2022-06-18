@@ -18,8 +18,9 @@ public class Maze extends World
     public boolean byeInitiated;
     private boolean spawnReset;
     private boolean muffetExit = false;
-    private int delay1;
-    private int delay2;
+    private int waitFirst;
+    private int delay;
+    private boolean destinationReached;
     
     // list of actors
     private Friend muffet = new Friend("muffet");
@@ -47,7 +48,8 @@ public class Maze extends World
         //add muffet
         //addObject(muffet, 575, 25);
         addObject(muffet, 60, 390);
-        delay1 = 600;
+        destinationReached = false;
+        waitFirst = 600;
         
         //add heart
         Heart heart = new Heart(25, 25);
@@ -68,7 +70,7 @@ public class Maze extends World
         //give heart
         greetInitiated = false;
         byeInitiated = false;
-        delay2 = 300;
+        delay = 300;
     }
     
     public void act()
@@ -78,14 +80,15 @@ public class Maze extends World
             hiMuffet();
             greetInitiated = true;
         }
+
         if(greetInitiated && GameP.canMove) {
-            delay1--;
-            if(delay1 <= 0) {
+            waitFirst--;
+            if(waitFirst <= 0 && !byeInitiated) {
             muffet.walk(this, 575, muffet.getY());
             muffet.walk(this, muffet.getX(), 25);
             }
         }
-        
+    
         //spawn reset potion
         if(frisk.collectedHeart && frisk.spawnReset) {
             ResetPotion p2 = new ResetPotion();
@@ -105,8 +108,9 @@ public class Maze extends World
         
         //makes muffet move after finished talking, can move to GrillbysBar
         if(byeInitiated) {
-            delay2--;
-            if(delay2 <= 0 && !muffetExit) {
+            //waitFirst = 1000000000;
+            delay--;
+            if(delay <= 0 && !muffetExit) {
                 muffet.walk(this, 0, muffet.getY());
                 if(muffet.getX() <= 0) {
                     removeObject(muffet);
