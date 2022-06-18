@@ -10,12 +10,12 @@ public class Final extends FallingHeartGame
 {
     // used for images in world
     private GreenfootImage[] scaryScreen; 
-    
+
     // used for gameplay
     private SimpleTimer animTimer;
     public static int score = 0;
     private Slider[] walls;
-    
+
     // list of actors
     private Friend doggo = new Friend("annoying-dog");
     private Player frisk = new Player(true);
@@ -69,7 +69,12 @@ public class Final extends FallingHeartGame
             ambient.playLoop();
 
             addObject(scoreLabel, 550, 50);
-            addObject(heart, 300, 0);
+            if(frisk.getX() >= 300){
+                addObject(heart, frisk.getX() - 150, 0);
+            }else{
+                addObject(heart, frisk.getX() + 150, 0);
+            }
+            //addObject(heart, 300, 0);
             frisk.collectFallingHeart();
 
         }
@@ -78,15 +83,15 @@ public class Final extends FallingHeartGame
             win = true;
             Player.canMove = false;
             showBye();
-            byeInitiated = true;
+            
             setBackground(scaryScreen[1]);
         }
-        /*
-        if(byeInitiated && Player.canMove){
-            TitleScreen world = new TitleScreen();
+
+        if(win && frisk.getX() >= 350){
+            EndScreen world = new EndScreen();
             Greenfoot.setWorld(world);
         }
-        */
+
     }
 
     /**
@@ -170,7 +175,7 @@ public class Final extends FallingHeartGame
      * Sets Annoying Dog goodbye dialogue
      */
     public void showBye(){
-        String[] bye = new String[15];
+        String[] bye = new String[17];
         bye[0] = new String("...");
         bye[1] = new String("you...");
         bye[2] = new String("...you...");
@@ -188,9 +193,11 @@ public class Final extends FallingHeartGame
         bye[14] = new String("but i don't think that's today.");
         bye[15] = new String("...");
         bye[16] = new String("Goodbye.");
-
+        
         Dialogue goodBye = new Dialogue(bye);
         addObject(goodBye, 0, 0);
+        
+        
     }
 
 }
