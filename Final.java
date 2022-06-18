@@ -163,9 +163,11 @@ public class Final extends FallingHeartGame
      * Continues dialogue after bg change
      */
     public void showReveal(){
-        String[] reveal = new String[2];
+        String[] reveal = new String[3];
         reveal[0] = new String("I DONT WANNA BE YOUR FWRIEND >;(");
         reveal[1] = new String("[Annoying Dog will get wary \n if humans move too much.]");
+        reveal[2] = new String("[Hold still if gaining his trust.]");
+
 
         Dialogue dramaticReveal = new Dialogue(reveal);//, Color.BLACK);
         addObject(dramaticReveal, 0, 0);
