@@ -120,7 +120,7 @@ public class Maze extends World
      */
     public void hiMuffet()
     {
-        String[] greet = new String[19];
+        String[] greet = new String[18];
         greet[0] = new String("boohoo :'(");
         greet[1] = new String("boo :''''((((( hoo");
         greet[2] = new String("!!");
@@ -133,13 +133,12 @@ public class Maze extends World
         greet[9] = new String("That HURTS, you know >:(");
         greet[10] = new String("It's not my fault I'm a spider");
         greet[11] = new String("Just because I'm spooky \n doesn't mean I'm mean!");
-        greet[12] = new String("doesn't mean I'm mean!");
-        greet[13] = new String("And here I thought video \n game society was evolving :(");
-        greet[14] = new String("..");
-        greet[15] = new String("What's that??");
-        greet[16] = new String("YOU want to be my friend :0");
-        greet[17] = new String("A lot of people say that, you know.");
-        greet[18] = new String("So I guess we'll see.");
+        greet[12] = new String("And here I thought video \n game society was evolving :(");
+        greet[13] = new String("..");
+        greet[14] = new String("What's that??");
+        greet[15] = new String("YOU want to be my friend :0");
+        greet[16] = new String("A lot of people say that, you know.");
+        greet[17] = new String("So I guess we'll see.");
 
         Dialogue greeting = new Dialogue(greet);//, Color.WHITE);
         addObject(greeting, 0, 0);
