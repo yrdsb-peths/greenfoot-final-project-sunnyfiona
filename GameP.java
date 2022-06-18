@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class GameP here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 17, 2022
  */
 public class GameP extends Actor
 {
@@ -14,6 +14,10 @@ public class GameP extends Actor
     public boolean drankPotion = false;
     public int pCount = 0;
     public boolean spawnReset;
+    /**
+     * Constructor for the class GameP, setting the image for an in-game
+     * representation of the player with a scale
+     */
     public GameP(int x, int y)
     {
         GreenfootImage head = new GreenfootImage("images/frisk/head.png");
@@ -53,6 +57,9 @@ public class GameP extends Actor
 
     }
 
+    /**
+     * Sends the player back to spawn point
+     */
     public void restart()
     {
         Maze w = (Maze) getWorld();
@@ -62,6 +69,9 @@ public class GameP extends Actor
         }
     }
     
+    /**
+     * Allows the player to navigate the world using 'WASD' or arrow keys
+     */
     public void walk()
     {
         //Tutorial world = new Tutorial();

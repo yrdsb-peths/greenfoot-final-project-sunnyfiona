@@ -1,18 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Grillby here.
+ * Allows objects in class Grillby
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny 
+ * @version June 17, 2022
  */
 public class Grillby extends Friend
 {
     boolean movingRight = true;
     int speed = 2;
 
+    /**
+     * Constructor for the class Grillby, setting the images of the NPC
+     */
     public Grillby(){
-        super("grillby");    
+         super("grillby");    
     }
     
     /**

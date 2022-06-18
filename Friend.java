@@ -45,9 +45,9 @@ public class Friend extends Actor
     /**
      * Moves friend around world
      * 
-     * @param world: which world friend is in
-     * @param x: desired horizontal position in coordinates
-     * @param y: desired vertical position in coordinates
+     * @param world which world friend is in
+     * @param x desired horizontal position in coordinates
+     * @param y desired vertical position in coordinates
      */
     public void walk(World world, int x, int y){
         if(getX() > x)
@@ -72,7 +72,7 @@ public class Friend extends Actor
     /**
      * Scales images smaller (divides the image size of the friend by the factor)
      * 
-     * @param factor: the number the friend image will be divided by
+     * @param factor the number the friend image will be divided by
      */
     public void scaleSmaller(int factor)
     {

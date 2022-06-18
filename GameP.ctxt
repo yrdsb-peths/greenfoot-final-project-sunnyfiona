@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=GameP
-comment0.text=\n\ Write\ a\ description\ of\ class\ GameP\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ GameP\ here.\n\ \n\ @author\ Finny\n\ @version\ June\ 17,\ 2022\n
 comment1.params=x\ y
 comment1.target=GameP(int,\ int)
+comment1.text=\n\ Constructor\ for\ the\ class\ GameP,\ setting\ the\ image\ for\ an\ in-game\n\ representation\ of\ the\ player\ with\ a\ scale\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ GameP\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ restart()
+comment3.text=\n\ Sends\ the\ player\ back\ to\ spawn\ point\n
 comment4.params=
 comment4.target=void\ walk()
+comment4.text=\n\ Allows\ the\ player\ to\ navigate\ the\ world\ using\ 'WASD'\ or\ arrow\ keys\n
 numComments=5
