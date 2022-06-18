@@ -90,6 +90,7 @@ public class Final extends FallingHeartGame
         if(win && frisk.getX() >= 390){
             EndScreen world = new EndScreen();
             Greenfoot.setWorld(world);
+            ambient.stop();
         }
 
     }

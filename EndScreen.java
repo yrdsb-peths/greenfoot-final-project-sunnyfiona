@@ -50,7 +50,7 @@ public class EndScreen extends World
         clickLabelTimer.mark();
         textTimer.mark();
         
-        clickToPlay = new Label("[THE END]", 25);
+        clickToPlay = new Label("[FIN]", 25);
         addObject(clickToPlay, 300, 350);
         
         
