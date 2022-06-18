@@ -1,21 +1,21 @@
 #BlueJ class context
 comment0.target=Tutorial
-comment0.text=\r\n\ Player\ begins\ in\ this\ world\ after\ passing\ the\ title\ screen\ and\ learns\ how\ to\ navigate\ the\ world\ and\ collect\ hearts.\r\n\ \r\n\ @author\ Finny\ \r\n\ @version\ June\ 16,\ 2022\r\n
+comment0.text=\n\ Player\ begins\ in\ this\ world\ after\ passing\ the\ title\ screen\ and\ learns\ how\ to\ navigate\ the\ world\ and\ collect\ hearts.\n\ \n\ @author\ Finny\ \n\ @version\ June\ 16,\ 2022\n
 comment1.params=
 comment1.target=Tutorial()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tutorial.\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Tutorial.\n
 comment2.params=
 comment2.target=void\ started()
-comment2.text=\r\n\ This\ method\ plays\ the\ Temmie's\ background\ music.\r\n
+comment2.text=\n\ This\ method\ plays\ the\ Temmie's\ background\ music.\n
 comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ showGreet()
-comment4.text=\r\n\ This\ method\ sets\ the\ dialogue\ for\ Temmie's\ greeting.\r\n
+comment4.text=\n\ This\ method\ sets\ the\ dialogue\ for\ Temmie's\ greeting.\n
 comment5.params=
 comment5.target=void\ showBye()
-comment5.text=\r\n\ \ This\ method\ sets\ the\ dialogue\ for\ Temmie's\ goodbye.\r\n
+comment5.text=\n\ \ This\ method\ sets\ the\ dialogue\ for\ Temmie's\ goodbye.\n
 comment6.params=
 comment6.target=void\ buildTrees()
-comment6.text=\r\n\ This\ method\ uses\ the\ image\ of\ a\ tree\ to\ function\ as\ a\ part\ of\ the\ Wall\ class,\ and\ adds\ the\ object\ to\ the\ world.\r\n
+comment6.text=\n\ This\ method\ uses\ the\ image\ of\ a\ tree\ to\ function\ as\ a\ part\ of\ the\ Wall\ class,\ and\ adds\ the\ object\ to\ the\ world.\n
 numComments=7
