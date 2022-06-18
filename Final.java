@@ -187,7 +187,7 @@ public class Final extends FallingHeartGame
         bye[6] = new String("no.");
         bye[7] = new String("I said I didn't want to be friends >:(");
         bye[8] = new String("you don't get to keep trying.");
-        bye[9] = new String("you don't get to bully me into doing what you want.");
+        bye[9] = new String("you don't get to bully me \n into doing what you want.");
         bye[10] = new String("and you don't get to be my friend \n until you learn to respect that.");
         bye[11] = new String("owo");
         bye[12] = new String("maybe you'll learn that someday. \n if you keep trying.");
