@@ -18,6 +18,7 @@ public class Maze extends World
     public boolean byeInitiated;
     private boolean spawnReset;
     private boolean muffetExit = false;
+    private int waitFirst;
     private int delay;
     
     // list of actors
@@ -44,8 +45,10 @@ public class Maze extends World
         addObject(frisk, 20, 384);
         
         //add muffet
-        addObject(muffet, 575, 25);
+        //addObject(muffet, 575, 25);
+        addObject(muffet, 80, 400);
         muffet.scaleSmaller(25);
+        waitFirst = 800;
         
         //add heart
         Heart heart = new Heart(25, 25);
@@ -78,6 +81,14 @@ public class Maze extends World
             hiMuffet();
             greetInitiated = true;
         }
+        if(greetInitiated && GameP.canMove) {
+            waitFirst--;
+            if(waitFirst <= 0 && !byeInitiated) {
+            muffet.walk(this, 575, muffet.getY());
+            muffet.walk(this, muffet.getX(), 25);
+            }
+        }
+
         
         //spawn reset potion
         if(frisk.collectedHeart && frisk.spawnReset) {
