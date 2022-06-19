@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Obstacle
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Obstacle\ here.\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 17,\ 2022\r\n
+comment0.text=\r\n\ Wall\ that\ will\ reset\ Player\ location\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 17,\ 2022\r\n
 comment1.params=scaleX\ scaleY
 comment1.target=Obstacle(int,\ int)
 comment1.text=\r\n\ Constructor\ for\ an\ obstacle\ (the\ spikes)\ that\ sets\ and\ scales\r\n\ the\ image\r\n\ \r\n\ @param\ scaleX\ the\ desired\ scaled\ width\ of\ the\ image\r\n\ @param\ scaleY\ the\ desired\ scaled\ height\ of\ the\ image\r\n

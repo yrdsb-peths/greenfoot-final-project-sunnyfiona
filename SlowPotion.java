@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Potion here.
+ * Potion that makes player (GameP) speed slower
  * 
  * @author Finny 
  * @version June 17, 2022

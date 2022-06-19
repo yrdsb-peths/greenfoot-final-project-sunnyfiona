@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Slider here.
+ * Moving Wall that resets player Position
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny 
+ * @version June 16th, 2022
  */
 public class Slider extends Wall
 {
+    //instance variables
     boolean movingRight = true;
     int speed = 3;
     Obstacle[] spikes;
@@ -28,7 +29,7 @@ public class Slider extends Wall
      */
     public void act()
     {
-        // Add your action code here.
+        
         if(movingRight){
             setLocation(getX() + speed, getY());
         } else {

@@ -1,20 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Texbox here.
+ * Textbox that accompanies dialogue
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 16th, 2022
  */
 public class Textbox extends Actor
 {
-    
+    /**
+     * constructor for textbox
+     */
     public Textbox(){
         GreenfootImage box = new GreenfootImage("images/misc/textbox.png");
         box.scale(box.getWidth(), box.getHeight() / 2);
         setImage(box);
-        //setImage("images/misc/textbox.png");
-        //GreenfootImage("images/misc/
+        
     
     }
     /**
@@ -23,9 +24,7 @@ public class Textbox extends Actor
      */
     public void act()
     {
-        if(!Player.canMove){
-            
-        }// Add your action code here.
+        
     }
 }
 

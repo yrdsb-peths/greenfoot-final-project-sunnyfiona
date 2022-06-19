@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ResetPotion here.
+ * Potion that resets player (GameP) speed 
  * 
  * @author Finny
  * @version June 17, 2022

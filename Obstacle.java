@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Obstacle here.
+ * Wall that will reset Player location
  * 
  * @author Finny
  * @version June 17, 2022
