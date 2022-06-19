@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameP extends Actor
 {
+    //instance variables
     public boolean collectedHeart = false;
     public static boolean canMove = true;
     private int speed = 4;

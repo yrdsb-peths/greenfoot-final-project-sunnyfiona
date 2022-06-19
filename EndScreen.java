@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndScreen here.
+ * This is the ending screen that the player enters when the game is 
+ * over. The player does not have the choice to return to the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny 
+ * @version June 17th, 2022
  */
 public class EndScreen extends World
 {
@@ -55,7 +56,9 @@ public class EndScreen extends World
         
         
     }
-    
+    /**
+     * Method that starts looping the backgroun music.
+     */
     public void started()
     {
         ambient.playLoop();

@@ -1,20 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class dropHeart here.
+ * Heart that falls down.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 16th, 2022
  */
 public class DropHeart extends Heart
 {
-    //public static boolean onScreen;
+    /**
+     * Constructor for DropHeart
+     * 
+     * @param x the desired scaled width of the image
+     * @param y the desired scaled height of the image
+     */
     public DropHeart(int x, int y){
         super(x, y);
-        //onScreen = true;
+        
     }
     /**
-     * Act - do whatever the dropHeart wants to do. This method is called whenever
+     * Act - Makes DropHeart fall, and removes itself when touching something.
+     * This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
@@ -28,9 +34,4 @@ public class DropHeart extends Heart
         }
         
     }
-    /*
-    public void dropHeart(){
-        getWorld().addObject(this, getX(), 100);
-    }
-    */
 }

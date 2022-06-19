@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Grillby extends Friend
 {
+    //instance variables for allowing him to slide
     boolean movingRight = true;
     int speed = 2;
 
@@ -19,12 +20,12 @@ public class Grillby extends Friend
     }
     
     /**
-     * Act - do whatever the Grillby wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - Animates Grillby, allows him to slide, and allows him to collect hearts.
+     * This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        
         animate();
         if(movingRight){
             setLocation(getX() + speed, getY());

@@ -2,31 +2,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Textbox here.
+ * This class adds a cycle of dialogue with a textbox and removes
+ * after the player finishes.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 16th, 2022
  */
 public class Dialogue extends Actor
 {
     
-    //private GreenfootImage text;
+    //instance variables for cycling through dialogue messages
     private int curTextIndex = 0;
     private String[] texts;
-    //private Color color;
+    
+    //instance variables for creating the textbox
     Label messageLabel;
-    
     Textbox box; 
-
-    public Dialogue(String[] texts){
-        //this.text = new GreenfootImage(text, 30, Color.BLACK, color);
-        //setImage(this.text);
-
-            
-        this.texts = texts;
-        //this.color = color;
-    }
     
+    /**
+     * Constructor for the Dialogue box
+     */
+    public Dialogue(String[] texts){
+    
+        this.texts = texts;
+        
+    }
+    /**
+     * Method that adds the text with a textbox into a world
+     */
     protected void addedToWorld(World world){
         box = new Textbox();
         world.addObject(box, 300, 330);
@@ -34,15 +37,20 @@ public class Dialogue extends Actor
         messageLabel = new Label(texts[curTextIndex], 23);
         messageLabel.setLineColor(Color.GRAY);
         messageLabel.setFillColor(Color.BLACK);
-        //setImage(messageLabel);
+        
         world.addObject(messageLabel, 300, 330);
     }
-
+    /**
+     * Act - allows the Dialogue to cycle through. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         
         if(Greenfoot.mouseClicked(box)){
             if(curTextIndex + 1 < texts.length) {
+                Player.canMove = false;
+                GameP.canMove = false;
                 curTextIndex++;
                 messageLabel.setValue(texts[curTextIndex]);
             } 
@@ -53,21 +61,7 @@ public class Dialogue extends Actor
                 getWorld().removeObject(box);
             }
         }
-        if(Player.canMove){
-
-        }
+        
     }
-
-    public void add(Dialogue text, World world)
-    {
-        world.addObject(text, 300, 350);
-
-    }
-
-    public void remove(Dialogue text, World world)
-    {
-        world.removeObject(text);
-
-    }
-
+    
 }

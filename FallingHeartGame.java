@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FallingHeartGame extends World
 {
+    //instance variables
     public Label scoreLabel;
+    public DropHeart heart;
     public static int score = 0;
-    DropHeart heart;
+    
     /**
      * Constructor for objects of class FallingHeartGame.
      * 
@@ -23,10 +25,4 @@ public class FallingHeartGame extends World
         scoreLabel = new Label(0, 70);
     }
     
-    /*
-    public void decreaseScore(){
-        score--;
-        scoreLabel.setValue(score);
-    }
-    */
 }

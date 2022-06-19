@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Heart here.
+ * Collectable by Player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny 
+ * @version June 16th, 2022
  */
 public class Heart extends Actor
 {
@@ -29,6 +29,6 @@ public class Heart extends Actor
      */
     public void act()
     {
-        
+        //null
     }
 }

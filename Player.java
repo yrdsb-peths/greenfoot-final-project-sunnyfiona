@@ -1,37 +1,36 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player here.
+ * Object the player controls
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Finny
+ * @version June 16th, 2022
  */
 public class Player extends Actor
 {
-
+    //instance variables for walking animations
     private GreenfootImage[] rightWalk;
     private GreenfootImage[] leftWalk;
     private GreenfootImage[] fwdWalk;
     private GreenfootImage[] bwdWalk;
     private SimpleTimer animTimer;
 
-    private boolean facingRight;
-    private boolean facingUp;
-    private boolean facingLeft;
-    private boolean facingDown;
+    //for controlling movement and progressing events
     public static boolean canMove = true;
     public boolean collectedHeart = false;
-    public boolean deliveredHeart;
     public static boolean canMoveVertical;
-
+    
+    //speed
     private int xSpeed = 3;
     private int ySpeed = 3;
     
-    private static int numLives;
     /**
-     * Act - do whatever the Player wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor for Player
+     * 
+     * @param canMoveVertical - indicates whether the Player is allowed to
+     * move up and down.
      */
+    
     public Player(boolean canMoveVertical)
     {
         this.canMoveVertical = canMoveVertical;
@@ -58,9 +57,12 @@ public class Player extends Actor
         }
         setImage(rightWalk[2]);
         animTimer = new SimpleTimer();
-        deliveredHeart = false;
+        
     }
-
+    /**
+     * Act - do whatever the Player wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
 
@@ -70,29 +72,24 @@ public class Player extends Actor
             animate();
         }
         pickUpHeart();
-        if(collectedHeart && Greenfoot.mouseClicked(Friend.class)){
-            deliveredHeart = true;
-        }
-        /*
-        if(isTouching(Heart.class)){
-            removeTouching(Heart.class);
-            FallingHeartGame world = (FallingHeartGame) getWorld();
-            world.increaseScore();
-        }
-        */
+        
     }
-
+    /**
+     * pickUpHeart - removes Heart if Player is touching one,and stores it
+     */
     public void pickUpHeart()
     {
-        //FallingHeartGame world = (FallingHeartGame) getWorld();
+        
         if(isTouching(Heart.class))
         {
             removeTouching(Heart.class);
             collectedHeart = true;
-            //world.increaseScore();
+            
         }
     }
-
+    /**
+     * collects falling hearts and sets score
+     */
     public void collectFallingHeart(){
         Final world = (Final) getWorld();
         if(isTouching(Wall.class)){
@@ -103,7 +100,9 @@ public class Player extends Actor
             
         }
     }
-    
+    /**
+     * allows player's movement to be controlled
+     */
     public void walk()
     {
         Tutorial world = new Tutorial();
@@ -147,8 +146,11 @@ public class Player extends Actor
         
 
     }
-
+    //for animation index
     int curIndex = 0;
+    /**
+     * animates the player's walking animations
+     */
     public void animate()
     {
         if(animTimer.millisElapsed() > 110)

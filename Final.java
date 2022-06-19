@@ -47,9 +47,12 @@ public class Final extends FallingHeartGame
         animTimer.mark();
         buildWalls();
     }
+    
+    //instance variables that help move along events in act()
     boolean greetInitiated = false;
     boolean revealInitiated = false;
     boolean win = false;
+    boolean byeInitiated = false;
     public void act(){
 
         if(frisk.getX() >= 50 && Player.canMove && !greetInitiated){
@@ -78,8 +81,8 @@ public class Final extends FallingHeartGame
             frisk.collectFallingHeart();
 
         }
-        boolean byeInitiated = false;
-        if(score == 15 && Player.canMove && !win){
+        
+        if(score == 1 && Player.canMove && !win){
             win = true;
             Player.canMove = false;
             showBye();
@@ -130,7 +133,7 @@ public class Final extends FallingHeartGame
             addObject(heart, frisk.getX() + 150, 0);
         }
     }
-
+    //instance variable that sets the animation indexes
     int curIndex = 1;
     /**
      * Animates Annoying Dog bg

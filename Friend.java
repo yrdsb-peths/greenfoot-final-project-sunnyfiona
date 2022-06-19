@@ -8,14 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Friend extends Actor
 {
-    GreenfootImage[] leftWalk = new GreenfootImage[4];
-    GreenfootImage[] rightWalk = new GreenfootImage[4];
+    // instance variables for animation
     GreenfootImage[] frontAnim = new GreenfootImage[4];
-    private String name;
-    GreenfootImage idle;
     SimpleTimer animTimer;
-    private boolean isFacingRight = true;
-    public boolean exit = false;
+    
+    //instance variable for obtaining file name
+    private String name;
+    
+    
+    //private boolean isFacingRight = true;
+    //public boolean exit = false;
     /**
      * Constructor for the class. Sets the images of the NPCs 
      * and sets the animations.
@@ -38,10 +40,7 @@ public class Friend extends Actor
         animate();
         
     }
-    /* public void slide(int leftBoundary, int rightBoundary){
-        walk(getWorld(), leftBoundary, getY());
-        walk(getWorld(), rightBoundary, getY());
-    } */
+    
     /**
      * Moves friend around world
      * 
@@ -87,7 +86,7 @@ public class Friend extends Actor
     /**
      * Animates the image of friend
      */
-    public void animate()//(boolean goRight, boolean stopped)
+    public void animate()
     {
         
        if(animTimer.millisElapsed() > 150){

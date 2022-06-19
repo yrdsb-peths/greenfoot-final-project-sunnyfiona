@@ -49,6 +49,7 @@ public class Tutorial extends World
     public void started(){
         ambient.playLoop();
     }
+    //instance variable that helps move along events in act()
     boolean greetInitiated = false;
     public void act()
     {
