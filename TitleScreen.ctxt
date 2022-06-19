@@ -1,18 +1,18 @@
 #BlueJ class context
 comment0.target=TitleScreen
-comment0.text=\r\n\ In\ this\ world,\ the\ player\ chooses\ to\ enter\ the\ game.\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 16,\ 2022\r\n
+comment0.text=\n\ In\ this\ world,\ the\ player\ chooses\ to\ enter\ the\ game.\n\ \n\ @author\ Finny\n\ @version\ June\ 16,\ 2022\n
 comment1.params=
 comment1.target=TitleScreen()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TitleScreen.\r\n\ \r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ TitleScreen.\n\ \n
 comment2.params=
 comment2.target=void\ started()
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Method\ that\ executes\ the\ title\ screen\ mechanisms\r\n\ (animations,\ click\ to\ play)\r\n
+comment3.text=\n\ Method\ that\ executes\ the\ title\ screen\ mechanisms\n\ (animations,\ click\ to\ play)\n
 comment4.params=
 comment4.target=void\ animateBG()
-comment4.text=\r\n\ Animates\ the\ background\ image.\r\n
+comment4.text=\n\ Animates\ the\ background\ image.\n
 comment5.params=
 comment5.target=void\ animateText()
-comment5.text=\r\n\ Animates\ the\ text\ on\ screen.\r\n
+comment5.text=\n\ Animates\ the\ text\ on\ screen.\n
 numComments=6

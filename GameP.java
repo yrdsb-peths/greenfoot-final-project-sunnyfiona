@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameP here.
+ * Object that the player controls and uses to interact with the minigame Maze
  * 
  * @author Finny
  * @version June 17, 2022

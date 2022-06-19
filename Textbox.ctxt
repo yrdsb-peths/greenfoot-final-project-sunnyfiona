@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Textbox
-comment0.text=\r\n\ Textbox\ that\ accompanies\ dialogue\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 16th,\ 2022\r\n
+comment0.text=\n\ Textbox\ that\ accompanies\ dialogue\n\ \n\ @author\ Finny\n\ @version\ June\ 16th,\ 2022\n
 comment1.params=
 comment1.target=Textbox()
-comment1.text=\r\n\ constructor\ for\ textbox\r\n
+comment1.text=\n\ constructor\ for\ textbox\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Textbox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Textbox\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 numComments=3

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Obstacle
-comment0.text=\r\n\ Wall\ that\ will\ reset\ Player\ location\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 17,\ 2022\r\n
+comment0.text=\n\ Wall\ that\ will\ reset\ Player\ location\n\ \n\ @author\ Finny\n\ @version\ June\ 17,\ 2022\n
 comment1.params=scaleX\ scaleY
 comment1.target=Obstacle(int,\ int)
-comment1.text=\r\n\ Constructor\ for\ an\ obstacle\ (the\ spikes)\ that\ sets\ and\ scales\r\n\ the\ image\r\n\ \r\n\ @param\ scaleX\ the\ desired\ scaled\ width\ of\ the\ image\r\n\ @param\ scaleY\ the\ desired\ scaled\ height\ of\ the\ image\r\n
+comment1.text=\n\ Constructor\ for\ an\ obstacle\ (the\ spikes)\ that\ sets\ and\ scales\n\ the\ image\n\ \n\ @param\ scaleX\ the\ desired\ scaled\ width\ of\ the\ image\n\ @param\ scaleY\ the\ desired\ scaled\ height\ of\ the\ image\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Obstacle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Obstacle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 numComments=3

@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=GameP
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameP\ here.\r\n\ \r\n\ @author\ Finny\r\n\ @version\ June\ 17,\ 2022\r\n
+comment0.text=\n\ Object\ that\ the\ player\ controls\ and\ uses\ to\ interact\ with\ the\ minigame\ Maze\n\ \n\ @author\ Finny\n\ @version\ June\ 17,\ 2022\n
 comment1.params=x\ y
 comment1.target=GameP(int,\ int)
-comment1.text=\r\n\ Constructor\ for\ the\ class\ GameP,\ setting\ the\ image\ for\ an\ in-game\r\n\ representation\ of\ the\ player\ with\ a\ scale\r\n
+comment1.text=\n\ Constructor\ for\ the\ class\ GameP,\ setting\ the\ image\ for\ an\ in-game\n\ representation\ of\ the\ player\ with\ a\ scale\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ GameP\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ GameP\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ restart()
-comment3.text=\r\n\ Sends\ the\ player\ back\ to\ spawn\ point\r\n
+comment3.text=\n\ Sends\ the\ player\ back\ to\ spawn\ point\n
 comment4.params=
 comment4.target=void\ walk()
-comment4.text=\r\n\ Allows\ the\ player\ to\ navigate\ the\ world\ using\ 'WASD'\ or\ arrow\ keys\r\n
+comment4.text=\n\ Allows\ the\ player\ to\ navigate\ the\ world\ using\ 'WASD'\ or\ arrow\ keys\n
 numComments=5

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Heart
-comment0.text=\r\n\ Collectable\ by\ Player\r\n\ \r\n\ @author\ Finny\ \r\n\ @version\ June\ 16th,\ 2022\r\n
+comment0.text=\n\ Collectable\ by\ Player\n\ \n\ @author\ Finny\ \n\ @version\ June\ 16th,\ 2022\n
 comment1.params=x\ y
 comment1.target=Heart(int,\ int)
-comment1.text=\r\n\ Constructor\ for\ the\ class\ Heart,\ setting\ the\ images\ of\ the\ complete\ heart\r\n\ and\ allowing\ it\ to\ be\ scaled\r\n\ \r\n\ @param\ x\ the\ desired\ scaled\ width\ of\ the\ image\r\n\ @param\ y\ the\ desired\ scaled\ height\ of\ the\ image\r\n
+comment1.text=\n\ Constructor\ for\ the\ class\ Heart,\ setting\ the\ images\ of\ the\ complete\ heart\n\ and\ allowing\ it\ to\ be\ scaled\n\ \n\ @param\ x\ the\ desired\ scaled\ width\ of\ the\ image\n\ @param\ y\ the\ desired\ scaled\ height\ of\ the\ image\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Heart\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Heart\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 numComments=3

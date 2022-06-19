@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Friend here.
+ * This class allows objects to be animated with multiple images and be moved
+ * around the world
  * 
  * @author Finny
  * @version June 17, 2022
